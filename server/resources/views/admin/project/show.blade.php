@@ -11,11 +11,11 @@
                 <span data-feather="corner-down-left"></span>
                 戻る
             </a>
-            <a class="btn btn-sm btn-outline-primary" href="{{ route('admin.project.edit', $item->id) }}">
+            <a class="btn btn-sm btn-outline-primary" href="{{ route('admin.project.edit', $project->id) }}">
                 <span data-feather="edit"></span>
                 編集
             </a>
-            {!! Form::open(['route' => ['admin.project.destroy', $item->id], 'method' => 'delete', 'class' => 'btn-group']) !!}
+            {!! Form::open(['route' => ['admin.project.destroy', $project->id], 'method' => 'delete', 'class' => 'btn-group']) !!}
             {!! Form::button('<span data-feather="trash"></span>削除', [
                 'type' => 'submit',
                 'class' => 'btn btn-sm btn-outline-danger',
@@ -29,40 +29,24 @@
         <table class="table table-bordered align-middle">
             <tbody>
                 <tr>
-                    <th class="table-light text-nowrap col-lg-3">ユーザー名</th>
-                    <td>{{ $item->user->account ??'' }}</td>
-                </tr>
-                <tr>
-                    <th class="table-light text-nowrap col-lg-3">部署名</th>
-                    <td>{{ $item->department->name ??'' }}</td>
-                </tr>
-                <tr>
                     <th class="table-light text-nowrap col-lg-3">顧客名</th>
-                    <td>{{ $item->customer->name ??'' }}</td>
+                    <td>{{ $project->customer->name ??'' }}</td>
                 </tr>
                 <tr>
                     <th class="table-light text-nowrap col-lg-3">顧客担当者</th>
-                    <td>{{ $item->customer_manager }}</td>
+                    <td>{{ $project->customer_manager }}</td>
                 </tr>
                 <tr>
-                    <th class="table-light text-nowrap col-lg-3">商品</th>
-                    <td>{{ $item->product }}</td>
-                </tr>
-                <tr>
-                    <th class="table-light text-nowrap col-lg-3">価格</th>
-                    <td>{{ $item->price }}円</td>
-                </tr>
-                <tr>
-                    <th class="table-light text-nowrap col-lg-3">数量</th>
-                    <td>{{ $item->amount }}個</td>
+                    <th class="table-light text-nowrap col-lg-3">仕入れ額</th>
+                    <td>{{ $project->cost }}円</td>
                 </tr>
                 <tr>
                     <th class="table-light text-nowrap col-lg-3">備考</th>
-                    <td>{!! nl2br(e($item->note)) !!}</td>
+                    <td>{!! nl2br(e($project->description)) !!}</td>
                 </tr>
                 <tr>
                     <th class="table-light text-nowrap col-lg-3">日付</th>
-                    <td>{{ $item->date }}</td>
+                    <td>{{ $project->date }}</td>
                 </tr>
             </tbody>
         </table>

@@ -76,7 +76,7 @@ class ProjectController extends Controller
     public function show()
     {
         return view('admin.project.show', [
-            'project' => $this->_project
+            'project' => $this->_project->findOrFail(request()->route('project'))
         ]);
     }
 
