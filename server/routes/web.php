@@ -87,6 +87,9 @@ Route::group(['prefix' => 'user', 'as' => 'user.',], function () {
         # Home
         Route::get('/', [User\HomeController::class, 'home'])->name('home');
 
+        # プロジェクト
+        Route::resource('project', User\ProjectController::class);
+
         # logout
         Route::match(['get', 'post'], '/logout', [Auth\LoginController::class, 'logout'])->name('logout');
     });

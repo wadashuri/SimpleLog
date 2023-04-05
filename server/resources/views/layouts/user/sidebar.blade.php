@@ -7,6 +7,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link link-dark" href="{{ route('user.project.index') }}">
+                <span data-feather="home"></span>
+                プロジェクト
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link text" href="{{ route('user.logout') }}"
                 onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
