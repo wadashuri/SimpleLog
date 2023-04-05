@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class Admin extends Authenticatable
 {
@@ -35,5 +36,15 @@ class Admin extends Authenticatable
     public function projects()
     {
         return $this->hasMany(Project::class);
+    }
+
+    // ========================================================================
+
+    /**
+     * ミューテタ設定
+     */
+    public function setPasswordAttribute($attr)
+    {
+        $this->attributes['password'] =  Hash::make($attr);
     }
 }
