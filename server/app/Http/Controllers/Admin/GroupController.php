@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GroupRequest;
 use Illuminate\Support\Facades\DB;
-use App\Models\Group;
 
 class GroupController extends Controller
 {
@@ -14,9 +13,8 @@ class GroupController extends Controller
 
     public function __construct()
     {
-        parent::__construct();
         $this->middleware(function ($request, $next) {
-            $this->_group = Group::query();
+            $this->_group = auth()->user('admin')->groups();
             return $next($request);
         });
     }
@@ -27,8 +25,8 @@ class GroupController extends Controller
      */
     public function create()
     {
-        return view('company.group.create', [
-            'groups' => $this->_groupQuery->get()
+        return view('admin.group.create', [
+            'groups' => $this->_group->latest()->paginate(10)
         ]);
     }
 
@@ -41,10 +39,10 @@ class GroupController extends Controller
             $params = $request->input();
 
             DB::transaction(function () use ($params) {
-                $this->_groupQuery->create($params);
+                $this->_group->create($params);
             });
 
-            return redirect()->route('company.group.create')->with([
+            return redirect()->route('admin.group.create')->with([
                 'alert' => [
                     'message' => 'グループの登録が完了しました。',
                     'type' => 'success'
@@ -65,10 +63,10 @@ class GroupController extends Controller
             $params = $request->input();
 
             DB::transaction(function () use ($params) {
-                $this->_group->fill($params)->update();
+                $this->_group->findOrFail(request()->route('group'))->fill($params)->update();
             });
 
-            return redirect()->route('company.group.create')->with([
+            return redirect()->route('admin.group.create')->with([
                 'alert' => [
                     'message' => 'グループの編集が完了しました。',
                     'type' => 'success'
@@ -87,10 +85,10 @@ class GroupController extends Controller
     {
         try {
             DB::transaction(function () {
-                $this->_group->delete();
+                $this->_group->findOrFail(request()->route('group'))->delete();
             });
 
-            return redirect()->route('company.group.create')->with([
+            return redirect()->route('admin.group.create')->with([
                 'alert' => [
                     'message' => 'グループの削除が完了しました。',
                     'type' => 'danger'
