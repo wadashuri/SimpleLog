@@ -20,4 +20,9 @@ class Customer extends Model
     {
         return $this->belongsTo(Admin::class);
     }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 }

@@ -59,6 +59,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
         # 顧客
         Route::resource('customer', Admin\CustomerController::class)->only('create', 'store', 'update', 'destroy');
 
+        # プロジェクト
+        Route::resource('project', Admin\ProjectController::class);
+
         # logout
         Route::match(['get', 'post'], '/logout', [Auth\LoginController::class, 'logout'])->name('logout');
     });

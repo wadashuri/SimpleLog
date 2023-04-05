@@ -18,6 +18,7 @@ class CreateTasksTable extends Migration
             $table->foreignId('project_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('title')->comment('タスクタイトル');
+            $table->unsignedTinyInteger('status')->comment('完了:10 確認待ち:8 作業中:5 予告:1');
             $table->dateTime('published_at')->nullable()->comment('開始日');
             $table->dateTime('closed_at')->nullable()->comment('終了日');
             $table->dateTime('created_at')->nullable();

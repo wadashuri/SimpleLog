@@ -25,6 +25,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link link-dark" href="{{ route('admin.project.index') }}">
+                <span class="svg_initial" data-feather="users"></span>
+                プロジェクト
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link link-dark" href="{{ route('admin.logout') }}"
                 onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
