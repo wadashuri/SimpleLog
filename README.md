@@ -17,7 +17,7 @@ docker-compose up -d
 
 次のコマンドを実行し，Docker コンテナに入る。  
 ```
-docker exec -it <container_name> bash
+docker exec <container_name> bash
 ```
 
 次のコマンドを実行し，依頼パッケージをインストールする。  

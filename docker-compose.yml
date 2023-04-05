@@ -9,10 +9,10 @@ services:
     volumes:
       - ./server:/var/www/html
       - ./docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
-
+# platform: 'linux/amd64'//m1macでの開発時はコメントアウト解除
   db:
     image: mysql:5.7.36
-    # platform: 'linux/amd64'//m1macでの開発時はコメントアウト解除
+    platform: 'linux/amd64'
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_ROOT_PASSWORD: root
