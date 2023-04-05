@@ -47,10 +47,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
     # logged
     Route::group(['middleware' => 'auth:admin'], function () {
 
-        # Home
+        # ホーム
         Route::get('/', [Admin\HomeController::class, 'home'])->name('home');
 
-        # User
+        # タスク
+        Route::resource('task', Admin\TaskController::class)->only('create', 'store', 'update', 'destroy');;
+
+        # ユーザー
         Route::resource('user', Admin\UserController::class);
 
         # グループ

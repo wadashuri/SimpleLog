@@ -15,10 +15,12 @@ class CreateTasksTable extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('project_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('title')->comment('タスクタイトル');
-            $table->unsignedTinyInteger('status')->comment('完了:10 確認待ち:8 作業中:5 予告:1');
+            $table->foreignId('admin_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->string('name')->comment('タスク名');
+            $table->unsignedTinyInteger('status')->comment('完了:10 確認待ち:8 作業中:5 予告:1 未設定:0');
             $table->dateTime('published_at')->nullable()->comment('開始日');
             $table->dateTime('closed_at')->nullable()->comment('終了日');
             $table->dateTime('created_at')->nullable();
@@ -37,6 +39,7 @@ class CreateTasksTable extends Migration
         Schema::table('tasks', function (Blueprint $table) {
             $table->dropForeign(['project_id']);
             $table->dropForeign(['user_id']);
+            $table->dropForeign(['admin_id']);
             $table->dropIfExists('tasks');
         });
     }
