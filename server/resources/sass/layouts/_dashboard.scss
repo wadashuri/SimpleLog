@@ -1,0 +1,28 @@
+/* navbar */
+
+.navbar {
+    background-color: black;
+}
+
+.navbar .container-fluid,
+.navbar-expand-lg .navbar-collapse,
+.navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgb(0 0 0 / 10%);
+    color: #f8f9fa;
+}
+
+.text {
+    color: black;
+}
