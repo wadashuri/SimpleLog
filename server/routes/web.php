@@ -54,7 +54,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
         Route::resource('user', Admin\UserController::class);
 
         # グループ
-        Route::resource('group', Admin\GroupController::class);
+        Route::resource('group', Admin\GroupController::class)->only('create', 'store', 'update', 'destroy');
+
+        # 顧客
+        Route::resource('customer', Admin\CustomerController::class)->only('create', 'store', 'update', 'destroy');
 
         # logout
         Route::match(['get', 'post'], '/logout', [Auth\LoginController::class, 'logout'])->name('logout');

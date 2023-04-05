@@ -19,6 +19,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link link-dark" href="{{ route('admin.customer.create') }}">
+                <span class="svg_initial" data-feather="users"></span>
+                顧客
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link link-dark" href="{{ route('admin.logout') }}"
                 onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">

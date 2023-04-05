@@ -6,17 +6,17 @@
 
     {{-- header --}}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">グループ</h1>
+        <h1 class="h2">顧客</h1>
     </div>
 
-    {!! Form::open(['route' => 'admin.group.store', request()->route('group'), 'method' => 'POST']) !!}
+    {!! Form::open(['route' => 'admin.customer.store', request()->route('customer'), 'method' => 'POST']) !!}
     <div class="row g-3 mb-3">
         <div class="col-12">
-            <label>グループ名</label>
+            <label>顧客名</label>
             {{ Form::text('name', null, [
                 'id' => 'name',
                 'class' => 'form-control',
-                'placeholder' => 'グループ名を入力してください',
+                'placeholder' => '顧客名を入力してください',
             ]) }}
         </div>
 
@@ -32,24 +32,24 @@
             <table class="table text-nowrap table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">グループ名</th>
-                        <small class="text-danger">※グループ名はクリックで編集が出来ます</small>
+                        <th scope="col">顧客名</th>
+                        <small class="text-danger">※顧客名はクリックで編集が出来ます</small>
                         <th scope="col">操作</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($groups as $group)
+                    @foreach ($customers as $customer)
                         <tr>
                             <td class="align-middle col-7">
                                 {{ Form::open([
-                                    'route' => ['admin.group.update', [$group->id]],
+                                    'route' => ['admin.customer.update', [$customer->id]],
                                     'method' => 'PUT',
                                     'class' => 'js-editGroup group_form',
                                 ]) }}
 
-                                {{ Form::text('name', $group->name, [
+                                {{ Form::text('name', $customer->name, [
                                     'class' => 'form-control group_border_none',
-                                    'placeholder' => 'グループ名を入力してください',
+                                    'placeholder' => '顧客名を入力してください',
                                 ]) }}
 
                                 {{ Form::close() }}
@@ -58,7 +58,7 @@
                                 <div class="d-flex gap-2">
                                     <span>
                                         {{ Form::open([
-                                            'route' => ['admin.group.destroy', [$group->id]],
+                                            'route' => ['admin.customer.destroy', [$customer->id]],
                                             'method' => 'DELETE',
                                             'onsubmit' => 'return confirm("本当に削除しますか?")',
                                         ]) }}
@@ -72,6 +72,6 @@
                 </tbody>
             </table>
             {{-- paginator --}}
-            {{ $groups->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
+            {{ $customers->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
         </div>
 @endsection

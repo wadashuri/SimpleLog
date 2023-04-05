@@ -26,4 +26,9 @@ class Admin extends Authenticatable
     {
         return $this->hasMany(Group::class);
     }
+
+    public function customers()
+    {
+        return $this->hasMany(Customer::class);
+    }
 }
