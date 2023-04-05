@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedTinyInteger('administrator')->comment('全体管理者:10 一般:1');
             $table->rememberToken();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();

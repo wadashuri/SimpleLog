@@ -87,8 +87,13 @@ Route::group(['prefix' => 'user', 'as' => 'user.',], function () {
         # Home
         Route::get('/', [User\HomeController::class, 'home'])->name('home');
 
+        # 全体管理者がアクセスできるプロジェクトのルート
+        Route::group(['middleware' => 'can:administrator'], function () {
+            Route::resource('project', User\ProjectController::class)->only('store','update','destroy');
+        });
+
         # プロジェクト
-        Route::resource('project', User\ProjectController::class);
+        Route::resource('project', User\ProjectController::class)->except('store','update','destroy');
 
         # タスク
         Route::resource('task', User\TaskController::class)->only('create', 'store', 'update', 'destroy');;

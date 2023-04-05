@@ -42,11 +42,13 @@
                                     <span data-feather="edit"></span>
                                     編集
                                 </a>
+                                @can('administrator')
                                 {!! Form::open(['route' => ['user.project.destroy', $project->id], 'method' => 'delete', 'class' => 'btn-group']) !!}
                                     {!! Form::button('<span data-feather="trash"></span>削除', [
                                         'type' => 'submit', 'class' => 'btn btn-sm btn-outline-danger', 'onclick' => "if(!confirm('削除をしてもよろしいですか？')) return false;"
                                     ]) !!}
                                 {!! Form::close() !!}
+                                @endcan
                             </div>
                         </td>
                     </tr>

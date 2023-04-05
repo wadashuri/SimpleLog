@@ -62,7 +62,12 @@
 
         <div class="col-12 mt-0">
             <hr class="my-4">
+            @can('administrator')
             {{ Form::button('送信', ['type' => 'submit', 'class' => 'w-100 btn btn-primary btn-md']) }}
+            @else
+            {{ Form::button('送信', ['type' => 'submit', 'class' => 'w-100 btn btn-primary btn-md','disabled' => true]) }}
+            <small class="text-danger">※権限がありません</small>
+            @endcan
         </div>
     </div>
     {!! Form::close() !!}

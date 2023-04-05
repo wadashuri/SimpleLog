@@ -17,6 +17,7 @@ class UserFactory extends Factory
         return [
             "admin_id" => $this->faker->numberBetween(1, 10),
             'name' => $this->faker->name(),
+            "administrator" => $this->faker->randomElement([1, 10]),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
         ];
