@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.user.app')
 
 @section('content')
     {{-- alert --}}
@@ -9,11 +9,11 @@
         <h1 class="h2">タスク</h1>
     </div>
 
-    {!! Form::open(['route' => 'admin.task.store', request()->route('task'), 'method' => 'POST']) !!}
+    {!! Form::open(['route' => 'user.task.store', request()->route('task'), 'method' => 'POST']) !!}
     <div class="row g-3 mb-3">
         <div class="col-12">
             {{ Form::label('project_id', 'プロジェクト', ['class' => 'form-label']) }}
-            {{ Form::select('project_id', $projects, ['class' => 'form-select', 'placeholder' => '未指定']) }}
+            {{ Form::select('project_id', $projects, false, ['class' => 'form-select', 'placeholder' => '未指定']) }}
         </div>
         <div class="col-12">
             <label>タスク名</label>
@@ -62,7 +62,7 @@
                         <tr>
                             <td class="align-middle col-7">
                                 {{ Form::open([
-                                    'route' => ['admin.task.update', [$task->id]],
+                                    'route' => ['user.task.update', [$task->id]],
                                     'method' => 'PUT',
                                 ]) }}
                                 {{ Form::select('project_id', $projects, old('project_id', isset($task->project_id) ? $task->project_id : false), ['class' => 'form-select', 'placeholder' => '未指定']) }}
@@ -84,7 +84,7 @@
                                 <div class="d-flex gap-2">
                                     <span>
                                         {{ Form::open([
-                                            'route' => ['admin.task.destroy', [$task->id]],
+                                            'route' => ['user.task.destroy', [$task->id]],
                                             'method' => 'DELETE',
                                             'onsubmit' => 'return confirm("本当に削除しますか?")',
                                         ]) }}
