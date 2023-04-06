@@ -28,50 +28,44 @@
 
     {!! Form::close() !!}
 
-        <div class="table-responsive">
-            <table class="table text-nowrap table-hover">
-                <thead>
+    <div class="table-responsive">
+        <table class="table text-nowrap table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">グループ名</th>
+                    <small class="text-danger">※グループ名はクリックで編集が出来ます</small>
+                    <th scope="col">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($groups as $group)
                     <tr>
-                        <th scope="col">グループ名</th>
-                        <small class="text-danger">※グループ名はクリックで編集が出来ます</small>
-                        <th scope="col">操作</th>
+                        <td class="align-middle col-7">
+                            <edit-text-common
+                            :value="{{ $group }}"
+                            csrf-token="{{ csrf_token() }}"
+                            title="グループ"
+                            route="{{ route('admin.group.update', $group->id) }}"
+                            ></edit-text-common>
+                        </td>
+                        <td class="align-middle col-5">
+                            <div class="d-flex gap-2">
+                                <span>
+                                    {{ Form::open([
+                                        'route' => ['admin.group.destroy', [$group->id]],
+                                        'method' => 'DELETE',
+                                        'onsubmit' => 'return confirm("本当に削除しますか?")',
+                                    ]) }}
+                                    {{ Form::submit('削除', ['class' => 'btn btn-danger']) }}
+                                    {{ Form::close() }}
+                                </span>
+                            </div>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach ($groups as $group)
-                        <tr>
-                            <td class="align-middle col-7">
-                                {{ Form::open([
-                                    'route' => ['admin.group.update', [$group->id]],
-                                    'method' => 'PUT',
-                                    'class' => 'js-editGroup group_form',
-                                ]) }}
-
-                                {{ Form::text('name', $group->name, [
-                                    'class' => 'form-control group_border_none',
-                                    'placeholder' => 'グループ名を入力してください',
-                                ]) }}
-
-                                {{ Form::close() }}
-                            </td>
-                            <td class="align-middle col-5">
-                                <div class="d-flex gap-2">
-                                    <span>
-                                        {{ Form::open([
-                                            'route' => ['admin.group.destroy', [$group->id]],
-                                            'method' => 'DELETE',
-                                            'onsubmit' => 'return confirm("本当に削除しますか?")',
-                                        ]) }}
-                                        {{ Form::submit('削除', ['class' => 'btn btn-danger']) }}
-                                        {{ Form::close() }}
-                                    </span>
-                                </div>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            {{-- paginator --}}
-            {{ $groups->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
-        </div>
+                @endforeach
+            </tbody>
+        </table>
+        {{-- paginator --}}
+        {{ $groups->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
+    </div>
 @endsection

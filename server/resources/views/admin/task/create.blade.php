@@ -13,7 +13,7 @@
     <div class="row g-3 mb-3">
         <div class="col-12">
             {{ Form::label('project_id', 'プロジェクト', ['class' => 'form-label']) }}
-            {{ Form::select('project_id', $projects, ['class' => 'form-select', 'placeholder' => '未指定']) }}
+            {{ Form::select('project_id', $projects, false, ['class' => 'form-select', 'placeholder' => '未指定']) }}
         </div>
         <div class="col-12">
             <label>タスク名</label>
@@ -36,7 +36,7 @@
             {{ Form::select(
                 'status',
                 StatusConstants::STATUS,
-                '0', 
+                '0',
                 ['class' => 'form-select'],
             ) }}
         </div>
@@ -61,16 +61,17 @@
                     @foreach ($tasks as $task)
                         <tr>
                             <td class="align-middle col-7">
+                                <edit-text-common
+                                :value="{{ $task }}"
+                                csrf-token="{{ csrf_token() }}"
+                                title="タスク名"
+                                route="{{ route('admin.task.update', $task->id) }}"
+                                ></edit-text-common>
                                 {{ Form::open([
                                     'route' => ['admin.task.update', [$task->id]],
                                     'method' => 'PUT',
                                 ]) }}
-                                {{ Form::select('project_id', $projects, old('project_id', isset($task->project_id) ? $task->project_id : false), ['class' => 'form-select', 'placeholder' => '未指定']) }}
-
-                                {{ Form::text('name', $task->name, [
-                                    'class' => 'form-control group_border_none',
-                                    'placeholder' => 'タスク名を入力してください',
-                                ]) }}
+                                {{ Form::select('project_id', $projects, isset($task->project_id) ? $task->project_id : false, ['class' => 'form-select', 'placeholder' => '未指定']) }}
                                 {{ Form::select(
                                     'status',
                                     StatusConstants::STATUS, $task->status,

@@ -41,18 +41,12 @@
                     @foreach ($customers as $customer)
                         <tr>
                             <td class="align-middle col-7">
-                                {{ Form::open([
-                                    'route' => ['admin.customer.update', [$customer->id]],
-                                    'method' => 'PUT',
-                                    'class' => 'js-editGroup group_form',
-                                ]) }}
-
-                                {{ Form::text('name', $customer->name, [
-                                    'class' => 'form-control group_border_none',
-                                    'placeholder' => '顧客名を入力してください',
-                                ]) }}
-
-                                {{ Form::close() }}
+                            <edit-text-common
+                            :value="{{ $customer }}"
+                            csrf-token="{{ csrf_token() }}"
+                            title="顧客"
+                            route="{{ route('admin.customer.update', $customer->id) }}"
+                            ></edit-text-common>
                             </td>
                             <td class="align-middle col-5">
                                 <div class="d-flex gap-2">
