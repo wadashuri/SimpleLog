@@ -6,10 +6,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
-# リダイレクト設定
-Route::get('/', function () {
-    return redirect()->route('user.login');
-});
+# Home
+Route::get('/', [HomeController::class, 'home'])->name('home');
+
+# pricing
+Route::get('/pricing', [PricingController::class, 'pricing'])->name('pricing');
 
 /**
  * master
@@ -51,7 +52,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
         Route::get('/', [Admin\HomeController::class, 'home'])->name('home');
 
         # タスク
-        Route::resource('task', Admin\TaskController::class);
+        Route::resource('task', Admin\TaskController::class)->only('create', 'store', 'update', 'destroy');
 
         # ユーザー
         Route::resource('user', Admin\UserController::class);
@@ -96,7 +97,7 @@ Route::group(['prefix' => 'user', 'as' => 'user.',], function () {
         Route::resource('project', User\ProjectController::class)->except('store','update','destroy');
 
         # タスク
-        Route::resource('task', User\TaskController::class);
+        Route::resource('task', User\TaskController::class)->only('create', 'store', 'update', 'destroy');;
 
         # logout
         Route::match(['get', 'post'], '/logout', [Auth\LoginController::class, 'logout'])->name('logout');
