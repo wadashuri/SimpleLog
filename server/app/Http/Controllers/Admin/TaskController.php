@@ -121,7 +121,7 @@ class TaskController extends Controller
                 $this->_task->findOrFail(request()->route('task'))->delete();
             });
 
-            return redirect()->route('admin.task.create')->with([
+            return redirect()->route('admin.task.index')->with([
                 'alert' => [
                     'message' => 'タスクの削除が完了しました。',
                     'type' => 'danger'

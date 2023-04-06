@@ -7,7 +7,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link link-dark" href="{{ route('user.task.create') }}">
+            <a class="nav-link link-dark" href="{{ route('user.task.index') }}">
                 <span data-feather="home"></span>
                 タスク
             </a>
