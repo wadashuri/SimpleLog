@@ -51,7 +51,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
         Route::get('/', [Admin\HomeController::class, 'home'])->name('home');
 
         # タスク
-        Route::resource('task', Admin\TaskController::class)->only('create', 'store', 'update', 'destroy');
+        Route::resource('task', Admin\TaskController::class);
 
         # ユーザー
         Route::resource('user', Admin\UserController::class);
@@ -96,7 +96,7 @@ Route::group(['prefix' => 'user', 'as' => 'user.',], function () {
         Route::resource('project', User\ProjectController::class)->except('store','update','destroy');
 
         # タスク
-        Route::resource('task', User\TaskController::class)->only('create', 'store', 'update', 'destroy');;
+        Route::resource('task', User\TaskController::class);
 
         # logout
         Route::match(['get', 'post'], '/logout', [Auth\LoginController::class, 'logout'])->name('logout');

@@ -20,6 +20,16 @@ class TaskController extends Controller
         });
     }
 
+    /**
+     *　タスク一覧
+     */
+    public function index()
+    {
+        return view('admin.task.index', [
+            'tasks' => $this->_task->latest()->paginate(10)
+        ]);
+    }
+
 
     /**
      *　タスク作成
@@ -27,7 +37,6 @@ class TaskController extends Controller
     public function create()
     {
         return view('admin.task.create', [
-            'tasks' => $this->_task->latest()->paginate(10),
             'projects' => auth()->user('admin')->projects()->pluck('name', 'id'),
         ]);
     }
@@ -45,7 +54,7 @@ class TaskController extends Controller
                 $this->_task->create($params);
             });
 
-            return redirect()->route('admin.task.create')->with([
+            return redirect()->route('admin.task.index')->with([
                 'alert' => [
                     'message' => 'タスクの登録が完了しました。',
                     'type' => 'success'
@@ -55,6 +64,27 @@ class TaskController extends Controller
             logger()->error($e);
             throw $e;
         }
+    }
+
+    /**
+     *　タスク詳細
+     */
+    public function show()
+    {
+        return view('admin.task.show', [
+            'task' => $this->_task->findOrFail(request()->route('task'))
+        ]);
+    }
+
+    /**
+     *　タスク編集
+     */
+    public function edit()
+    {
+        return view('admin.task.edit', [
+            'task' => $this->_task->findOrFail(request()->route('task')),
+            'projects' => auth()->user('admin')->projects()->pluck('name', 'id')
+        ]);
     }
 
     /**
@@ -69,7 +99,7 @@ class TaskController extends Controller
                 $this->_task->findOrFail(request()->route('task'))->fill($params)->update();
             });
 
-            return redirect()->route('admin.task.create')->with([
+            return redirect()->route('admin.task.edit', request()->route('task'))->with([
                 'alert' => [
                     'message' => 'タスクの編集が完了しました。',
                     'type' => 'success'

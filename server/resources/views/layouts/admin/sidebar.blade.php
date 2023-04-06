@@ -7,7 +7,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link link-dark" href="{{ route('admin.task.create') }}">
+            <a class="nav-link link-dark" href="{{ route('admin.task.index') }}">
                 <span class="svg_initial" data-feather="user"></span>
                 タスク
             </a>
