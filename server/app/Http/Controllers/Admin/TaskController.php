@@ -23,10 +23,10 @@ class TaskController extends Controller
     /**
      *　タスク一覧
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('admin.task.index', [
-            'tasks' => $this->_task->latest()->paginate(10)
+            'tasks' => $this->_task->searchTask($request)->latest()->paginate(10)
         ]);
     }
 

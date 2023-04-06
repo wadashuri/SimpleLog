@@ -4,6 +4,12 @@
     {{-- alert --}}
     @include('parts.alert.bootstrap-5')
 
+    {{-- search --}}
+    @include('parts.task.search',[
+        'slot_route' => ['user.task.index'],
+        'slot_method' => 'GET',
+    ])
+
     {{-- header --}}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">タスク一覧</h1>

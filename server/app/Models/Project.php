@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
 
 class Project extends Model
 {
@@ -31,7 +30,7 @@ class Project extends Model
     /**
      * スコープ設定
      */
-    public function scopesearchProject($query, $request)
+    public function scopeSearchProject($query, $request)
     {
         # インスタンス生成
         $end_time = new Carbon($request->end);
