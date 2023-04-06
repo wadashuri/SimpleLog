@@ -38,9 +38,6 @@ class Project extends Model
 
         $query
             ->with(['admin'])
-            ->when($request->filled('admin_id'), function ($q) use ($request) {
-                $q->where('admin_id', $request->admin_id);
-            })
             ->when($request->filled('customer_id'), function ($q) use ($request) {
                 $q->where('customer_id', $request->customer_id);
             })
@@ -51,12 +48,7 @@ class Project extends Model
                 $q->where('date', '<', $end_time->addDays(1));
             })
             ->when($request->filled('search'), function ($q) use ($request) {
-                $q->where(function ($q) use ($request) {
-                    $q->whereHas('user', function ($q) use ($request) {
-                        $q->where('name', 'LIKE', '%' . $request->search . '%');
-                    })
-                        ->orWhere('customer_manager', 'LIKE', '%' . $request->search . '%');
-                });
+                $q->Where('customer_manager', 'LIKE', '%' . $request->search . '%');
             });
     }
 }

@@ -30,7 +30,7 @@ class ProjectController extends Controller
             'users' => $admin->users()->pluck('name', 'id'),
             'customers' => $admin->customers()->pluck('name', 'id'),
             'projects' => $admin->projects()->with(['admin','customer'])->searchProject($request)->latest()->paginate("10"),
-            'sum_price' => $admin->projects()->searchProject($request)->sum('cost')
+            'sum_cost' => $admin->projects()->searchProject($request)->sum('cost')
         ]);
     }
 
