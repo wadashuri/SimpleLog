@@ -64,6 +64,9 @@
             </tbody>
         </table>
     </div>
+    @if (isset($projects))
+        <h2>合計金額 : &yen;{{ number_format($sum_cost) }}</h2>
+    @endif
 
     {{-- paginator --}}
     {{ $projects->appends(request()->query())->links('vendor.pagination.bootstrap-4') }}
