@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use App\Http\Requests\CsvRequest;
+use App\Models\Customer;
 
 class CustomerController extends Controller
 {
@@ -207,22 +208,24 @@ class CustomerController extends Controller
         $id = $line[0];
 
         $params = [
-            'name' => $line[1]
+            'name' => $this->format_string($line[1])
         ];
 
         # 顧客重複確認
-        $customer = $this->_customer->find($id);
+        $customer = Customer::find($id);
 
         # 顧客が存在すれば上書き
         if ($customer) {
-            DB::transaction(function () use ($customer, $params) {
-                $customer->fill($params)->update();
-            });
+            $customer->fill($params)->update();
         } else {
-            DB::transaction(function () use ($params) {
-                $this->_customer->create($params);
-            });
+            $this->_customer->create($params);
         }
+    }
+
+
+    private function format_string($text)
+    {
+        return trim(mb_convert_kana($text, 'asK')); //a->「全角」英数字を「半角」に。s->「全角」スペースを「半角」に（U+3000 -> U+0020）。K->「半角カタカナ」を「全角カタカナ」に変換。
     }
 
     # 商品CSVのヘッダーとユニコードの作成

@@ -63,6 +63,7 @@
             <tbody>
                 @foreach ($customers as $customer)
                     <tr>
+                        <td class="align-middle">{{ $customer->id }}</td>
                         <td class="align-middle">
                             <edit-text-common :value="{{ $customer }}" csrf-token="{{ csrf_token() }}" title="顧客"
                                 route="{{ route('admin.customer.update', $customer->id) }}">
