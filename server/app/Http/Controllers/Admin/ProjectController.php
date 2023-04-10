@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Customer;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use App\Http\Requests\ProjectRequest;
 
 class ProjectController extends Controller
@@ -29,8 +29,8 @@ class ProjectController extends Controller
         return view('admin.project.index', [
             'users' => $admin->users()->pluck('name', 'id'),
             'customers' => $admin->customers()->pluck('name', 'id'),
-            'projects' => $admin->projects()->with(['admin','customer'])->searchProject($request)->latest()->paginate("10"),
-            'sum_cost' => $admin->projects()->searchProject($request)->sum('cost')
+            'projects' => $this->_project->with(['admin','customer'])->searchProject($request)->latest()->paginate("10"),
+            'sum_cost' => $this->_project->searchProject($request)->sum('cost')
         ]);
     }
 
@@ -41,7 +41,7 @@ class ProjectController extends Controller
     {
         return view('admin.project.create', [
             'customers' => auth()->user('admin')->customers()->latest()->pluck('name', 'id'),
-            'all_projects' => auth()->user('admin')->projects()->latest()->get(),
+            'all_projects' => $this->_project->latest()->get(),
         ]);
     }
 
@@ -135,5 +135,39 @@ class ProjectController extends Controller
             logger()->error($e);
             throw $e;
         }
+    }
+
+    /**
+     * csvエクスポート
+     */
+    public function exportCsv(Request $request)
+    {
+        return new StreamedResponse(function () use ($request) {
+            $stream = fopen('php://output', 'w');
+            //　文字化け回避
+            stream_filter_prepend($stream, 'convert.iconv.utf-8/cp932//TRANSLIT');
+            fputcsv($stream, [
+                "ID",
+                "顧客",
+                "顧客担当者",
+                "日付"
+            ]);
+            $projects = $this->_project->with(['admin', 'customer'])->searchProject($request)->latest()->get();
+            // プロジェクトごと
+            foreach ($projects as $project) {
+                    $columns = [
+                        $project->id,
+                        $project->customer->name ? $project->customer->name : '##',
+                        $project->customer_manager ? $project->customer_manager : '##',
+                        $project->date ? $project->date : '##',
+                    ];
+                    fputcsv($stream, $columns);
+                }
+
+            fclose($stream);
+        }, 200, [
+            'Content-Type' => 'application/octet-stream',
+            'Content-Disposition' => sprintf('attachment; filename="プロジェクト一覧_%s.csv"', date('YmdHi'))
+        ]);
     }
 }

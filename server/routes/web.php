@@ -65,6 +65,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
 
         # プロジェクト
         Route::resource('project', Admin\ProjectController::class);
+        # csvエクスポート
+        Route::post('/project/export', [Admin\ProjectController::class, 'exportCsv'])->name('project.export');
 
         # logout
         Route::match(['get', 'post'], '/logout', [Auth\LoginController::class, 'logout'])->name('logout');
