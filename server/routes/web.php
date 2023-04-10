@@ -62,6 +62,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
 
         # 顧客
         Route::resource('customer', Admin\CustomerController::class)->only('create', 'store', 'update', 'destroy');
+        # csvインポート
+        Route::post('/customer/import', [Admin\CustomerController::class, 'importCsv'])->name('customer.importCsv');
+        # csvエクスポート
+        Route::post('/customer/export', [Admin\CustomerController::class, 'exportCsv'])->name('customer.export');
+
 
         # プロジェクト
         Route::resource('project', Admin\ProjectController::class);
