@@ -6,11 +6,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-# Home
-Route::get('/', [HomeController::class, 'home'])->name('home');
-
-# pricing
-Route::get('/pricing', [PricingController::class, 'pricing'])->name('pricing');
+# リダイレクト設定
+Route::get('/', function () {
+    return redirect('/lp/index.html');
+});
 
 /**
  * master
