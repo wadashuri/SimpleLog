@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="{{ asset('lp/css/open-iconic-bootstrap.min.css') }}">  
+<link rel="stylesheet" href="{{ asset('lp/css/animate.css') }}"> 
+<link rel="stylesheet" href="{{ asset('lp/css/owl.carousel.min.css') }}">  
+<link rel="stylesheet" href="{{ asset('lp/css/owl.theme.default.min.css') }}">  
+<link rel="stylesheet" href="{{ asset('lp/css/magnific-popup.css') }}">   
+<link rel="stylesheet" href="{{ asset('lp/css/aos.css') }}">
+<link rel="stylesheet" href="{{ asset('lp/css/ionicons.min.css') }}">
+<link rel="stylesheet" href="{{ asset('lp/css/bootstrap-datepicker.css') }}">  
+<link rel="stylesheet" href="{{ asset('lp/css/jquery.timepicker.css') }}">
+<link rel="stylesheet" href="{{ asset('lp/css/flaticon.css') }}">  
+<link rel="stylesheet" href="{{ asset('lp/css/icomoon.css') }}">  
+<link rel="stylesheet" href="{{ asset('lp/css/style.css') }}">  
