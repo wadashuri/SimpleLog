@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 # リダイレクト設定
 Route::get('/', function () {
-    return redirect('/lp/index');
+    return redirect('/front/index');
 });
 
 /**
@@ -16,31 +16,31 @@ Route::get('/', function () {
  */
 
 # index
-Route::view('/lp/index', 'front.pages.index')->name('index');
+Route::view('/front/index', 'front.pages.index')->name('index');
 
 # about
-Route::view('/lp/about', 'front.pages.about')->name('about');
+Route::view('/front/about', 'front.pages.about')->name('about');
 
 # services
-Route::view('/lp/services', 'front.pages.services')->name('services');
+Route::view('/front/services', 'front.pages.services')->name('services');
 
 # work
-Route::view('/lp/work', 'front.pages.work')->name('work');
+Route::view('/front/work', 'front.pages.work')->name('work');
 
 # team
-Route::view('/lp/team', 'front.pages.team')->name('team');
+Route::view('/front/team', 'front.pages.team')->name('team');
 
 # pricing
-Route::view('/lp/pricing', 'front.pages.pricing')->name('pricing');
+Route::view('/front/pricing', 'front.pages.pricing')->name('pricing');
 
 # blog
-Route::view('/lp/blog', 'front.pages.blog')->name('blog');
+Route::view('/front/blog', 'front.pages.blog')->name('blog');
 
 # contact
-Route::view('/lp/contact', 'front.pages.contact')->name('contact');
+Route::view('/front/contact', 'front.pages.contact')->name('contact');
 
 # blog_single
-Route::view('/lp/blog_single', 'front.pages.blog_single')->name('blog_single');
+Route::view('/front/blog_single', 'front.pages.blog_single')->name('blog_single');
 
 /**
  * master
