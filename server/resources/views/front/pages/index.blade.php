@@ -31,7 +31,7 @@
       </div>
     </div>
   </div>
-  
+
   <section class="ftco-section ftco-section-2">
       <div class="overlay"></div>
       <div class="container">
@@ -59,7 +59,7 @@
               <h3 class="heading">Market Research</h3>
               <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
             </div>
-          </div>      
+          </div>
         </div>
         <div class="col-md-4 d-flex align-self-stretch ftco-animate">
           <div class="media block-6 services d-block text-center">
@@ -68,7 +68,7 @@
               <h3 class="heading">Business Strategy</h3>
               <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
             </div>
-          </div>    
+          </div>
         </div>
         <div class="col-md-4 d-flex align-self-stretch ftco-animate">
           <div class="media block-6 services d-block text-center">
@@ -77,7 +77,7 @@
               <h3 class="heading">Audience Analytics</h3>
               <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
             </div>
-          </div>      
+          </div>
         </div>
       </div>
     </div>
@@ -252,94 +252,7 @@
       </div>
   </section>
 
-  <section class="ftco-section bg-light">
-      <div class="container">
-          <div class="row justify-content-center mb-5 pb-5">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-3">Our Best Pricing</h2>
-          <span class="subheading">Pricing Plans</span>
-        </div>
-      </div>
-          <div class="row">
-          <div class="col-md-3 ftco-animate">
-            <div class="block-7">
-              <div class="text-center">
-              <h2 class="heading">Free</h2>
-              <span class="price"><sup>$</sup> <span class="number">0</span></span>
-              <span class="excerpt d-block">100% free. Forever</span>
-              <a href="#" class="btn btn-primary d-block px-2 py-3 mb-4">Get Started</a>
-              
-              <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
-              
-              <ul class="pricing-text">
-                <li><strong>150 GB</strong> Bandwidth</li>
-                <li><strong>100 GB</strong> Storage</li>
-                <li><strong>$1.00 / GB</strong> Overages</li>
-                <li>All features</li>
-              </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <div class="block-7">
-              <div class="text-center">
-              <h2 class="heading">Startup</h2>
-              <span class="price"><sup>$</sup> <span class="number">19</span></span>
-              <span class="excerpt d-block">All features are included</span>
-              <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get Started</a>
-              
-              <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
-              
-              <ul class="pricing-text">
-                <li><strong>450 GB</strong> Bandwidth</li>
-                <li><strong>400 GB</strong> Storage</li>
-                <li><strong>$2.00 / GB</strong> Overages</li>
-                <li>All features</li>
-              </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <div class="block-7">
-              <div class="text-center">
-              <h2 class="heading">Premium</h2>
-              <span class="price"><sup>$</sup> <span class="number">49</span></span>
-              <span class="excerpt d-block">All features are included</span>
-              <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get Started</a>
-              
-              <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
-              
-              <ul class="pricing-text">
-                <li><strong>250 GB</strong> Bandwidth</li>
-                <li><strong>200 GB</strong> Storage</li>
-                <li><strong>$5.00 / GB</strong> Overages</li>
-                <li>All features</li>
-              </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <div class="block-7">
-              <div class="text-center">
-              <h2 class="heading">Pro</h2>
-              <span class="price"><sup>$</sup> <span class="number">99</span></span>
-              <span class="excerpt d-block">All features are included</span>
-              <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get Started</a>
-              
-              <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
-              
-              <ul class="pricing-text">
-                <li><strong>450 GB</strong> Bandwidth</li>
-                <li><strong>400 GB</strong> Storage</li>
-                <li><strong>$20.00 / GB</strong> Overages</li>
-                <li>All features</li>
-              </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </section>
+  @include('front.include.pricing')
 
   <section class="ftco-quote">
       <div class="container">
@@ -399,7 +312,7 @@
           </div>
       </div>
   </section>
-      
+
 
       <section class="ftco-section testimony-section bg-light">
     <div class="container">

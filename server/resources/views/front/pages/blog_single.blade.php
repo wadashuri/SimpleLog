@@ -1,17 +1,12 @@
 @extends('layouts.front.app')
 
 @section('content')
-<div class="hero-wrap hero-wrap-2" style="background-image: url(images/bg_2.jpg);" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container-fluid">
-      <div class="row no-gutters d-flex slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-        <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a href="blog.html">Blog</a></span> <span>Blog Single</span></p>
-          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Blog Details</h1>
-        </div>
-      </div>
-    </div>
-  </div>
+
+@include('front.include.content_header',[
+    'title1' => 'Blog',
+    'title2' => 'Blog Single',
+    'main_title' => 'Blog Details',
+  ])
 
   <section class="ftco-section ftco-degree-bg">
     <div class="container">
@@ -40,7 +35,7 @@
               <a href="#" class="tag-cloud-link">Travel</a>
             </div>
           </div>
-          
+
           <div class="about-author d-flex p-5 bg-light">
             <div class="bio align-self-md-center mr-5">
               <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
@@ -135,7 +130,7 @@
               </li>
             </ul>
             <!-- END comment-list -->
-            
+
             <div class="comment-form-wrap pt-5">
               <h3 class="mb-5">Leave a comment</h3>
               <form action="#">

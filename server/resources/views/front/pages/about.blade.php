@@ -1,17 +1,10 @@
 @extends('layouts.front.app')
 
 @section('content')
-<div class="hero-wrap hero-wrap-2" style="background-image: url(images/bg_2.jpg);" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container-fluid">
-      <div class="row no-gutters d-flex slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-        <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>About</span></p>
-          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">About Us</h1>
-        </div>
-      </div>
-    </div>
-  </div>
+    @include('front.include.content_header',[
+    'title1' => 'About',
+    'main_title' => 'About Us',
+  ])
 
   <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
       <div class="container">
@@ -74,7 +67,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 d-flex align-items-center">
-                  
+
                   <div class="tab-content ftco-animate" id="v-pills-tabContent">
 
                     <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
@@ -107,8 +100,8 @@
           </div>
       </div>
   </section>
-  
-  
+
+
       <section class="ftco-section testimony-section bg-light">
     <div class="container">
       <div class="row justify-content-center mb-5 pb-3">
@@ -194,7 +187,7 @@
         </div>
       </div>
     </div>
-  </section> 
+  </section>
 
   <section class="ftco-section-parallax">
     <div class="parallax-img d-flex align-items-center">
