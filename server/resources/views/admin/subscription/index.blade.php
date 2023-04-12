@@ -120,7 +120,7 @@
             async subscribe(e) {
 
                 const paymentMethod = await this.getPaymentMethod(e.target);
-                const url = '/user/ajax/subscription/subscribe';
+                const url = '/admin/ajax/subscription/subscribe';
                 const params = {
                     payment_method: paymentMethod,
                     plan: this.plan
@@ -135,21 +135,21 @@
             },
             cancel() {
 
-                const url = '/user/ajax/subscription/cancel';
+                const url = '/admin/ajax/subscription/cancel';
                 axios.post(url)
                     .then(this.setStatus);
 
             },
             resume() {
 
-                const url = '/user/ajax/subscription/resume';
+                const url = '/admin/ajax/subscription/resume';
                 axios.post(url)
                     .then(this.setStatus);
 
             },
             changePlan() {
 
-                const url = '/user/ajax/subscription/change_plan';
+                const url = '/admin/ajax/subscription/change_plan';
                 const params = { plan: this.plan };
                 axios.post(url, params)
                     .then(this.setStatus);
@@ -158,7 +158,7 @@
             async updateCard(e) {
 
                 const paymentMethod = await this.getPaymentMethod(e.target);
-                const url = '/user/ajax/subscription/update_card';
+                const url = '/admin/ajax/subscription/update_card';
                 const params = { payment_method: paymentMethod };
                 axios.post(url, params)
                     .then(response => {
@@ -232,7 +232,7 @@
         mounted() {
 
             this.stripe = Stripe(this.publicKey);
-            const url = '/user/ajax/subscription/status';
+            const url = '/admin/ajax/subscription/status';
             axios.get(url)
                 .then(this.setStatus);
 
