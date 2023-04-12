@@ -90,7 +90,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
             Route::get('/', 'index')->name('subscription');
         });
 
-        Route::get('/status', [Admin\Ajax\SubscriptionController::class, 'status'])->name('status');
+        Route::get('/ajax/subscription/status', [Admin\Ajax\SubscriptionController::class, 'status'])->name('status');
         Route::group([
             'prefix' => '/ajax/subscription',
             'as' => 'ajax.',
