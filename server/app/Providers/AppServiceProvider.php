@@ -29,7 +29,5 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         # 参照モデル変更
         Cashier::useCustomerModel(App\Models\Admin::class);
-        # 税金自動計算有効
-        Cashier::calculateTaxes();
     }
 }
