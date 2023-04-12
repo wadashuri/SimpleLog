@@ -212,6 +212,7 @@
         },
         watch: {
             status(value) {
+                console.log(value);
 
                 Vue.nextTick(() => {
 
