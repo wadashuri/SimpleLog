@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Laravel\Cashier\Cashier;
+use App\Models\Admin;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,6 +29,6 @@ class AppServiceProvider extends ServiceProvider
         # ページネーション
         Paginator::useBootstrap();
         # 参照モデル変更
-        Cashier::useCustomerModel(App\Models\Admin::class);
+        Cashier::useCustomerModel(Admin::class);
     }
 }
