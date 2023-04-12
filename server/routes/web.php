@@ -80,7 +80,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
 
 
         // 課金
-        Route::get('subscription', 'Admin\SubscriptionController@index');
+        Route::get('subscription', [Admin\SubscriptionController::class, 'index'])->name('subscription');
         Route::get('ajax/subscription/status', 'Admin\Ajax\SubscriptionController@status');
         Route::post('ajax/subscription/subscribe', 'Admin\Ajax\SubscriptionController@subscribe');
         Route::post('ajax/subscription/cancel', 'Admin\Ajax\SubscriptionController@cancel');
