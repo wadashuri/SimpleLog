@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('admin_id');
+            $table->foreignId('admin_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->string('stripe_id')->unique();
             $table->string('stripe_status');
