@@ -14,34 +14,37 @@ Route::get('/', function () {
 /**
  * front
  */
+Route::group([
+    'prefix' => '/front',
+    'as' => 'front.',
+], function () {
+    # index
+    Route::view('/index', 'front.pages.index')->name('index');
 
-# index
-Route::view('/front/index', 'front.pages.index')->name('index');
+    # about
+    Route::view('/about', 'front.pages.about')->name('about');
 
-# about
-Route::view('/front/about', 'front.pages.about')->name('about');
+    # services
+    Route::view('/services', 'front.pages.services')->name('services');
 
-# services
-Route::view('/front/services', 'front.pages.services')->name('services');
+    # work
+    Route::view('/work', 'front.pages.work')->name('work');
 
-# work
-Route::view('/front/work', 'front.pages.work')->name('work');
+    # team
+    Route::view('/team', 'front.pages.team')->name('team');
 
-# team
-Route::view('/front/team', 'front.pages.team')->name('team');
+    # pricing
+    Route::view('/pricing', 'front.pages.pricing')->name('pricing');
 
-# pricing
-Route::view('/front/pricing', 'front.pages.pricing')->name('pricing');
+    # blog
+    Route::view('/blog', 'front.pages.blog')->name('blog');
 
-# blog
-Route::view('/front/blog', 'front.pages.blog')->name('blog');
+    # contact
+    Route::view('/front/contact', 'front.pages.contact')->name('contact');
 
-# contact
-Route::view('/front/contact', 'front.pages.contact')->name('contact');
-
-# blog_single
-Route::view('/front/blog_single', 'front.pages.blog_single')->name('blog_single');
-
+    # blog_single
+    Route::view('/front/blog_single', 'front.pages.blog_single')->name('blog_single');
+});
 /**
  * master
  */
@@ -84,7 +87,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
             'prefix' => '/subscription',
             'controller' => Admin\SubscriptionController::class
         ], function () {
-            Route::get('/','index')->name('subscription');
+            Route::get('/', 'index')->name('subscription');
         });
 
         Route::group([
@@ -149,11 +152,11 @@ Route::group(['prefix' => 'user', 'as' => 'user.',], function () {
 
         # 全体管理者がアクセスできるプロジェクトのルート
         Route::group(['middleware' => 'can:administrator'], function () {
-            Route::resource('project', User\ProjectController::class)->only('store','update','destroy');
+            Route::resource('project', User\ProjectController::class)->only('store', 'update', 'destroy');
         });
 
         # プロジェクト
-        Route::resource('project', User\ProjectController::class)->except('store','update','destroy');
+        Route::resource('project', User\ProjectController::class)->except('store', 'update', 'destroy');
 
         # タスク
         Route::resource('task', User\TaskController::class);
