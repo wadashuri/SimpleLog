@@ -90,12 +90,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
             Route::get('/', 'index')->name('subscription');
         });
 
+        Route::get('/status', [Admin\Ajax\SubscriptionController::class, 'status'])->name('status');
         Route::group([
             'prefix' => '/ajax/subscription',
             'as' => 'ajax.',
             'controller' => Admin\Ajax\SubscriptionController::class
         ], function () {
-            Route::get('/status', 'status')->name('status');
             Route::post('/subscribe', 'subscribe')->name('subscribe');
             Route::post('/cancel', 'cancel')->name('cancel');
             Route::post('/resume', 'resume')->name('resume');
