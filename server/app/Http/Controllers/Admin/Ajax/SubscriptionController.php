@@ -86,11 +86,11 @@ class SubscriptionController extends Controller
             $subscription = $user->subscriptions->first(function ($value) {
 
                 return ($value->name === 'main');
-            })->only('ends_at', 'stripe_plan');
+            })->only('ends_at', 'stripe_price');
 
             $details = [
                 'end_date' => ($subscription['ends_at']) ? $subscription['ends_at']->format('Y-m-d') : null,
-                'plan' => \Arr::get(config('services.stripe.plans'), $subscription['stripe_plan']),
+                'plan' => \Arr::get(config('services.stripe.plans'), $subscription['stripe_price']),
                 'card_last_four' => $user->card_last_four
             ];
         }
