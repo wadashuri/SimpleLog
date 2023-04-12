@@ -232,8 +232,12 @@
         mounted() {
 
             this.stripe = Stripe(this.publicKey);
-            console.log(this.stripe);
             const url = '/admin/ajax/subscription/status';
+            axios.get(url)
+        .then(response => {
+            console.log(response);
+            this.setStatus(response);
+        });
             axios.get(url)
                 .then(this.setStatus);
 
