@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Cashier\Billable;
 
 class Admin extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Billable;
 
     protected $guarded = ['id'];
 

@@ -78,6 +78,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
     # logged
     Route::group(['middleware' => 'auth:admin'], function () {
 
+
+        // 課金
+        Route::get('subscription', 'Admin\SubscriptionController@index');
+        Route::get('ajax/subscription/status', 'Admin\Ajax\SubscriptionController@status');
+        Route::post('ajax/subscription/subscribe', 'Admin\Ajax\SubscriptionController@subscribe');
+        Route::post('ajax/subscription/cancel', 'Admin\Ajax\SubscriptionController@cancel');
+        Route::post('ajax/subscription/resume', 'v\Ajax\SubscriptionController@resume');
+        Route::post('ajax/subscription/change_plan', 'Admin\Ajax\SubscriptionController@change_plan');
+        Route::post('ajax/subscription/update_card', 'Admin\Ajax\SubscriptionController@update_card');
+
         # ホーム
         Route::get('/', [Admin\HomeController::class, 'home'])->name('home');
 
