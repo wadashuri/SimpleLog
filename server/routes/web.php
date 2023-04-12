@@ -79,14 +79,26 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
     Route::group(['middleware' => 'auth:admin'], function () {
 
 
-        // 課金
-        Route::get('subscription', [Admin\SubscriptionController::class, 'index'])->name('subscription');
-        Route::get('ajax/subscription/status', 'Admin\Ajax\SubscriptionController@status');
-        Route::post('ajax/subscription/subscribe', 'Admin\Ajax\SubscriptionController@subscribe');
-        Route::post('ajax/subscription/cancel', 'Admin\Ajax\SubscriptionController@cancel');
-        Route::post('ajax/subscription/resume', 'v\Ajax\SubscriptionController@resume');
-        Route::post('ajax/subscription/change_plan', 'Admin\Ajax\SubscriptionController@change_plan');
-        Route::post('ajax/subscription/update_card', 'Admin\Ajax\SubscriptionController@update_card');
+        # 課金
+        Route::group([
+            'prefix' => '/subscription',
+            'controller' => Admin\SubscriptionController::class
+        ], function () {
+            Route::get('/','index')->name('subscription');
+        });
+
+        Route::group([
+            'prefix' => '/ajax/subscription',
+            'as' => 'ajax.',
+            'controller' => Admin\Ajax\SubscriptionController::class
+        ], function () {
+            Route::get('/status', 'status')->name('status');
+            Route::post('/subscribe', 'subscribe')->name('subscribe');
+            Route::post('/cancel', 'cancel')->name('cancel');
+            Route::post('/resume', 'resume')->name('resume');
+            Route::post('/change_plan', 'change_plan')->name('change_plan');
+            Route::post('/update_card', 'update_card')->name('update_card');
+        });
 
         # ホーム
         Route::get('/', [Admin\HomeController::class, 'home'])->name('home');
