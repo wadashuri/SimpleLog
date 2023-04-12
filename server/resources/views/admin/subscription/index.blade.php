@@ -22,6 +22,9 @@
 <body>
 <div id="app" class="container">
     <h1 class="mb-4">Stripeを使った月額課金・サンプル</h1>
+    <a href="{{ route('admin.home') }}">
+        ホーム
+    </a>
     <div class="row">
         <div class="offset-3 col-6">
             <div class="card mb-4">

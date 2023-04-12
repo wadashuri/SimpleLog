@@ -37,6 +37,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link link-dark" href="{{ route('admin.subscription') }}">
+                <span class="svg_initial" data-feather="users"></span>
+                お支払い
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link link-dark" href="{{ route('admin.logout') }}"
                 onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
