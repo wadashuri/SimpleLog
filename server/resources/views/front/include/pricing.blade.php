@@ -11,8 +11,8 @@
             <div class="block-7">
               <div class="text-center">
               <h2 class="heading">Free</h2>
-              <span class="price"><sup>$</sup> <span class="number">0</span></span>
-              <span class="excerpt d-block">100% free. Forever</span>
+              <span class="price"><sup>¥</sup> <span class="number">0</span>-/ユーザー</span>
+              <span class="excerpt d-block">永続無料</span>
               <a href="#" class="btn btn-primary d-block px-2 py-3 mb-4">Get Started</a>
 
               <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
@@ -30,7 +30,7 @@
             <div class="block-7">
               <div class="text-center">
               <h2 class="heading">Startup</h2>
-              <span class="price"><sup>$</sup> <span class="number">19</span></span>
+              <span class="price"><sup>¥</sup> <span class="number">400</span>-/ユーザー</span>
               <span class="excerpt d-block">All features are included</span>
               <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get Started</a>
 
@@ -49,7 +49,7 @@
             <div class="block-7">
               <div class="text-center">
               <h2 class="heading">Premium</h2>
-              <span class="price"><sup>$</sup> <span class="number">49</span></span>
+              <span class="price"><sup>¥</sup> <span class="number">1200</span>-/ユーザー</span>
               <span class="excerpt d-block">All features are included</span>
               <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get Started</a>
 
@@ -68,7 +68,7 @@
             <div class="block-7">
               <div class="text-center">
               <h2 class="heading">Pro</h2>
-              <span class="price"><sup>$</sup> <span class="number">99</span></span>
+              <span class="price"><sup>¥</sup> <span class="number">2000</span>-/ユーザー</span>
               <span class="excerpt d-block">All features are included</span>
               <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get Started</a>
 
