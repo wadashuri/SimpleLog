@@ -172,6 +172,7 @@
 
                 this.status = response.data.status;
                 this.details = response.data.details;
+                console.log(this.details);
 
             },
             async getPaymentMethod(target) {
