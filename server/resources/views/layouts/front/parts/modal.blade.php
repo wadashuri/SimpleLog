@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalRequestLabel">Request a Quote</h5>
+          <h5 class="modal-title" id="modalRequestLabel">資料請求</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -23,7 +23,7 @@
                 <div class="form-group">
                   <!-- <label for="appointment_date" class="text-black">Date</label> -->
                   <input type="text" class="form-control" id="appointment_date" placeholder="Date">
-                </div>    
+                </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
@@ -32,7 +32,7 @@
                 </div>
               </div>
             </div>
-            
+
 
             <div class="form-group">
               <!-- <label for="appointment_message" class="text-black">Message</label> -->
@@ -43,7 +43,7 @@
             </div>
           </form>
         </div>
-        
+
       </div>
     </div>
   </div>
