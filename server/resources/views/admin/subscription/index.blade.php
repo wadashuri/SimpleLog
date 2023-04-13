@@ -1,8 +1,8 @@
-
 @extends('layouts.admin.app')
 
 @section('content')
-<div id="app">
+<body>
+<div id="app" class="container">
     <h1 class="mb-4">Stripeを使った月額課金・サンプル</h1>
     <a href="{{ route('admin.home') }}">
         ホーム
