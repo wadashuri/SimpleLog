@@ -16,7 +16,7 @@
           <li class="nav-item"><a href="blog" class="nav-link">ブログ</a></li>
           <li class="nav-item"><a href="contact" class="nav-link">お問い合わせ</a></li>
           <li class="nav-item"><a href="{{ route('admin.login')}}" class="nav-link">ログイン</a></li>
-          <li class="nav-item cta"><a href="contact" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>見積もり請求</span></a></li>
+          <li class="nav-item cta"><a href="contact" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>資料請求</span></a></li>
         </ul>
       </div>
     </div>

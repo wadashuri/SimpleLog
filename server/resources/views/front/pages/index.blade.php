@@ -13,7 +13,7 @@
             </strong>
           </h1>
           <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-          <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#" class="btn btn-primary px-4 py-3">見積もり請求</a> <a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">私たちの実績</a></p>
+          <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#" class="btn btn-primary px-4 py-3">資料請求</a> <a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">私たちの実績</a></p>
         </div>
         <div class="one-half align-self-md-end align-self-sm-center">
             <div class="slider-carousel owl-carousel">
