@@ -7,15 +7,15 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link link-dark" href="{{ route('user.task.index') }}">
-                <span data-feather="home"></span>
-                タスク
+            <a class="nav-link link-dark" href="{{ route('user.project.index') }}">
+                <span data-feather="activity"></span>
+                プロジェクト
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link link-dark" href="{{ route('user.project.index') }}">
-                <span data-feather="home"></span>
-                プロジェクト
+            <a class="nav-link link-dark" href="{{ route('user.task.index') }}">
+                <span data-feather="file-text"></span>
+                タスク
             </a>
         </li>
         <li class="nav-item">
