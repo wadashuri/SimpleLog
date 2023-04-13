@@ -29,7 +29,7 @@
           <div class="col-md-3 ftco-animate">
             <div class="block-7">
               <div class="text-center">
-              <h2 class="heading">Startup</h2>
+              <h2 class="heading">STANDARD</h2>
               <span class="price"><sup>¥</sup> <span class="number">400</span>-/ユーザー</span>
               <span class="excerpt d-block">All features are included</span>
               <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get Started</a>
