@@ -1,4 +1,7 @@
 
+@extends('layouts.admin.app')
+
+@section('content')
 <div id="app">
     <h1 class="mb-4">Stripeを使った月額課金・サンプル</h1>
     <a href="{{ route('admin.home') }}">
@@ -222,4 +225,4 @@
     });
 
 </script>
-</body>
+@endsection
