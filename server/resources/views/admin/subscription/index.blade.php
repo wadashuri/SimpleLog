@@ -1,7 +1,9 @@
+@extends('layouts.admin.app')
+
+@section('content')
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
 
         body {
@@ -21,10 +23,7 @@
 </head>
 <body>
 <div id="app" class="container">
-    <h1 class="mb-4">Stripeを使った月額課金・サンプル</h1>
-    <a href="{{ route('admin.home') }}">
-        ホーム
-    </a>
+    <h1 class="mb-4">お支払い</h1>
     <div class="row">
         <div class="offset-3 col-6">
             <div class="card mb-4">
@@ -89,14 +88,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5>テスト入力について</h5>
-                    <hr>
-                    <strong>名義人：</strong> 半角ローマ字ならなんでもOK<br>
-                    <strong>カード番号：</strong> <a href="https://stripe.com/docs/testing#cards" target="_blank">テスト用のカード番号</a>に用意されています。なお、年／月は未来の日付ならいつでもOKで、CVCも数字ならなんでもOKです。
                 </div>
             </div>
         </div>
@@ -245,3 +236,4 @@
 </script>
 </body>
 </html>
+@endsection
