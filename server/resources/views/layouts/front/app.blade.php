@@ -10,8 +10,6 @@
 
   </head>
   <body>
-    {{-- functions --}}
-    {{ require_once app_path('Helpers/front/functions.php');}}
 
     {{-- header --}}
     @include('layouts.front.header')

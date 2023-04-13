@@ -235,6 +235,11 @@ return [
          */
         'StatusConstants' => App\Constants\StatusConstants::class,
 
+        /**
+         * Functions
+         */
+        'FrontFunctions' => App\Library\FrontFunctions::class,
+
     ],
 
 ];
