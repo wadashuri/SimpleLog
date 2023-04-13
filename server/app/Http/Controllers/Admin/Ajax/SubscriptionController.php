@@ -12,12 +12,11 @@ class SubscriptionController extends Controller
     {
 
         $admin = $request->user();
-        $userCount = $admin->users()->count();
+
         if (!$admin->subscribed('main')) {
 
             $payment_method = $request->payment_method;
             $plan = $request->plan;
-            $plan->quantity = $userCount; // プランの数量をユーザー数に設定
             $admin->newSubscription('main', $plan)->create($payment_method);
             $admin->load('subscriptions');
         }
