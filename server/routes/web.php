@@ -16,7 +16,7 @@ Route::get('/', function () {
  */
 Route::group([
     'prefix' => '/front',
-    'as' => 'front.',
+    'as' => 'front.pages.',
 ], function () {
     # index
     Route::view('/index', 'front.pages.index')->name('index');
