@@ -1,9 +1,7 @@
-@extends('layouts.admin.app')
-
-@section('content')
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
 
         body {
@@ -24,6 +22,9 @@
 <body>
 <div id="app" class="container">
     <h1 class="mb-4">お支払い</h1>
+    <a href="{{ route('admin.home') }}">
+        ホーム
+    </a>
     <div class="row">
         <div class="offset-3 col-6">
             <div class="card mb-4">
@@ -236,4 +237,3 @@
 </script>
 </body>
 </html>
-@endsection
