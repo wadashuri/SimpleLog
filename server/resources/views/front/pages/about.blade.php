@@ -3,7 +3,7 @@
 @section('content')
     @include('front.include.content_header',[
     'title1' => 'About',
-    'main_title' => 'About Us',
+    'main_title' => '会社概要',
   ])
 
   <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">

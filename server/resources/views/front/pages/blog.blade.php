@@ -3,7 +3,7 @@
 @section('content')
   @include('front.include.content_header',[
     'title1' => 'Blog',
-    'main_title' => 'Our Blog',
+    'main_title' => 'ブログ',
   ])
 
   <section class="ftco-section bg-light">

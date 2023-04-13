@@ -5,7 +5,7 @@
 @include('front.include.content_header',[
     'title1' => 'Blog',
     'title2' => 'Blog Single',
-    'main_title' => 'Blog Details',
+    'main_title' => 'ブログ詳細',
   ])
 
   <section class="ftco-section ftco-degree-bg">

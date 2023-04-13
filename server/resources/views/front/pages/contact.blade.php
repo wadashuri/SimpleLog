@@ -3,7 +3,7 @@
 @section('content')
     @include('front.include.content_header',[
     'title1' => 'Contact',
-    'main_title' => 'Contact',
+    'main_title' => 'お問い合わせ',
   ])
 
       <section class="ftco-section contact-section ftco-degree-bg">

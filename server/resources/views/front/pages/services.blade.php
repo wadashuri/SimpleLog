@@ -3,7 +3,7 @@
 @section('content')
   @include('front.include.content_header',[
     'title1' => 'Services',
-    'main_title' => 'Services',
+    'main_title' => 'サービス',
   ])
 
   <section class="ftco-section ftco-services">
