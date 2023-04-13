@@ -238,7 +238,7 @@ return [
         /**
          * Functions
          */
-        'FrontFunctions' => App\Library\FrontFunctions::class,
+        'Functions' => App\Library\Functions::class,
 
     ],
 

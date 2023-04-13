@@ -2,7 +2,7 @@
 
 namespace App\Library;
 
-class FrontFunctions
+class Functions
 {
     # routeによってclassを付与
     public static function activeClass($route)
