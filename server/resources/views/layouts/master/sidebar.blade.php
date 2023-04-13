@@ -8,7 +8,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link link-dark" href="{{ route('master.admin.index') }}">
-                <span class="svg_initial" data-feather="user"></span>
+                <span class="svg_initial" data-feather="clipboard"></span>
                 管理者
             </a>
         </li>

@@ -7,8 +7,14 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link link-dark" href="{{ route('admin.project.index') }}">
+                <span class="svg_initial" data-feather="activity"></span>
+                プロジェクト
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link link-dark" href="{{ route('admin.task.index') }}">
-                <span class="svg_initial" data-feather="user"></span>
+                <span class="svg_initial" data-feather="file-text"></span>
                 タスク
             </a>
         </li>
@@ -26,19 +32,13 @@
         </li>
         <li class="nav-item">
             <a class="nav-link link-dark" href="{{ route('admin.customer.create') }}">
-                <span class="svg_initial" data-feather="users"></span>
+                <span class="svg_initial" data-feather="clipboard"></span>
                 顧客
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link link-dark" href="{{ route('admin.project.index') }}">
-                <span class="svg_initial" data-feather="users"></span>
-                プロジェクト
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link link-dark" href="{{ route('admin.subscription') }}">
-                <span class="svg_initial" data-feather="users"></span>
+                <span class="svg_initial" data-feather="dollar-sign"></span>
                 お支払い
             </a>
         </li>
