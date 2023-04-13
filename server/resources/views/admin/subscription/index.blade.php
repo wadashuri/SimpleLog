@@ -1,6 +1,24 @@
-@extends('layouts.admin.app')
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
 
-@section('content')
+        body {
+
+            padding: 15px;
+
+        }
+
+        #new-card, #update-card {
+
+            border: 1px solid #ccc;
+            padding: 8px;
+
+        }
+
+    </style>
+</head>
 <body>
 <div id="app" class="container">
     <h1 class="mb-4">Stripeを使った月額課金・サンプル</h1>
@@ -225,4 +243,5 @@
     });
 
 </script>
-@endsection
+</body>
+</html>
