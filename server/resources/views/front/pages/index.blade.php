@@ -13,7 +13,7 @@
             </strong>
           </h1>
           <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-          <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#" class="btn btn-primary px-4 py-3">Get a Quote</a> <a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Our Portfolio</a></p>
+          <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#" class="btn btn-primary px-4 py-3">見積もり請求</a> <a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">私たちの実績</a></p>
         </div>
         <div class="one-half align-self-md-end align-self-sm-center">
             <div class="slider-carousel owl-carousel">
@@ -416,7 +416,7 @@
       <div class="row">
         <div class="col-md-4 ftco-animate">
           <div class="blog-entry">
-            <a href="lp/blog_single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+            <a href="/front/blog_single" class="block-20" style="background-image: url('images/image_1.jpg');">
             </a>
             <div class="text py-4">
               <div class="meta mb-3">
@@ -430,7 +430,7 @@
         </div>
         <div class="col-md-4 ftco-animate">
           <div class="blog-entry" data-aos-delay="100">
-            <a href="lp/blog_single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+            <a href="/front/blog_single" class="block-20" style="background-image: url('images/image_2.jpg');">
             </a>
             <div class="text py-4">
               <div class="meta mb-3">
@@ -444,7 +444,7 @@
         </div>
         <div class="col-md-4 ftco-animate">
           <div class="blog-entry" data-aos-delay="200">
-            <a href="lp/blog_single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+            <a href="/front/blog_single" class="block-20" style="background-image: url('images/image_3.jpg');">
             </a>
             <div class="text py-4">
               <div class="meta mb-3">

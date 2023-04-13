@@ -40,10 +40,10 @@ Route::group([
     Route::view('/blog', 'front.pages.blog')->name('blog');
 
     # contact
-    Route::view('/front/contact', 'front.pages.contact')->name('contact');
+    Route::view('/contact', 'front.pages.contact')->name('contact');
 
     # blog_single
-    Route::view('/front/blog_single', 'front.pages.blog_single')->name('blog_single');
+    Route::view('/blog_single', 'front.pages.blog_single')->name('blog_single');
 });
 /**
  * master
