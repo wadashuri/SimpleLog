@@ -20,9 +20,6 @@
     </style>
     <!-- FeatherのJavaScriptライブラリを読み込む -->
     <script src="https://unpkg.com/feather-icons"></script>
-
-    <!-- アイコンを表示する要素 -->
-    <span data-feather="corner-down-left"></span>
 </head>
 
 <body>
