@@ -10,8 +10,8 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
         <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-2">Our Service Keeps you Happy</h2>
-          <span class="subheading">Search Engine &amp; Social Media Optimization Experts</span>
+          <h2 class="mb-2">お客様に満足いただけるサービスを提供することが、私たちの使命です。</h2>
+          <span class="subheading">シンプルな操作で &amp; あなたのビジネスを効率化</span>
         </div>
       </div>
       <div class="row">
@@ -78,8 +78,8 @@
             <div class="col-md-6 d-flex">
                 <div class="services-wrap">
                     <div class="heading-section mb-5 ftco-animate">
-                  <h2 class="mb-2">Our Service Keeps you Happy</h2>
-                  <span class="subheading">Search Engine &amp; Social Media Optimization Experts</span>
+                  <h2 class="mb-2">お客様に満足いただけるサービスを提供することが、私たちの使命です。</h2>
+                  <span class="subheading">シンプルな操作であなたのビジネスを効率化します</span>
                 </div>
                     <div class="list-services d-flex ftco-animate">
                         <div class="icon d-flex justify-content-center align-items-center">

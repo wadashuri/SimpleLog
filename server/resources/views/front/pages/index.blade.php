@@ -7,12 +7,12 @@
       <div class="slider-text d-md-flex align-items-center" data-scrollax-parent="true">
 
         <div class="one-forth ftco-animate align-self-md-center" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4"> Template for
-            <strong class="typewrite" data-period="4000" data-type='[ "Digital Agency", "Portfolio", "SEO Agency", "Business" ]'>
+            <h1 class="mb-4"> シンプルで
+            <strong class="typewrite" data-period="4000" data-type='[ "必要最低限の項目で 稼働", "洗礼されたデザイン", "直感的に 使える", "あなたのビジネスを 効率化" ]'>
               <span class="wrap"></span>
             </strong>
           </h1>
-          <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+          <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">進捗状況と作業時間を確認することで業務の偏りなどをおさえビジネスの効率化を図ります</p>
           <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#" class="btn btn-primary px-4 py-3">資料請求</a> <a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">私たちの実績</a></p>
         </div>
         <div class="one-half align-self-md-end align-self-sm-center">
@@ -37,7 +37,7 @@
       <div class="container">
           <div class="row">
               <div class="col-md-8">
-                  <h3 class="heading-white">We Provide High Quality Services</h3>
+                  <h3 class="heading-white">高品質なサービスをお届けすることをお約束します</h3>
               </div>
           </div>
       </div>
@@ -47,8 +47,8 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
         <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-2">Our Service Keeps you Happy</h2>
-          <span class="subheading">Search Engine &amp; Social Media Optimization Experts</span>
+          <h2 class="mb-2">お客様に満足いただけるサービスを提供することが、私たちの使命です。</h2>
+          <span class="subheading">シンプルな操作で &amp; あなたのビジネスを効率化します</span>
         </div>
       </div>
       <div class="row">
@@ -56,8 +56,8 @@
           <div class="media block-6 services d-block text-center">
             <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-research"></span></div></div>
             <div class="media-body p-2 mt-3">
-              <h3 class="heading">Market Research</h3>
-              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              <h3 class="heading">業務の見える化</h3>
+              <p>従業員の作業時間やタスクの進捗状況をリアルタイムに把握することができ、業務の見える化を実現することができます。</p>
             </div>
           </div>
         </div>
@@ -65,8 +65,8 @@
           <div class="media block-6 services d-block text-center">
             <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-creativity"></span></div></div>
             <div class="media-body p-2 mt-3">
-              <h3 class="heading">Business Strategy</h3>
-              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              <h3 class="heading">タスク管理</h3>
+              <p>タスクを優先度や期限などの条件に基づいて整理し、タスクの進捗状況をリアルタイムで把握することができます。</p>
             </div>
           </div>
         </div>
@@ -74,8 +74,8 @@
           <div class="media block-6 services d-block text-center">
             <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-market"></span></div></div>
             <div class="media-body p-2 mt-3">
-              <h3 class="heading">Audience Analytics</h3>
-              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              <h3 class="heading">分析と改善</h3>
+              <p>システムに蓄積されたデータを分析することで、業務の瓶頸やムダを洗い出し、改善策を提案することができます。</p>
             </div>
           </div>
         </div>
@@ -88,8 +88,8 @@
             <div class="col-md-6 d-flex">
                 <div class="services-wrap">
                     <div class="heading-section mb-5 ftco-animate">
-                  <h2 class="mb-2">Our Service Keeps you Happy</h2>
-                  <span class="subheading">Search Engine &amp; Social Media Optimization Experts</span>
+                  <h2 class="mb-2">お客様に満足いただけるサービスを提供することが、私たちの使命です。</h2>
+                  <span class="subheading">シンプルな操作で &amp; あなたのビジネスを効率化</span>
                 </div>
                     <div class="list-services d-flex ftco-animate">
                         <div class="icon d-flex justify-content-center align-items-center">
