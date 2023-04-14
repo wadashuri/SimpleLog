@@ -11,7 +11,7 @@
             <div class="block-7">
               <div class="text-center">
               <h2 class="heading">Free</h2>
-              <span class="price"><sup>¥</sup> <span class="number">0</span>-/ユーザー</span>
+              <span class="price"><sup>¥</sup> <span class="number">0</span></span>
               <span class="excerpt d-block">永続無料</span>
               <a href="#" class="btn btn-primary d-block px-2 py-3 mb-4">Get Started</a>
 
