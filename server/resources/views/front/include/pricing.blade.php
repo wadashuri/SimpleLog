@@ -2,7 +2,7 @@
       <div class="container">
           <div class="row justify-content-center mb-5 pb-5">
         <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-3">Our Best Pricing</h2>
+          <h2 class="mb-3">価格</h2>
           <span class="subheading">Pricing Plans</span>
         </div>
       </div>
