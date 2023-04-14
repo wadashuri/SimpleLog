@@ -88,15 +88,15 @@
             <div class="col-md-6 d-flex">
                 <div class="services-wrap">
                     <div class="heading-section mb-5 ftco-animate">
-                  <h2 class="mb-2">お客様に満足いただけるサービスを提供することが、私たちの使命です。</h2>
-                  <span class="subheading">シンプルな操作で &amp; あなたのビジネスを効率化</span>
+                  <h2 class="mb-2">必要最低限の項目で稼働</h2>
+                  <span class="subheading">分かりやすい機能 &amp; 操作</span>
                 </div>
                     <div class="list-services d-flex ftco-animate">
                         <div class="icon d-flex justify-content-center align-items-center">
                             <span class="icon-pencil"></span>
                         </div>
                         <div class="text">
-                            <h3>Logo Branding</h3>
+                            <h3>タスク</h3>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                             <span class="icon-web"></span>
                         </div>
                         <div class="text">
-                            <h3>Development</h3>
+                            <h3>ユーザー</h3>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                             <span class="icon-pie-chart"></span>
                         </div>
                         <div class="text">
-                            <h3>Online Marketing</h3>
+                            <h3>プロジェクト</h3>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
       <div class="container-fluid">
           <div class="row justify-content-center mb-5 pb-5">
         <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-2">Our Portfolio</h2>
+          <h2 class="mb-2">私たちの実績</h2>
           <span class="subheading">We're Happy to share our complete Projects</span>
         </div>
       </div>

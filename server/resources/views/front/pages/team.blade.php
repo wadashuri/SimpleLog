@@ -66,7 +66,10 @@
       </div>
       <div class="row  mt-5 justify-conten-center">
           <div class="col-md-8 ftco-animate">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi vero accusantium sunt sit aliquam ipsum molestias autem perferendis, incidunt cumque necessitatibus cum amet cupiditate, ut accusamus. Animi, quo. Laboriosam, laborum.</p>
+              <p>※5プロジェクト30ユーザーまでのスタータープラン（¥2,970/月）もご用意しています。　30日間の無料トライアルはこちら。
+※Nulab Pass(有料)で、下記機能を導入できます。
+・SAML認証：お使いのIDプロバイダー経由でBacklogのアカウントを認証できます。
+・監査ログ：組織内のBacklogユーザーの操作内容を記録情報としてダウンロードできます。</p>
           </div>
       </div>
     </div>
