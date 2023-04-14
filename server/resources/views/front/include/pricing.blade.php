@@ -30,7 +30,7 @@
             <div class="block-7">
               <div class="text-center">
               <h2 class="heading">STANDARD</h2>
-              <span class="price"><sup>¥</sup> <span class="number">400</span>-/ユーザー</span>
+              <span class="price"><sup>¥</sup> <span class="number">3,000</span></span>
               <span class="excerpt d-block">All features are included</span>
               <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get Started</a>
 
@@ -49,7 +49,7 @@
             <div class="block-7">
               <div class="text-center">
               <h2 class="heading">Premium</h2>
-              <span class="price"><sup>¥</sup> <span class="number">1200</span>-/ユーザー</span>
+              <span class="price"><sup>¥</sup> <span class="number">7,500</span></span>
               <span class="excerpt d-block">All features are included</span>
               <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get Started</a>
 
@@ -68,7 +68,7 @@
             <div class="block-7">
               <div class="text-center">
               <h2 class="heading">Pro</h2>
-              <span class="price"><sup>¥</sup> <span class="number">2000</span>-/ユーザー</span>
+              <span class="price"><sup>¥</sup> <span class="number">22,500</span></span>
               <span class="excerpt d-block">All features are included</span>
               <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get Started</a>
 

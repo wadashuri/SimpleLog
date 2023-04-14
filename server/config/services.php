@@ -39,9 +39,9 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
         'plans' => [
-            env('STRIPE_STANDARD_ID') => 'ベーシック',
-            env('STRIPE_PREMIUM_ID') => 'プレミアム',
-            env('STRIPE_PRO_ID') => 'プロ'
+            env('STRIPE_STANDARD_ID') => 'ベーシック-月額3,000円-',
+            env('STRIPE_PREMIUM_ID') => 'プレミアム-月額7,500円-',
+            env('STRIPE_PRO_ID') => 'プロ-月額22,500円-'
         ]
     ],
 
