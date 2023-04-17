@@ -13,7 +13,10 @@
             </strong>
           </h1>
           <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">進捗状況と作業時間を確認することで業務の偏りなどをおさえビジネスの効率化を図ります</p>
-          <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#" class="btn btn-primary px-4 py-3">資料請求</a> <a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">私たちの実績</a></p>
+          <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+            {{-- <a href="#" class="btn btn-primary px-4 py-3">資料<br>ダウンロード</a> --}}
+             <a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">無料で<br>SimpleLogを試してみる</a>
+            </p>
         </div>
         <div class="one-half align-self-md-end align-self-sm-center">
             <div class="slider-carousel owl-carousel">
@@ -43,223 +46,23 @@
       </div>
   </section>
 
-  <section class="ftco-section ftco-services">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-2">お客様に満足いただけるサービスを提供することが、私たちの使命です。</h2>
-          <span class="subheading">シンプルな操作で &amp; あなたのビジネスを効率化します</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services d-block text-center">
-            <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-research"></span></div></div>
-            <div class="media-body p-2 mt-3">
-              <h3 class="heading">業務の見える化</h3>
-              <p>従業員の作業時間やタスクの進捗状況をリアルタイムに把握することができ、業務の見える化を実現することができます。</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services d-block text-center">
-            <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-creativity"></span></div></div>
-            <div class="media-body p-2 mt-3">
-              <h3 class="heading">タスク管理</h3>
-              <p>タスクを優先度や期限などの条件に基づいて整理し、タスクの進捗状況をリアルタイムで把握することができます。</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services d-block text-center">
-            <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-market"></span></div></div>
-            <div class="media-body p-2 mt-3">
-              <h3 class="heading">分析と改善</h3>
-              <p>システムに蓄積されたデータを分析することで、業務の瓶頸やムダを洗い出し、改善策を提案することができます。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-wrap mt-5">
-        <div class="row d-flex no-gutters">
-            <div class="col-md-6 img ftco-animate" style="background-image: url(images/about.jpg);">
-            </div>
-            <div class="col-md-6 d-flex">
-                <div class="services-wrap">
-                    <div class="heading-section mb-5 ftco-animate">
-                  <h2 class="mb-2">必要最低限の項目で稼働</h2>
-                  <span class="subheading">分かりやすい機能 &amp; 操作</span>
-                </div>
-                    <div class="list-services d-flex ftco-animate">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span class="icon-pencil"></span>
-                        </div>
-                        <div class="text">
-                            <h3>タスク</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        </div>
-                    </div>
-                    <div class="list-services d-flex ftco-animate">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span class="icon-web"></span>
-                        </div>
-                        <div class="text">
-                            <h3>ユーザー</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        </div>
-                    </div>
-                    <div class="list-services d-flex ftco-animate">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span class="icon-pie-chart"></span>
-                        </div>
-                        <div class="text">
-                            <h3>プロジェクト</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
+  @include('front.include.services')
 
-  <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
-      <div class="container">
-          <div class="row justify-content-center">
-              <div class="col-md-11">
-                  <div class="row">
-                <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-                  <div class="block-18 text-center">
-                    <div class="text">
-                      <strong class="number" data-number="6780">0</strong>
-                      <span>Happy Clients</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-                  <div class="block-18 text-center">
-                    <div class="text">
-                      <strong class="number" data-number="4500">0</strong>
-                      <span>Running Projects</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-                  <div class="block-18 text-center">
-                    <div class="text">
-                      <strong class="number" data-number="4200">0</strong>
-                      <span>Project Completed</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-                  <div class="block-18 text-center">
-                    <div class="text">
-                      <strong class="number" data-number="320">0</strong>
-                      <span>Cups of Coffe</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-      </div>
-      </div>
-  </section>
+  {{-- counter --}}
+  {{-- @include('front.include.counter') --}}
 
-  <section class="ftco-section ftco-work">
-      <div class="container-fluid">
-          <div class="row justify-content-center mb-5 pb-5">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-2">私たちの実績</h2>
-          <span class="subheading">We're Happy to share our complete Projects</span>
-        </div>
-      </div>
-      <div class="row">
-          <div class="col-md-4 ftco-animate">
-              <div class="work-entry">
-                  <a href="#" class="img" style="background-image: url(images/work-1.jpg);">
-                      <div class="text d-flex justify-content-center align-items-center">
-                          <div class="p-3">
-                              <span>Branding</span>
-                              <h3>Work 01</h3>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-              <div class="work-entry">
-                  <a href="#" class="img" style="background-image: url(images/work-2.jpg);">
-                      <div class="text d-flex justify-content-center align-items-center">
-                          <div class="p-3">
-                              <span>Branding</span>
-                              <h3>Work 02</h3>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-              <div class="work-entry">
-                  <a href="#" class="img" style="background-image: url(images/work-3.jpg);">
-                      <div class="text d-flex justify-content-center align-items-center">
-                          <div class="p-3">
-                              <span>Branding</span>
-                              <h3>Work 03</h3>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-              <div class="work-entry">
-                  <a href="#" class="img" style="background-image: url(images/work-4.jpg);">
-                      <div class="text d-flex justify-content-center align-items-center">
-                          <div class="p-3">
-                              <span>Branding</span>
-                              <h3>Work 01</h3>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-              <div class="work-entry">
-                  <a href="#" class="img" style="background-image: url(images/work-5.jpg);">
-                      <div class="text d-flex justify-content-center align-items-center">
-                          <div class="p-3">
-                              <span>Branding</span>
-                              <h3>Work 02</h3>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-              <div class="work-entry">
-                  <a href="#" class="img" style="background-image: url(images/work-6.jpg);">
-                      <div class="text d-flex justify-content-center align-items-center">
-                          <div class="p-3">
-                              <span>Branding</span>
-                              <h3>Work 03</h3>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div>
-      </div>
-      </div>
-  </section>
+  {{-- 実績 --}}
+  {{-- @include('front.include.work') --}}
 
   @include('front.include.pricing')
 
-  <section class="ftco-quote">
+  {{-- 資料請求 --}}
+  {{-- <section class="ftco-quote">
       <div class="container">
           <div class="row">
               <div class="col-md-6 pr-md-5 aside-stretch py-5 choose">
                   <div class="heading-section heading-section-white mb-5 ftco-animate">
-              <h2 class="mb-2">Reasons for Choosing Us </h2>
+              <h2 class="mb-2">私たちを選ぶ理由</h2>
             </div>
             <div class="ftco-animate">
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. Because there were thousands of bad Commas, wild Question Marks and devious Semikoli</p>
@@ -272,7 +75,7 @@
               </div>
               <div class="col-md-6 py-5 pl-md-5">
                   <div class="heading-section mb-5 ftco-animate">
-              <h2 class="mb-2">Get a Free Quote</h2>
+              <h2 class="mb-2">お問い合わせ</h2>
             </div>
             <form action="#" class="ftco-animate">
                 <div class="row">
@@ -303,7 +106,7 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <input type="submit" value="Get a Quote" class="btn btn-primary py-3 px-5">
+                      <input type="submit" value="資料請求" class="btn btn-primary py-3 px-5">
                     </div>
                 </div>
             </div>
@@ -311,101 +114,16 @@
               </div>
           </div>
       </div>
-  </section>
+  </section> --}}
+
+{{-- ユーザーの声 --}}
+{{-- @include('front.include.testimony') --}}
 
 
-      <section class="ftco-section testimony-section bg-light">
-    <div class="container">
-      <div class="row justify-content-center mb-5 pb-3">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-2">Testimony</h2>
-          <span class="subheading">Our Happy Customer Says</span>
-        </div>
-      </div>
-      <div class="row justify-content-center ftco-animate">
-        <div class="col-md-8">
-          <div class="carousel-testimony owl-carousel ftco-owl">
-            <div class="item">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
-                  <span class="quote d-flex align-items-center justify-content-center">
-                    <i class="icon-quote-left"></i>
-                  </span>
-                </div>
-                <div class="text text-center">
-                  <p class="mb-5">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                  <p class="name">Dennis Green</p>
-                  <span class="position">Marketing Manager</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-5" style="background-image: url(images/person_2.jpg)">
-                  <span class="quote d-flex align-items-center justify-content-center">
-                    <i class="icon-quote-left"></i>
-                  </span>
-                </div>
-                <div class="text text-center">
-                  <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Dennis Green</p>
-                  <span class="position">Interface Designer</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-5" style="background-image: url(images/person_3.jpg)">
-                  <span class="quote d-flex align-items-center justify-content-center">
-                    <i class="icon-quote-left"></i>
-                  </span>
-                </div>
-                <div class="text text-center">
-                  <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Dennis Green</p>
-                  <span class="position">UI Designer</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
-                  <span class="quote d-flex align-items-center justify-content-center">
-                    <i class="icon-quote-left"></i>
-                  </span>
-                </div>
-                <div class="text text-center">
-                  <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Dennis Green</p>
-                  <span class="position">Web Developer</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
-                  <span class="quote d-flex align-items-center justify-content-center">
-                    <i class="icon-quote-left"></i>
-                  </span>
-                </div>
-                <div class="text text-center">
-                  <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Dennis Green</p>
-                  <span class="position">System Analytics</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-{{-- newsletter --}}
+{{-- メルマガ --}}
 {{-- @include('front.include.newsletter') --}}
 
-  <section class="ftco-section">
+  {{-- <section class="ftco-section">
     <div class="container">
       <div class="row justify-content-center mb-5 pb-3">
         <div class="col-md-7 text-center heading-section ftco-animate">
@@ -458,5 +176,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 @endsection

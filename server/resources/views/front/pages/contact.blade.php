@@ -10,7 +10,7 @@
     <div class="container">
       <div class="row d-flex mb-5 contact-info">
         <div class="col-md-12 mb-4">
-          <h2 class="h4">Contact Information</h2>
+          <h2 class="h4">お問い合わせ</h2>
         </div>
         <div class="w-100"></div>
         <div class="col-md-3">
@@ -42,14 +42,16 @@
               <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
             </div>
             <div class="form-group">
-              <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+              <input type="submit" value="送信" class="btn btn-primary py-3 px-5">
             </div>
           </form>
 
         </div>
 
         {{-- ここにGoogleマップ表示 --}}
-        <div class="col-md-6" id="map"></div>
+        <div class="col-md-6" id="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4612.747205838796!2d136.92050180103385!3d35.16398149207498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1681695112299!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
   </section>
