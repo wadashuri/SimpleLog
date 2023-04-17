@@ -14,6 +14,14 @@ class TaskTableSeeder extends Seeder
      */
     public function run()
     {
-        Task::factory(100)->create();
+        Task::factory(100)->sequence(
+            function ($sequence) {
+                return [
+                    'admin_id' => (($sequence->index + 1) % 2 == 0) ? $sequence->index + 1 : null,
+                    'user_id' => (($sequence->index + 1) % 2 !== 0) ? $sequence->index + 1 : null,
+                    'name' => 'タスク' . ($sequence->index + 1),
+                ];
+            }
+        )->create();
     }
 }

@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(50)
+        User::factory(100)
             ->hasAttached(
                 Group::factory()->sequence(
                 fn ($sequence) => [
