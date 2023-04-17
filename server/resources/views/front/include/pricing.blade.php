@@ -1,4 +1,4 @@
-<section class="ftco-section bg-light">
+<section class="ftco-section bg-light" id="plans">
     <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
@@ -13,7 +13,7 @@
                         <h2 class="heading">FREE</h2>
                         <span class="price"><sup>¥</sup> <span class="number">0</span></span>
                         <span class="excerpt d-block">全ての機能</span>
-                        <a href="#" class="btn btn-primary d-block px-2 py-3 mb-4">Get Started</a>
+                        <a href="{{ route('admin.register') }}" class="btn btn-primary d-block px-2 py-3 mb-4">Get Started</a>
 
                         <ul class="pricing-text">
                             <li><strong>プロジェクトの登録、分析</strong></li>
@@ -30,7 +30,7 @@
                         <h2 class="heading">STANDARD</h2>
                         <span class="price"><sup>¥</sup> <span class="number">3,000</span></span>
                         <span class="excerpt d-block">全ての機能</span>
-                        <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get
+                        <a href="{{ route('admin.register') }}" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get
                             Started</a>
 
                         <h3 class="heading-2 mb-4">FREEの全ての機能</h3>
@@ -49,7 +49,7 @@
                         <h2 class="heading">Premium</h2>
                         <span class="price"><sup>¥</sup> <span class="number">7,500</span></span>
                         <span class="excerpt d-block">全ての機能</span>
-                        <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get
+                        <a href="{{ route('admin.register') }}" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get
                             Started</a>
 
                         <h3 class="heading-2 mb-4">STANDARDの全ての機能</h3>
@@ -68,7 +68,7 @@
                         <h2 class="heading">Pro</h2>
                         <span class="price"><sup>¥</sup> <span class="number">22,500</span></span>
                         <span class="excerpt d-block">全ての機能</span>
-                        <a href="#" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get
+                        <a href="{{ route('admin.register') }}" class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get
                             Started</a>
 
                         <h3 class="heading-2 mb-4">Proの全ての機能</h3>

@@ -52,7 +52,7 @@
                         </div>
                         <div class="text">
                             <h3>タスク</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <p>分かりやすく直感的な操作で日々の業務を記入</p>
                         </div>
                     </div>
                     <div class="list-services d-flex ftco-animate">
@@ -61,7 +61,7 @@
                         </div>
                         <div class="text">
                             <h3>ユーザー</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <p>進捗の管理やタスクの割り振り、権限機能などで柔軟に管理</p>
                         </div>
                     </div>
                     <div class="list-services d-flex ftco-animate">
@@ -70,7 +70,7 @@
                         </div>
                         <div class="text">
                             <h3>プロジェクト</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <p>かかった時間に対しての効率が表やグラフで一目で分かる</p>
                         </div>
                     </div>
                 </div>

@@ -74,6 +74,10 @@ Route::group(['prefix' => 'master', 'as' => 'master.',], function () {
  * admin
  */
 Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
+    # register
+    Route::get('/register', [Auth\RegisterController::class, 'registerForm'])->name('register_form');
+    Route::post('/register', [Auth\RegisterController::class, 'register'])->name('register');
+
     # login
     Route::get('/login', [Auth\LoginController::class, 'loginForm'])->name('login_form');
     Route::post('/login', [Auth\LoginController::class, 'login'])->name('login');

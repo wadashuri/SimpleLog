@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\User;
+use App\Models\Admin;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $_guard;
 
     /**
      * Create a new controller instance.
@@ -38,7 +39,11 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        if (request()->route()) {
+            # ルート名から現在のguard名を取得
+            $route = explode('.', request()->route()->getName());
+            $this->_guard = $route[0];
+        }
     }
 
     /**
@@ -56,18 +61,24 @@ class RegisterController extends Controller
         ]);
     }
 
+
     /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
+     * 登録画面表示
      */
-    protected function create(array $data)
+    public function registerForm()
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        return view('auth.register');
+    }
+
+    /**
+     * 新規登録処理
+     */
+    protected function register(Request $request)
+    {
+        $params = $request->input();
+        Admin::create($params);
+        //リダイレクトさせるルート
+        $route_name = $this->_guard . '.home';
+        return redirect()->route($route_name);
     }
 }

@@ -4,27 +4,26 @@
         <div class="col-md-3">
           <div class="ftco-footer-widget mb-4">
             <h2 class="ftco-heading-2">SimpleLog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p>当事務所に関する情報を各種SNSにも掲載しておりますのでご確認ください</p>
           </div>
           <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
-            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+            <li class="ftco-animate"><a href="https://twitter.com/wada20010108"><span class="icon-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCu22rOTZVY-GJWrA5MmG6LQ"><span class="icon-youtube"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.instagram.com/shuri.wada/"><span class="icon-instagram"></span></a></li>
           </ul>
         </div>
         <div class="col-md-2">
           <div class="ftco-footer-widget mb-4 ml-md-5">
-            <h2 class="ftco-heading-2">Quick Links</h2>
+            <h2 class="ftco-heading-2">リンク</h2>
             <ul class="list-unstyled">
-              <li><a href="#" class="py-2 d-block">About</a></li>
-              <li><a href="#" class="py-2 d-block">Features</a></li>
-              <li><a href="#" class="py-2 d-block">Projects</a></li>
-              <li><a href="#" class="py-2 d-block">Blog</a></li>
-              <li><a href="#" class="py-2 d-block">Contact</a></li>
+              <li><a href="{{ route('front.pages.about') }}" class="py-2 d-block">会社概要</a></li>
+              <li><a href="{{ route('front.pages.services') }}" class="py-2 d-block">サービス</a></li>
+              <li><a href="{{ route('front.pages.pricing') }}" class="py-2 d-block">価格</a></li>
+              <li><a href="{{ route('front.pages.about') }}" class="py-2 d-block">ログイン</a></li>
             </ul>
           </div>
         </div>
-        <div class="col-md-4 pr-md-4">
+        {{-- <div class="col-md-4 pr-md-4">
           <div class="ftco-footer-widget mb-4">
             <h2 class="ftco-heading-2">Recent Blog</h2>
             <div class="block-21 mb-4 d-flex">
@@ -50,8 +49,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-3">
+        </div> --}}
+        {{-- <div class="col-md-3">
           <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Contact Info</h2>
               <div class="block-23 mb-3">
@@ -62,7 +61,7 @@
                 </ul>
               </div>
           </div>
-        </div>
+        </div> --}}
       </div>
       <div class="row">
         <div class="col-md-12 text-center">
