@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Cashier\Billable;
+use Laravel\Cashier\Subscription;
 
 class Admin extends Authenticatable
 {
@@ -44,9 +45,9 @@ class Admin extends Authenticatable
         return $this->hasMany(Task::class);
     }
 
-    public function subscription()
+    public function subscriptions()
     {
-        return $this->hasOne(Subscription::class);
+        return $this->hasMany(Subscription::class);
     }
 
     // ========================================================================

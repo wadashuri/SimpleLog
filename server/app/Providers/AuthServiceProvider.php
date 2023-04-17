@@ -35,7 +35,10 @@ class AuthServiceProvider extends ServiceProvider
             Gate::define('plan',function($admin){
 
                 $user_count = $admin->users()->count();
-                $stripe_price = $admin->subscription->stripe_price;
+                $stripe_price = '';
+                if($admin->subscriptions->isNotEmpty()){
+                   $stripe_price = $admin->subscriptions()->first()->stripe_price;
+                }
                 $plan_name = config('services.stripe.plan_name');
 
                 if ($plan_name['スタンダード'] === $stripe_price){
@@ -48,7 +51,7 @@ class AuthServiceProvider extends ServiceProvider
                     return $user_count < 150;
                 }
 
-                return false;
+                return true;
             });
         }
 }
