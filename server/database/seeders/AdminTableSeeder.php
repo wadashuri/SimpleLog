@@ -14,7 +14,7 @@ class AdminTableSeeder extends Seeder
      */
     public function run()
     {
-        Admin::factory(10)->sequence(
+        Admin::factory(100)->sequence(
             fn ($sequence) => [
                 'email' => 'admin' . ($sequence->index + 1) . '@example.com',
                 'password' => 'admin' . ($sequence->index + 1),

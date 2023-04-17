@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Group;
 use Illuminate\Support\Facades\DB;
 
 
@@ -16,11 +17,19 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(50)->sequence(
-            fn ($sequence) => [
-                'email' => 'user' . ($sequence->index + 1) . '@example.com',
-                'password' => 'user' . ($sequence->index + 1),
-            ],
-        )->create();
+        User::factory(50)
+            ->hasAttached(
+                Group::factory()->sequence(
+                fn ($sequence) => [
+                    'name' => '部署' . ($sequence->index + 1),
+                ],
+            )
+            )
+            ->sequence(
+                fn ($sequence) => [
+                    'email' => 'user' . ($sequence->index + 1) . '@example.com',
+                    'password' => 'user' . ($sequence->index + 1),
+                ],
+            )->create();
     }
 }

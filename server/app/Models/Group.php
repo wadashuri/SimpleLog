@@ -20,4 +20,9 @@ class Group extends Model
     {
         return $this->belongsTo(Admin::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

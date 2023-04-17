@@ -17,8 +17,6 @@ class CreateGroupUserTable extends Migration
         Schema::create('group_user', function (Blueprint $table) {
             $table->foreignId('group_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->dateTime('created_at')->nullable();
-            $table->dateTime('updated_at')->nullable();
         });
         DB::statement("ALTER TABLE group_user comment='タスク'");
     }

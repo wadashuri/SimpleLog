@@ -15,7 +15,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            "admin_id" => $this->faker->numberBetween(1, 10),
+            "admin_id" => $this->faker->numberBetween(1, 100),
             'name' => $this->faker->name(),
             "administrator" => $this->faker->randomElement([1, 10]),
             'email_verified_at' => now(),

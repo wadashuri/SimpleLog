@@ -26,7 +26,7 @@ class MasterTableSeeder extends Seeder
             'updated_at' => now()
         ]);
 
-        Master::factory(10)->sequence(
+        Master::factory(100)->sequence(
             fn ($sequence) => [
                 'email' => 'master' . ($sequence->index + 1) . '@example.com',
                 'password' => 'master' . ($sequence->index + 1),
