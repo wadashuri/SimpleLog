@@ -20,7 +20,6 @@ class CreateMastersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->unsignedTinyInteger('administrator')->comment('権限/権限 0: 一般, 1: 全体管理者');
-            $table->string('stripe')->comment('stripeの情報');;
             $table->rememberToken();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
