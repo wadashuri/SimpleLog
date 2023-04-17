@@ -11,7 +11,7 @@
                     <a href="{{ route('front.pages.index') }}" class="nav-link">ホーム</a>
                 </li>
                 <li class="nav-item {{ Functions::activeClass('front.pages.about') }}">
-                    <a href="{{ route('front.pages.about') }}" class="nav-link">会社概要</a>
+                    <a href="{{ route('front.pages.about') }}" class="nav-link">事務所概要</a>
                 </li>
                 <li class="nav-item {{ Functions::activeClass('front.pages.services') }}">
                     <a href="{{ route('front.pages.services') }}" class="nav-link">サービス</a>
