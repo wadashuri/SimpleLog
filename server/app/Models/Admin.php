@@ -44,6 +44,11 @@ class Admin extends Authenticatable
         return $this->hasMany(Task::class);
     }
 
+    public function subscription()
+    {
+        return $this->hasOne(Subscription::class);
+    }
+
     // ========================================================================
 
     /**

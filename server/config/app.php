@@ -234,6 +234,7 @@ return [
          * Constants
          */
         'StatusConstants' => App\Constants\StatusConstants::class,
+        'UserConstants' => App\Constants\UserConstants::class,
 
         /**
          * Functions

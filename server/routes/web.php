@@ -113,8 +113,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
         # タスク
         Route::resource('task', Admin\TaskController::class);
 
+        # 権限:ユーザー登録
+        Route::group(['middleware' => ['can:plan']], function () {
+            Route::resource('user', Admin\UserController::class)->only('store');
+        });
+
         # ユーザー
-        Route::resource('user', Admin\UserController::class);
+        Route::resource('user', Admin\UserController::class)->except('store');
 
         # グループ
         Route::resource('group', Admin\GroupController::class)->only('create', 'store', 'update', 'destroy');

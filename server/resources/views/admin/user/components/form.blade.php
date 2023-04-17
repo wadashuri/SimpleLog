@@ -22,6 +22,11 @@
             {{ Form::text('name', old('name', isset($slot_user) ? $slot_user->name : null), ['class' => 'form-control', 'required']) }}
         </div>
 
+        <div class="mb-3">
+            {{ Form::label('administrator', '権限', ['class' => 'form-label']) }}
+            {{ Form::select('administrator', UserConstants::TYPE, isset($slot_user) ? $slot_user->administrator : 0, ['class' => 'form-select']) }}
+        </div>
+
         <div class="col-12">
             <label>メールアドレス<span class="text-danger">*</span></label>
             {{ Form::email('email', old('email', isset($slot_user) ? $slot_user->email : null), ['class' => 'form-control', 'required']) }}
