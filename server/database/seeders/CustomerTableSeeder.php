@@ -14,7 +14,7 @@ class CustomerTableSeeder extends Seeder
      */
     public function run()
     {
-        Customer::factory(100)->sequence(
+        Customer::factory(500)->sequence(
             fn ($sequence) => [
                 'name' => '顧客' . ($sequence->index + 1),
             ],

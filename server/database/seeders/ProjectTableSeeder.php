@@ -14,7 +14,7 @@ class ProjectTableSeeder extends Seeder
      */
     public function run()
     {
-        Project::factory(100)->sequence(
+        Project::factory(500)->sequence(
             fn ($sequence) => [
                 'name' => '案件' . ($sequence->index + 1),
                 'customer_manager' => '顧客担当者' . ($sequence->index + 1),
