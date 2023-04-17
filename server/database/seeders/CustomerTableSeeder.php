@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Customer;
 
 class CustomerTableSeeder extends Seeder
 {
@@ -13,6 +14,10 @@ class CustomerTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Customer::factory(100)->sequence(
+            fn ($sequence) => [
+                'name' => '顧客' . ($sequence->index + 1),
+            ],
+        )->create();
     }
 }

@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             MasterTableSeeder::class,
             AdminTableSeeder::class,
             UserTableSeeder::class,
-            // GroupTableSeeder::class,
+            CustomerTableSeeder::class,
+            ProjectTableSeeder::class,
           ]);
     }
 }

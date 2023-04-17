@@ -20,10 +20,10 @@ class CreateProjectsTable extends Migration
             $table->foreignId('admin_id')->constrained()->cascadeOnDelete();
             $table->dateTime('date')->nullable()->comment('日付');
             $table->unsignedTinyInteger('progress')->nullable()->comment('進捗');
-            $table->string('name')->index()->nullable()->comment('プロジェクト名');
-            $table->string('customer_manager')->index()->nullable()->comment('顧客担当者');
+            $table->string('name')->nullable()->comment('プロジェクト名');
+            $table->string('customer_manager')->nullable()->comment('顧客担当者');
             $table->bigInteger('cost')->comment('仕入額');
-            $table->string('description')->index()->nullable()->comment('説明');
+            $table->text('description')->nullable()->comment('説明');
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
