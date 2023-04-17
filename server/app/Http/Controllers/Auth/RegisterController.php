@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\Admin;
-use Illuminate\Http\Request;
+use App\Http\Requests\AdminRequest;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -73,7 +73,7 @@ class RegisterController extends Controller
     /**
      * 新規登録処理
      */
-    protected function register(Request $request)
+    protected function register(AdminRequest $request)
     {
         $params = $request->input();
         Admin::create($params);

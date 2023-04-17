@@ -29,7 +29,7 @@ class AdminRequest extends FormRequest
         ];
 
         switch (request()->route()->getName()) {
-            case 'master.admin.store':
+            case 'master.admin.store'|| 'front.register':
                 $rules['email'] = 'required|email:rfc|max:255|unique:admins';
                 break;
             case 'master.admin.update':
