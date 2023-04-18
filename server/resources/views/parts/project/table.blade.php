@@ -4,7 +4,8 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">案件名</th>
+                    <th scope="col">名前</th>
+                    <th scope="col">顧客名</th>
                     <th scope="col">顧客担当者</th>
                     <th scope="col">計上日</th>
                     <th scope="col">進捗</th>
@@ -19,6 +20,7 @@
                 @foreach ($projects as $project)
                     <tr>
                         <td class="align-middle">{{ $project->id }}</td>
+                        <td class="align-middle">{{ $project->name ?? '' }}</td>
                         <td class="align-middle">{{ $project->customer->name ?? '' }}</td>
                         <td class="align-middle">{{ $project->customer_manager ?? '' }}</td>
                         <td class="align-middle">{{ $project->date }}</td>
