@@ -24,7 +24,7 @@
 
         <div class="mb-3">
             {{ Form::label('administrator', '権限', ['class' => 'form-label']) }}
-            {{ Form::select('administrator', UserConstants::TYPE, isset($slot_user) ? $slot_user->administrator : 0, ['class' => 'form-select']) }}
+            {{ Form::select('administrator', UserConstants::TYPE, isset($slot_user) ? $slot_user->administrator : 0, ['disabled ' => !auth()->user()->can('pro'),'class' => 'form-select']) }}
         </div>
 
         <div class="col-12">
@@ -41,10 +41,18 @@
             ]) }}
         </div>
 
-        <div class="col-12 mt-0">
-            <hr class="my-4">
+        <hr class="my-4">
+        @can('plan')
             {{ Form::button('送信', ['type' => 'submit', 'class' => 'w-100 btn btn-primary btn-md']) }}
-        </div>
+        @else
+            @if (isset($slot_user))
+                {{ Form::button('送信', ['type' => 'submit', 'class' => 'w-100 btn btn-primary btn-md']) }}
+            @else
+                {{ Form::button('送信', ['type' => 'submit', 'class' => 'w-100 btn btn-primary btn-md', 'disabled' => true]) }}
+                <small class="text-danger">※このプランではこれ以上ユーザー追加出来ません</small>
+            @endif
+        @endcan
+    </div>
     </div>
 
     {!! Form::close() !!}

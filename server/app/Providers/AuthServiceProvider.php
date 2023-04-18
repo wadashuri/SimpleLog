@@ -23,35 +23,55 @@ class AuthServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-        {
-            $this->registerPolicies();
+    {
+        $this->registerPolicies();
 
-            // 管理者権限設定
-            Gate::define('administrator',function($user){
-                return $user->administrator === 10;
-            });
+        # 管理者権限設定
+        Gate::define('administrator', function ($user) {
+            return $user->administrator === 10;
+        });
 
+        # スタンダードプランのゲート定義
+        Gate::define('standard', function ($admin) {
+            $plan_name = config('services.stripe.plan_name');
+            $stripe_price = '';
+            if ($admin->subscriptions->isNotEmpty()) {
+                $stripe_price = $admin->subscriptions()->first()->stripe_price;
+            }
+            return $plan_name['スタンダード'] === $stripe_price;
+        });
 
-            Gate::define('plan',function($admin){
+        # プレミアムプランのゲート定義
+        Gate::define('premium', function ($admin) {
+            $plan_name = config('services.stripe.plan_name');
+            $stripe_price = '';
+            if ($admin->subscriptions->isNotEmpty()) {
+                $stripe_price = $admin->subscriptions()->first()->stripe_price;
+            }
+            return $plan_name['プレミアム'] === $stripe_price;
+        });
 
-                $user_count = $admin->users()->count();
-                $stripe_price = '';
-                if($admin->subscriptions->isNotEmpty()){
-                   $stripe_price = $admin->subscriptions()->first()->stripe_price;
-                }
-                $plan_name = config('services.stripe.plan_name');
+        # プロプランのゲート定義
+        Gate::define('pro', function ($admin) {
+            $plan_name = config('services.stripe.plan_name');
+            $stripe_price = '';
+            if ($admin->subscriptions->isNotEmpty()) {
+                $stripe_price = $admin->subscriptions()->first()->stripe_price;
+            }
+            return $plan_name['プロ'] === $stripe_price;
+        });
 
-                if ($plan_name['スタンダード'] === $stripe_price){
-                    return $user_count < 20;
-                }
-                if ($plan_name['プレミアム'] === $stripe_price){
-                    return $user_count < 50;
-                }
-                if ($plan_name['プロ'] === $stripe_price){
-                    return $user_count < 150;
-                }
-
-                return true;
-            });
-        }
+        // プランに関するゲート定義
+        Gate::define('plan', function ($admin) {
+            $user_count = $admin->users()->count();
+            if (auth()->user()->can('standard')) {
+                return $user_count < 20;
+            } elseif (auth()->user()->can('premium')) {
+                return $user_count < 50;
+            } elseif (auth()->user()->can('pro')) {
+                return $user_count < 150;
+            }
+            return false;
+        });
+    }
 }

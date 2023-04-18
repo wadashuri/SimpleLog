@@ -46,6 +46,10 @@ class UserController extends Controller
     {
         try {
             $params = $request->input();
+            # プロ以外は権限固定
+            if(!auth()->user()->can('pro')){
+                $params['administrator'] = 0;
+            }
 
             DB::transaction(function () use ($params) {
                 return $this->_user->create($params);

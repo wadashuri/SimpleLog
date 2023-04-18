@@ -27,6 +27,7 @@
     </div>
     {!! Form::close() !!}
 
+    @if(auth()->user()->can('pro')||auth()->user()->can('premium'))
     <div class="btn-toolbar mb-2 mb-md-0 align-items-end">
         <div class="btn-group me-2">
             {!! Form::open(['route' => 'admin.customer.export', 'method' => 'post']) !!}
@@ -49,6 +50,7 @@
             {!! Form::close() !!}
         </div>
     </div>
+    @endif
 
     <div class="table-responsive">
         <table class="table text-nowrap table-hover">

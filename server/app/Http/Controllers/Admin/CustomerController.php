@@ -109,6 +109,7 @@ class CustomerController extends Controller
      */
     public function exportCsv(Request $request)
     {
+        if (auth()->user()->can('pro') || auth()->user()->can('premium')){
         return new StreamedResponse(function () use ($request) {
             $stream = fopen('php://output', 'w');
             //　文字化け回避
@@ -132,6 +133,7 @@ class CustomerController extends Controller
             'Content-Type' => 'application/octet-stream',
             'Content-Disposition' => sprintf('attachment; filename="顧客一覧_%s.csv"', date('YmdHi'))
         ]);
+        }
     }
 
 
@@ -141,6 +143,7 @@ class CustomerController extends Controller
     # 顧客CSVインポート
     public function importCsv(CsvRequest $request)
     {
+        if (auth()->user()->can('pro') || auth()->user()->can('premium')) {
         $file_path = $request->file('file')->store('private/csv_tmp'); //storageフォームの下に作成
 
         try {
@@ -200,6 +203,7 @@ class CustomerController extends Controller
                 'type' => 'success'
             ]
         ]);
+    }
     }
 
     # CSV登録

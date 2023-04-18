@@ -156,6 +156,7 @@ class ProjectController extends Controller
      */
     public function exportCsv(Request $request)
     {
+        if (auth()->user()->can('pro') || auth()->user()->can('premium')) {
         return new StreamedResponse(function () use ($request) {
             $stream = fopen('php://output', 'w');
             //　文字化け回避
@@ -183,5 +184,6 @@ class ProjectController extends Controller
             'Content-Type' => 'application/octet-stream',
             'Content-Disposition' => sprintf('attachment; filename="プロジェクト一覧_%s.csv"', date('YmdHi'))
         ]);
+    }
     }
 }
