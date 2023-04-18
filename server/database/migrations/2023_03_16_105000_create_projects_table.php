@@ -23,6 +23,7 @@ class CreateProjectsTable extends Migration
             $table->string('name')->nullable()->comment('プロジェクト名');
             $table->string('customer_manager')->nullable()->comment('顧客担当者');
             $table->bigInteger('cost')->comment('仕入額');
+            $table->bigInteger('gross_profit')->comment('粗利');
             $table->text('description')->nullable()->comment('説明');
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();

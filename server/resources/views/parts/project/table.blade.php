@@ -9,7 +9,8 @@
                     <th scope="col">顧客担当者</th>
                     <th scope="col">計上日</th>
                     <th scope="col">進捗</th>
-                    <th scope="col">コスト</th>
+                    <th scope="col">仕入れ額</th>
+                    <th scope="col">粗利</th>
                     <th scope="col">人数</th>
                     <th scope="col">一人あたりの生産性</th>
                     <th scope="col">日付</th>
@@ -26,6 +27,7 @@
                         <td class="align-middle">{{ $project->date }}</td>
                         <td class="align-middle">{{ $project->progress }}%</td>
                         <td class="align-middle">&yen;{{ number_format($project->cost) }}</td>
+                        <td class="align-middle">&yen;{{ number_format($project->gross_profit) }}</td>
                         <td class="align-middle">{{ number_format($project->totalUserCount()) }}</td>
                         <td class="align-middle">&yen;{{ number_format($project->productivity()) }}</td>
                         <td class="align-middle">{{ $project->date ?? '' }}</td>
