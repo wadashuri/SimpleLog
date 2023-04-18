@@ -65,9 +65,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('plan', function ($admin) {
             $user_count = $admin->users()->count();
             if (auth()->user()->can('standard')) {
-                return $user_count < 20;
-            } elseif (auth()->user()->can('premium')) {
                 return $user_count < 50;
+            } elseif (auth()->user()->can('premium')) {
+                return $user_count < 100;
             } elseif (auth()->user()->can('pro')) {
                 return $user_count < 150;
             }
