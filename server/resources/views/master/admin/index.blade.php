@@ -20,7 +20,7 @@
         <table class="table text-nowrap table-hover">
             <thead>
                 <tr>
-                    <th scope="col">企業名</th>
+                    <th scope="col">admin名</th>
                     <th scope="col">操作</th>
                 </tr>
             </thead>
@@ -55,7 +55,7 @@
                         </td>
                     </tr>
                 @empty
-                    <p>企業が登録されていません</p>
+                    <p>adminが登録されていません</p>
                 @endforelse
             </tbody>
         </table>
