@@ -46,6 +46,7 @@ class AdminController extends Controller
     {
         try {
             $params = $request->input();
+            $params["master_id"] = auth()->user('master')->id;
 
             DB::transaction(function () use ($params) {
                 return $this->_admin->create($params);
