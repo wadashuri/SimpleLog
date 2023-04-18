@@ -22,6 +22,11 @@ class Task extends Model
         return $this->belongsTo(Admin::class);
     }
 
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
     /**
      * スコープ設定
      */

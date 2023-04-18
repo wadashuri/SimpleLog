@@ -26,11 +26,25 @@ class ProjectController extends Controller
     public function index(Request $request)
     {
         $admin = auth()->user('admin');
+        # プロジェクトのコレクションを取得
+        $projects = $this->_project->searchProject($request)->get();
+        # 各プロジェクトの生産性を合計する変数を初期化
+        $total_productivity = 0;
+        // 各プロジェクトの生産性を合計に加算
+        foreach ($projects as $project) {
+            // プロジェクトの生産性を計算
+            $productivity = $project->productivity();
+
+            // 生産性を合計に加算
+            $total_productivity += $productivity;
+        }
+
         return view('admin.project.index', [
             'users' => $admin->users()->pluck('name', 'id'),
             'customers' => $admin->customers()->pluck('name', 'id'),
             'projects' => $this->_project->with(['admin','customer'])->searchProject($request)->latest()->paginate("10"),
-            'sum_cost' => $this->_project->searchProject($request)->sum('cost')
+            'sum_cost' => $this->_project->searchProject($request)->sum('cost'),
+            'total_productivity' => $total_productivity,
         ]);
     }
 
