@@ -9,9 +9,28 @@
         <table class="table table-bordered align-middle">
             <tbody>
                 <tr>
-                    <th class="table-light text-nowrap col-lg-3">名前
+                    <th class="table-light text-nowrap col-lg-3">
+                        名前
                     </th>
-                    <td>{{ $admin->name }}</td>
+                    <td>
+                        {{ $admin->name }}
+                    </td>
+                </tr>
+                <tr>
+                    <th class="table-light text-nowrap col-lg-3">adminログインURL</th>
+                    <td>
+                        <a href="{{ route('admin.login_form') }}">
+                            {{ route('admin.login_form') }}
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="table-light text-nowrap col-lg-3">userログインURL</th>
+                    <td>
+                        <a href="{{ route('user.login_form') }}">
+                            {{ route('user.login_form') }}
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

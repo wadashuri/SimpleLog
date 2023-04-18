@@ -25,7 +25,7 @@
         <a href="{{ route('front.pages.contact') }}" class="nav-link">お問い合わせ</a>
     </li> --}}
     <li class="nav-item">
-        <a href="https://sinceritylab.com/news/" class="nav-link" target="_blank" rel="noopener noreferrer">News</a>
+        <a href="https://sinceritylab.com/news/" class="nav-link" target="_blank" rel="noopener noreferrer">お知らせ</a>
     </li>
     <li class="nav-item">
         <a href="https://sinceritylab.com/privacy-policy/" class="nav-link" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
