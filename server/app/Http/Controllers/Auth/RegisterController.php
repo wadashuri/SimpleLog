@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\Admin;
+use App\Models\Master;
 use App\Http\Requests\AdminRequest;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -76,6 +77,7 @@ class RegisterController extends Controller
     protected function register(AdminRequest $request)
     {
         $params = $request->input();
+        $params['master_id'] = Master::where('administrator', 1)->first()->id;
         Admin::create($params);
         //リダイレクトさせるルート
         $route_name = $this->_guard . '.home';

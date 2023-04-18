@@ -64,12 +64,18 @@ class AuthServiceProvider extends ServiceProvider
         // プランに関するゲート定義
         Gate::define('plan', function ($admin) {
             $user_count = $admin->users()->count();
+            $plan_end = true;
+            if($admin->subscriptions->isNotEmpty()){
+                $ends_at = $admin->subscriptions()->first()->ends_at;
+                $ends_at = $ends_at ? $ends_at->format('Y-m-d') : 0;
+                $plan_end = $ends_at < now()->format('Y-m-d');
+             }
             if (auth()->user()->can('standard')) {
-                return $user_count < 50;
+                return $user_count < 50 && $plan_end;
             } elseif (auth()->user()->can('premium')) {
-                return $user_count < 100;
+                return $user_count < 100 && $plan_end;
             } elseif (auth()->user()->can('pro')) {
-                return $user_count < 150;
+                return $user_count < 150 && $plan_end;
             }
             return false;
         });
