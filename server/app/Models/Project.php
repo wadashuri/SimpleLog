@@ -63,13 +63,13 @@ class Project extends Model
     # プロジェクトに参加しているユーザーと管理者の総数
     function totalUserCount()
     {
-        // プロジェクトに参加しているユーザーの数を取得
+        # プロジェクトに参加しているユーザーの数を取得
         $userCount = $this->tasks()->whereNotNull('user_id')->distinct('user_id')->count();
 
-        // プロジェクトに参加している管理者の数を取得
+        # プロジェクトに参加している管理者の数を取得
         $adminCount = $this->tasks()->whereNotNull('admin_id')->distinct('admin_id')->count();
 
-        // 全てのユーザーの総数を計算
+        # 全てのユーザーの総数を計算
         $totalUserCount = $userCount + $adminCount;
 
         return $totalUserCount;
@@ -78,7 +78,7 @@ class Project extends Model
     # 生産性計算
     function productivity()
     {
-        // プロジェクトに参加しているユーザーと管理者の総数を取得
+        # プロジェクトに参加しているユーザーと管理者の総数を取得
         $totalUserCount = $this->totalUserCount();
 
         # プロジェクトのコストを取得
