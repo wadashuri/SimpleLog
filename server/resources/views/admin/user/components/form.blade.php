@@ -24,7 +24,7 @@
 
         <div class="mb-3">
             {{ Form::label('administrator', '権限', ['class' => 'form-label']) }}
-            {{ Form::select('administrator', UserConstants::TYPE, isset($slot_user) ? $slot_user->administrator : 0, ['disabled ' => !auth()->user()->can('pro'),'class' => 'form-select']) }}
+            {{ Form::select('administrator', UserConstants::TYPE, isset($slot_user) ? $slot_user->administrator : 1, ['disabled ' => !auth()->user()->can('pro'),'class' => 'form-select']) }}
         </div>
 
         <div class="col-12">

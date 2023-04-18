@@ -48,7 +48,7 @@ class UserController extends Controller
             $params = $request->input();
             # プロ以外は権限固定
             if(!auth()->user()->can('pro')){
-                $params['administrator'] = 0;
+                $params['administrator'] = 1;
             }
 
             DB::transaction(function () use ($params) {

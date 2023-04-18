@@ -7,6 +7,6 @@ class UserConstants
     # ユーザー権限
     public const TYPE = [
         0 => '一般',
-        1 => '全体管理者',
+        1 => '管理者',
     ];
 }
