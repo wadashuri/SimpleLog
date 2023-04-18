@@ -19,7 +19,6 @@
                             <li><strong>プロジェクトの登録、分析</strong></li>
                             <li><strong>タスク管理</strong></li>
                             <li><strong>顧客登録</strong></li>
-                            <li>永続無料</li>
                         </ul>
                     </div>
                 </div>
