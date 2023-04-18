@@ -13,6 +13,30 @@
                     </th>
                     <td>{{ $master->name }}</td>
                 </tr>
+                <tr>
+                    <th class="table-light text-nowrap col-lg-3">masterログインURL</th>
+                    <td>
+                        <a href="{{ route('master.login_form') }}">
+                            {{ route('master.login_form') }}
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="table-light text-nowrap col-lg-3">adminログインURL</th>
+                    <td>
+                        <a href="{{ route('admin.login_form') }}">
+                            {{ route('admin.login_form') }}
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="table-light text-nowrap col-lg-3">userログインURL</th>
+                    <td>
+                        <a href="{{ route('user.login_form') }}">
+                            {{ route('user.login_form') }}
+                        </a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

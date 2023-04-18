@@ -18,14 +18,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="table-light text-nowrap col-lg-3">adminログインURL</th>
-                    <td>
-                        <a href="{{ route('admin.login_form') }}">
-                            {{ route('admin.login_form') }}
-                        </a>
-                    </td>
-                </tr>
-                <tr>
                     <th class="table-light text-nowrap col-lg-3">userログインURL</th>
                     <td>
                         <a href="{{ route('user.login_form') }}">
