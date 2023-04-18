@@ -16,7 +16,7 @@
           <div class="ftco-footer-widget mb-4 ml-md-5">
             <h2 class="ftco-heading-2">リンク</h2>
             <ul class="list-unstyled">
-              <li><a href="{{ route('front.pages.about') }}" class="py-2 d-block">会社概要</a></li>
+              <li><a href="{{ route('front.pages.about') }}" class="py-2 d-block">事務所概要</a></li>
               <li><a href="{{ route('front.pages.services') }}" class="py-2 d-block">サービス</a></li>
               <li><a href="{{ route('front.pages.pricing') }}" class="py-2 d-block">価格</a></li>
               <li><a href="{{ route('front.pages.about') }}" class="py-2 d-block">ログイン</a></li>
