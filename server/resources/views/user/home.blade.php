@@ -14,7 +14,7 @@
                         名前
                     </th>
                     <td>
-                        {{ $admin->name }}
+                        {{ $user->name }}
                     </td>
                 </tr>
                 <tr>
