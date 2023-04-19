@@ -22,17 +22,18 @@
                   </tr>
                   <tr>
                       <td>メールアドレス</td>
-                      <td><a href="mailto:info@sinceritylab.com">info@sinceritylab.com</a></td>
+                      <td><a href="mailto:info@example.jp">contact@sinceritylab.com</a></td>
                   </tr>
                   <tr>
                       <td>運営統括責任者</td>
                       <td><em>和田朱利</em></td>
                   </tr>
                   <tr>
-                      <td>交換および返品（返金ポリシー）</td>
-                      <td><em>＜お客様都合の返品・交換の場合＞<br>
+                      <td>交換およびキャンセル（返金ポリシー）</td>
+                      <td><em>＜お客様都合のキャンセルの場合＞<br>
                               カスタマーサポートよりお電話ください(070-8581-5236)
-                          </em></td>
+                          <br>＜サブスクリプションのキャンセル＞<br>
+                              管理者ページ>お支払いからキャンセルボタンを押すことでキャンセルできます</em></td>
                   </tr>
                   <tr>
                       <td>引渡時期</td>
@@ -48,15 +49,15 @@
                   </tr>
                   <tr>
                       <td>販売価格</td>
-                      <td><em>standard:¥3,000<br>premium:¥7,500<br>pro:¥22,500<br>プランページに記載の金額</em></td>
+                      <td><em>standard:¥3,000<br>premium:¥7,500pro:¥22,500<br>プランページに記載の金額</em></td>
                   </tr>
                   <tr>
                       <td>申込み期間の制限</td>
-                      <td><em>特にありません</em></td>
+                      <td><em>お支払い / 決済は、3 月 21 日までにお願いします。</em></td>
                   </tr>
                   <tr>
                       <td>販売数量の制限</td>
-                      <td><em>サーバーの容量によって販売できなくなる可能性がございます</em></td>
+                      <td><em>先着 200 名までの限定販売です。<br>お一人様2個まで購入可能です。</em></td>
                   </tr>
                   <tr>
                       <td>ソフトウェアの動作環境</td>
