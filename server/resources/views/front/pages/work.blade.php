@@ -3,7 +3,7 @@
 @section('content')
 @include('front.include.content_header',[
     'title1' => 'Work',
-    'main_title' => '実績',
+    'main_title' => '事業内容',
   ])
 
 @include('front.include.work')

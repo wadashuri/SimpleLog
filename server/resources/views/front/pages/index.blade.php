@@ -48,8 +48,8 @@
   {{-- counter --}}
   {{-- @include('front.include.counter') --}}
 
-  {{-- 実績 --}}
-  {{-- @include('front.include.work') --}}
+  {{-- 事業内容 --}}
+  @include('front.include.work')
 
   @include('front.include.pricing')
 
