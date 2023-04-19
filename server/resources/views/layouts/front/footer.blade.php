@@ -3,7 +3,7 @@
       <div class="row mb-5">
         <div class="col-md-3">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">SimpleLog</h2>
+            <h2 class="ftco-heading-2">SincerityLab</h2>
             <p>当事務所に関する情報を各種SNSにも掲載しておりますのでご確認ください</p>
           </div>
           <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
