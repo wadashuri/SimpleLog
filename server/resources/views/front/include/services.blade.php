@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
         <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-2">お客様に満足いただけるサービスを提供することが、私たちの使命です。</h2>
+          <h2 class="mb-2">SimpleLogでできること</h2>
           <span class="subheading">シンプルな操作で &amp; あなたのビジネスを効率化します</span>
         </div>
       </div>
