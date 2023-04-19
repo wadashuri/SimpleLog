@@ -43,6 +43,8 @@ Route::group([
     Route::view('/blog_single', 'front.pages.blog_single')->name('pages.blog_single');
     # privacy_policy
     Route::view('/privacy_policy', 'front.pages.privacy_policy')->name('pages.privacy_policy');
+    # tokushoho
+    Route::view('/tokushoho', 'front.pages.tokushoho')->name('pages.tokushoho');
 
     /**
      * 動的ページ
