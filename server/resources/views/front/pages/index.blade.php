@@ -14,8 +14,8 @@
           </h1>
           <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">進捗状況と作業時間を確認することで業務の偏りなどをおさえビジネスの効率化を図ります</p>
           <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
-            {{-- <a href="#" class="btn btn-primary px-4 py-3">資料<br>ダウンロード</a> --}}
-             <a href="#plans" class="btn btn-primary btn-outline-primary px-4 py-3">無料で<br>SimpleLogを試してみる</a>
+             <a href="{{ route('front.contact.index') }}" class="btn btn-primary btn-outline-primary px-4 py-3">資料請求</a>
+             <a href="#plans" class="btn btn-primary px-4 py-3">無料でSimpleLogを試してみる</a>
             </p>
         </div>
         <div class="one-half align-self-md-end align-self-sm-center">
