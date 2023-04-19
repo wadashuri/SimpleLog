@@ -18,7 +18,7 @@
         <a href="{{ route('front.pages.pricing') }}" class="nav-link">価格</a>
     </li>
     <li class="nav-item">
-        <a href="https://sinceritylab.com/news/" class="nav-link" target="_blank" rel="noopener noreferrer">お知らせ</a>
+        <a href="https://blog.sinceritylab.com/blog" class="nav-link" target="_blank" rel="noopener noreferrer">ブログ</a>
     </li>
     <li class="nav-item {{ Functions::activeClass('front.pages.privacy_policy') }}">
         <a href="{{ route('front.pages.privacy_policy') }}" class="nav-link">プライバシーポリシー</a>
