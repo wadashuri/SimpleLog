@@ -27,8 +27,8 @@
     <li class="nav-item">
         <a href="https://sinceritylab.com/news/" class="nav-link" target="_blank" rel="noopener noreferrer">お知らせ</a>
     </li>
-    <li class="nav-item">
-        <a href="https://sinceritylab.com/privacy-policy/" class="nav-link" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+    <li class="nav-item {{ Functions::activeClass('front.pages.privacy_policy') }}">
+        <a href="{{ route('front.pages.privacy_policy') }}" class="nav-link">プライバシーポリシー</a>
     </li>
     <li class="nav-item">
         <a href="https://sinceritylab.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" class="nav-link" target="_blank" rel="noopener noreferrer">お問い合わせ</a>

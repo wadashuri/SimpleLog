@@ -44,6 +44,9 @@ Route::group([
 
     # blog_single
     Route::view('/blog_single', 'front.pages.blog_single')->name('blog_single');
+
+    # privacy_policy
+    Route::view('/privacy_policy', 'front.pages.privacy_policy')->name('privacy_policy');
 });
 /**
  * master
