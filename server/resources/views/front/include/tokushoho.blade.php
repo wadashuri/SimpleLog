@@ -22,7 +22,7 @@
                   </tr>
                   <tr>
                       <td>メールアドレス</td>
-                      <td><a href="mailto:info@example.jp">contact@sinceritylab.com</a></td>
+                      <td><a href="mailto:info@sinceritylab.com">info@sinceritylab.com</a></td>
                   </tr>
                   <tr>
                       <td>運営統括責任者</td>
@@ -49,7 +49,7 @@
                   </tr>
                   <tr>
                       <td>販売価格</td>
-                      <td><em>standard:¥3,000<br>premium:¥7,500pro:¥22,500<br>プランページに記載の金額</em></td>
+                      <td><em>standard:¥3,000<br>premium:¥7,500<br>pro:¥22,500<br>プランページに記載の金額</em></td>
                   </tr>
                   <tr>
                       <td>申込み期間の制限</td>
