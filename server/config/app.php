@@ -235,6 +235,7 @@ return [
          */
         'StatusConstants' => App\Constants\StatusConstants::class,
         'UserConstants' => App\Constants\UserConstants::class,
+        'ContactConstants' => App\Constants\ContactConstants::class,
 
         /**
          * Functions

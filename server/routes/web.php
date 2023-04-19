@@ -16,37 +16,44 @@ Route::get('/', function () {
  */
 Route::group([
     'prefix' => '/front',
-    'as' => 'front.pages.',
+    'as' => 'front.',
 ], function () {
+
+    /**
+     * 固定ページ
+     */
+
     # index
-    Route::view('/index', 'front.pages.index')->name('index');
-
+    Route::view('/index', 'front.pages.index')->name('pages.index');
     # about
-    Route::view('/about', 'front.pages.about')->name('about');
-
+    Route::view('/about', 'front.pages.about')->name('pages.about');
     # services
-    Route::view('/services', 'front.pages.services')->name('services');
-
+    Route::view('/services', 'front.pages.services')->name('pages.services');
     # work
-    Route::view('/work', 'front.pages.work')->name('work');
-
+    Route::view('/work', 'front.pages.work')->name('pages.work');
     # team
-    Route::view('/team', 'front.pages.team')->name('team');
-
+    Route::view('/team', 'front.pages.team')->name('pages.team');
     # pricing
-    Route::view('/pricing', 'front.pages.pricing')->name('pricing');
-
+    Route::view('/pricing', 'front.pages.pricing')->name('pages.pricing');
     # blog
-    Route::view('/blog', 'front.pages.blog')->name('blog');
-
+    Route::view('/blog', 'front.pages.blog')->name('pages.blog');
     # contact
-    Route::view('/contact', 'front.pages.contact')->name('contact');
-
+    Route::view('/contact', 'front.pages.contact')->name('pages.contact');
     # blog_single
-    Route::view('/blog_single', 'front.pages.blog_single')->name('blog_single');
-
+    Route::view('/blog_single', 'front.pages.blog_single')->name('pages.blog_single');
     # privacy_policy
-    Route::view('/privacy_policy', 'front.pages.privacy_policy')->name('privacy_policy');
+    Route::view('/privacy_policy', 'front.pages.privacy_policy')->name('pages.privacy_policy');
+
+    /**
+     * 動的ページ
+     */
+    # お問い合わせ
+    Route::group(['controller' => Front\ContactController::class], function () {
+        Route::get('/contact', 'index')->name('contact.index');
+        Route::post('/confirm', 'confirm')->name('contact.confirm');
+        Route::post('/send', 'send')->name('contact.send');
+    });
+
 });
 /**
  * master
