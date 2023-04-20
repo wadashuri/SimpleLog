@@ -19,9 +19,6 @@
                 タスク
             </a>
         </li>
-        @if (auth()->user()->can('pro') ||
-                auth()->user()->can('premium') ||
-                auth()->user()->can('standard'))
             <li class="nav-item">
                 <a class="nav-link link-dark {{ Functions::activeClass('admin.user.index') }}"
                     href="{{ route('admin.user.index') }}">
@@ -29,7 +26,6 @@
                     ユーザー
                 </a>
             </li>
-        @endif
         <li class="nav-item">
             <a class="nav-link link-dark {{ Functions::activeClass('admin.group.create') }}"
                 href="{{ route('admin.group.create') }}">
