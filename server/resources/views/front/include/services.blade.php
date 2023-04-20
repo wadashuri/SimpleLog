@@ -38,7 +38,7 @@
     </div>
     <div class="container-wrap mt-5">
         <div class="row d-flex no-gutters">
-            <div class="col-md-6 img ftco-animate" style="background-image: url(images/about.jpg);">
+            <div class="col-md-6 img ftco-animate d-none d-md-block" style="background-image: url(images/about.jpg);">
             </div>
             <div class="col-md-6 d-flex">
                 <div class="services-wrap">
