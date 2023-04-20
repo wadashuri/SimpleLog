@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -38,5 +39,7 @@
         @yield('content')
     </main>
 </div>
+<script src="{{ asset('front/js/jquery.min.js') }}"></script>
+<script src="{{ asset('front/js/bootstrap.min.js') }}"></script>
 </body>
 </html>
