@@ -25,14 +25,12 @@
     </li>
     <!-- ドロップダウントグル -->
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
             メニュー
         </a>
         <!-- ドロップダウンメニュー本体 -->
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item"
-                href="{{ route('front.contact.index') }}">お問い合わせ</a>
+            <a class="dropdown-item" href="{{ route('front.contact.index') }}">お問い合わせ</a>
             <a class="dropdown-item {{ Functions::activeClass('admin.register') }}"
                 href="{{ route('admin.register') }}">新規会員登録</a>
             <a class="dropdown-item {{ Functions::activeClass('admin.login') }}"
