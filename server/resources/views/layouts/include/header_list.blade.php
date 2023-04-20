@@ -23,14 +23,21 @@
     <li class="nav-item {{ Functions::activeClass('front.pages.privacy_policy') }}">
         <a href="{{ route('front.pages.privacy_policy') }}" class="nav-link">プライバシーポリシー</a>
     </li>
-    <li class="nav-item {{ Functions::activeClass('front.contact.index') }}">
-        <a href="{{ route('front.contact.index') }}" class="nav-link">お問い合わせ</a>
-    </li>
-    <li class="nav-item {{ Functions::activeClass('admin.register') }}">
-        <a href="{{ route('admin.register') }}" class="nav-link">新規会員登録</a>
-    </li>
-    <li class="nav-item {{ Functions::activeClass('admin.login') }}">
-        <a href="{{ route('admin.login') }}" class="nav-link">ログイン</a>
+    <!-- ドロップダウントグル -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            メニュー
+        </a>
+        <!-- ドロップダウンメニュー本体 -->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item"
+                href="{{ route('front.contact.index') }}">お問い合わせ</a>
+            <a class="dropdown-item {{ Functions::activeClass('admin.register') }}"
+                href="{{ route('admin.register') }}">新規会員登録</a>
+            <a class="dropdown-item {{ Functions::activeClass('admin.login') }}"
+                href="{{ route('admin.login') }}">ログイン</a>
+        </div>
     </li>
     {{-- <li class="nav-item {{ Functions::activeClass('front.pages.contact') }} cta">
         <a href="{{ route('front.pages.contact') }}" class="nav-link" data-toggle="modal"
