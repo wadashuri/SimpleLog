@@ -13,7 +13,7 @@
                       <div class="text d-flex justify-content-center align-items-center">
                           <div class="p-3">
                               <span>wordpressカスタマイズ</span>
-                              <h3>詳しく見る</h3>
+                              {{-- <h3>詳しく見る</h3> --}}
                           </div>
                       </div>
                   </a>
@@ -25,7 +25,7 @@
                       <div class="text d-flex justify-content-center align-items-center">
                           <div class="p-3">
                               <span>業務効率化サービス</span>
-                              <h3>詳しく見る</h3>
+                              {{-- <h3>詳しく見る</h3> --}}
                           </div>
                       </div>
                   </a>
@@ -37,7 +37,7 @@
                       <div class="text d-flex justify-content-center align-items-center">
                           <div class="p-3">
                               <span>オリジナルサービス</span>
-                              <h3>詳しく見る</h3>
+                              {{-- <h3>詳しく見る</h3> --}}
                           </div>
                       </div>
                   </a>
@@ -49,7 +49,7 @@
                       <div class="text d-flex justify-content-center align-items-center">
                           <div class="p-3">
                               <span>音楽</span>
-                              <h3>詳しく見る</h3>
+                              {{-- <h3>詳しく見る</h3> --}}
                           </div>
                       </div>
                   </a>
