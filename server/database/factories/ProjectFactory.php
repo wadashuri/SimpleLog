@@ -16,7 +16,7 @@ class ProjectFactory extends Factory
         $datetime = $this->faker->dateTimeBetween('-1 day', 'now');
 
         return [
-            'customer_id' => $this->faker->numberBetween(1, 100),
+            'customer_id' => null,
             'admin_id' => $this->faker->numberBetween(1, 100),
             'progress' => $this->faker->numberBetween(1, 100),
             'cost' => $this->faker->numberBetween(1000000, 10000000),

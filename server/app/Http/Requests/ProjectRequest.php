@@ -25,7 +25,7 @@ class ProjectRequest extends FormRequest
     {
         return [
             'date' => 'required',
-            'progress' => 'nullable',
+            'progress' => 'nullable|integer|between:0,100',
             'name' => 'required|max:255',
             'status' => 'integer|between:0,10',
             'customer_manager' => 'max:255',
