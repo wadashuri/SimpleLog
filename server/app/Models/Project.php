@@ -82,10 +82,10 @@ class Project extends Model
         $totalUserCount = $this->totalUserCount();
 
         # プロジェクトのコストを取得
-        $cost = $this->cost;
+        $gross_profit = $this->gross_profit;
 
         # 生産性の計算
-        $productivity = $totalUserCount > 0 ? $cost / $totalUserCount : 0;
+        $productivity = $totalUserCount > 0 ? $gross_profit / $totalUserCount : 0;
 
         // 生産性の小数点以下を切り捨てて整数値を返す
         return round($productivity); // 小数点以下を1桁で四捨五入
