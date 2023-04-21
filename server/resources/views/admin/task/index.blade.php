@@ -4,11 +4,11 @@
     {{-- alert --}}
     @include('parts.alert.bootstrap-5')
 
-    {{-- search --}}
-    @include('parts.task.search',[
-        'slot_route' => ['admin.task.index'],
-        'slot_method' => 'GET',
-    ])
+    <date-search-common
+    value="{{ request()->input('date'??'') }}"
+    csrf-token="{{ csrf_token() }}"
+    route="{{ route('admin.task.index') }}">
+    </date-search-common>
 
     {{-- header --}}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -44,13 +44,11 @@
                         </td>
                         <td class="align-middle">
                             <div class="btn-group me-2">
-                                <a class="btn btn-sm btn-outline-success"
-                                    href="{{ route('admin.task.show', $task->id) }}">
+                                <a class="btn btn-sm btn-outline-success" href="{{ route('admin.task.show', $task->id) }}">
                                     <span data-feather="info"></span>
                                     詳細
                                 </a>
-                                <a class="btn btn-sm btn-outline-primary"
-                                    href="{{ route('admin.task.edit', $task->id) }}">
+                                <a class="btn btn-sm btn-outline-primary" href="{{ route('admin.task.edit', $task->id) }}">
                                     <span data-feather="edit"></span>
                                     編集
                                 </a>
