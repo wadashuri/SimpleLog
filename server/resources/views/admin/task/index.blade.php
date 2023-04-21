@@ -28,6 +28,7 @@
                 <tr>
                     <th scope="col">名前</th>
                     <th scope="col">開始/終了</th>
+                    <th scope="col">状態</th>
                     <th scope="col">操作</th>
                 </tr>
             </thead>
@@ -36,6 +37,7 @@
                     <tr>
                         <td class="align-middle">{{ $task->name }}</td>
                         <td class="align-middle">{{ $task->published_at }}/{{ $task->closed_at }}</td>
+                        <td class="align-middle">{{ StatusConstants::STATUS[$task->status] }}</td>
                         <td class="align-middle">
                             <div class="btn-group me-2">
                                 <a class="btn btn-sm btn-outline-success"
