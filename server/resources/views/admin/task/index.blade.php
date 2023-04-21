@@ -67,7 +67,7 @@
                         </td>
                     </tr>
                 @empty
-                    <p>企業が登録されていません</p>
+                    <p>タスクが登録されていません</p>
                 @endforelse
             </tbody>
         </table>
