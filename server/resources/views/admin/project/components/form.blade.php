@@ -52,12 +52,12 @@
 
         <div class="col-12">
             {{ Form::label('cost', '仕入れ額', ['class' => 'form-label']) }}
-            {{ Form::number('cost', isset($slot_project) ? $slot_project->cost : null, ['class' => 'form-control', 'min' => 1]) }}
+            {{ Form::number('cost', isset($slot_project) ? $slot_project->cost : null, ['class' => 'form-control', 'min' => 0,'max' => 100000000,]) }}
         </div>
 
         <div class="col-12">
             {{ Form::label('gross_profit', '粗利', ['class' => 'form-label']) }}
-            {{ Form::number('gross_profit', isset($slot_project) ? $slot_project->gross_profit : null, ['class' => 'form-control', 'min' => 1]) }}
+            {{ Form::number('gross_profit', isset($slot_project) ? $slot_project->gross_profit : null, ['class' => 'form-control', 'min' => 0,'max' => 100000000,]) }}
         </div>
 
         <div class="col-12">

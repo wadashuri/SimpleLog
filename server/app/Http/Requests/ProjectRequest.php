@@ -30,6 +30,7 @@ class ProjectRequest extends FormRequest
             'status' => 'integer|between:0,10',
             'customer_manager' => 'max:255',
             'cost' => 'required|integer|between:0,100000000',
+            'gross_profit' => 'required|integer|between:0,100000000',
             'description' => 'max:10000',
         ];
     }
