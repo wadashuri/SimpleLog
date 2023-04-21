@@ -14,10 +14,6 @@ export default {
             type: String,
             required: true,
         },
-        csrfToken: {
-            type: String,
-            required: true,
-        },
         route: {
             type: String,
             required: true,
