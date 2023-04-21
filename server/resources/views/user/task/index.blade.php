@@ -5,11 +5,11 @@
     @include('parts.alert.bootstrap-5')
 
     {{-- search --}}
-    <date-search-common
+    <task-search-common
     value="{{ request()->input('date'??'') }}"
     csrf-token="{{ csrf_token() }}"
     route="{{ route('user.task.index') }}">
-    </date-search-common>
+    </task-search-common>
 
     {{-- header --}}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
