@@ -37,7 +37,11 @@
                     <tr>
                         <td class="align-middle">{{ $task->name }}</td>
                         <td class="align-middle">{{ $task->published_at }}/{{ $task->closed_at }}</td>
-                        <td class="align-middle">{{ StatusConstants::STATUS[$task->status] }}</td>
+                        <td class="align-middle">
+                            <span class="{{ StatusConstants::COLOR[$task->status] }}">
+                                {{ StatusConstants::STATUS[$task->status] }}
+                            </span>
+                        </td>
                         <td class="align-middle">
                             <div class="btn-group me-2">
                                 <a class="btn btn-sm btn-outline-success"
