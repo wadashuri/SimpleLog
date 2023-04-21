@@ -32,15 +32,25 @@ class Task extends Model
      */
     public function scopeSearchTask($query, $request)
     {
-        // 日付を取得する
-        $date = $request->date ?? date("Y-m-d");
-
-        // 日付が指定された場合は、開始日以上終了日未満のタスクを検索する
-        $query->where(function ($query) use ($date) {
-            $query->where('published_at', '<=', $date . ' 23:59:59')
-                ->where('closed_at', '>=', $date . ' 00:00:00');
+        $query->when(!empty($request->date), function ($q) use ($request) {
+            $q->where('published_at', '<=', $request->date . ' 23:59:59')
+                ->where('closed_at', '>=', $request->date . ' 00:00:00');
         });
 
         return $query;
+    }
+
+
+    /**
+     * アクセサ設定
+     */
+    public function getPublishedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('m-d');
+    }
+
+    public function getClosedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('m-d');
     }
 }

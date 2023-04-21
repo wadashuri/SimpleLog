@@ -3,7 +3,7 @@
         <div class="form-group col-12 col-md-1 me-3">
             {{-- 日付 --}}
             {{ Form::label('date', '日付', ['class' => 'col-form-label']) }}
-            {{ Form::input('date', 'date', request()->input('date', date("Y-m-d")), ['class' => 'form-control']) }}
+            {{ Form::input('date', 'date', request()->input('date'), ['class' => 'form-control']) }}
         </div>
         <!-- 検索ボタン -->
         <div class="form-group col-12 col-md-1 me-3 mt-3">
