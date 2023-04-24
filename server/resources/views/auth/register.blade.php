@@ -63,9 +63,10 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" disabled>
                                     {{ __('Register') }}
                                 </button>
+                                <small class="text-danger">※現在登録することが出来ません</small>
                             </div>
                         </div>
                     </form>
