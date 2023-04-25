@@ -32,15 +32,15 @@ Route::group([
     # work
     Route::view('/work', 'front.pages.work')->name('pages.work');
     # team
-    Route::view('/team', 'front.pages.team')->name('pages.team');
+    // Route::view('/team', 'front.pages.team')->name('pages.team');
     # pricing
     Route::view('/pricing', 'front.pages.pricing')->name('pages.pricing');
     # blog
-    Route::view('/blog', 'front.pages.blog')->name('pages.blog');
+    // Route::view('/blog', 'front.pages.blog')->name('pages.blog');
     # contact
     Route::view('/contact', 'front.pages.contact')->name('pages.contact');
     # blog_single
-    Route::view('/blog_single', 'front.pages.blog_single')->name('pages.blog_single');
+    // Route::view('/blog_single', 'front.pages.blog_single')->name('pages.blog_single');
     # privacy_policy
     Route::view('/privacy_policy', 'front.pages.privacy_policy')->name('pages.privacy_policy');
     # tokushoho
