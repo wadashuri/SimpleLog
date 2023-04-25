@@ -17,6 +17,36 @@
 
     {!! Form::open(['route' => $slot_route, 'method' => $slot_method, 'files' => 'true']) !!}
     <div class="row g-3 mb-3">
+
+
+        <div class="col-12">
+                <label>グループ</label>
+                <div class="accordion mt-3" id="accordionUserGroup">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUserGroup" aria-expanded="false" aria-controls="collapseUserGroup">
+                                グループ
+                            </button>
+                        </h2>
+                        <div id="collapseUserGroup" class="accordion-collapse collapse" aria-labelledby="headingUserGroup" data-bs-parent="#accordionUserGroup">
+                            <div class="accordion-body">
+                                <div class="js-group_box">
+                                    @foreach($slot_groups as $group)
+                                        <label class="col-3 mb-2">
+                                            {{ Form::checkbox('groups[]', $group->id,
+                                                in_array($group->id, old('groups', isset($slot_user) ? $slot_user->groups->pluck('id')->toArray() : []), true),
+                                                ['class' => 'form-check-input'])
+                                            }}
+                                            {{ $group->name }}
+                                        </label>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         <div class="col-12">
             <label>名前</label>
             {{ Form::text('name', old('name', isset($slot_user) ? $slot_user->name : null), ['class' => 'form-control', 'required']) }}

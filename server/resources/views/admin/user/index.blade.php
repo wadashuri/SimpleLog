@@ -21,6 +21,7 @@
             <thead>
                 <tr>
                     <th scope="col">名前</th>
+                    <th scope="col">グループ</th>
                     <th scope="col">操作</th>
                 </tr>
             </thead>
@@ -28,6 +29,11 @@
                 @forelse ($users as $user)
                     <tr>
                         <td class="align-middle">{{ $user->name }}</td>
+                        <td class="align-middle">
+                            @foreach($user->groups as $group)
+                            <span class="badge bg-secondary">{{ $group->name }}</span>
+                            @endforeach
+                        </td>
                         <td class="align-middle">
                             <div class="btn-group me-2">
                                 <a class="btn btn-sm btn-outline-success"

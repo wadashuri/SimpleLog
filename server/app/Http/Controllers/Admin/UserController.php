@@ -36,7 +36,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.user.create',[
+            'groups' => auth()->user('admin')->groups()->latest()->get(),
+        ]);
     }
 
     /**
@@ -52,7 +54,11 @@ class UserController extends Controller
             }
 
             DB::transaction(function () use ($params) {
-                return $this->_user->create($params);
+                $user = $this->_user->create($params);
+
+                if (!empty($params['groups'])) {
+                    $user->groups()->attach($params['groups']);
+                }
             });
 
             return redirect()->route('admin.user.index')->with([
@@ -83,7 +89,8 @@ class UserController extends Controller
     public function edit(Request $request)
     {
         return view('admin.user.edit', [
-            'user' => $this->_user->findOrFail($request->user)
+            'user' => $this->_user->findOrFail($request->user),
+            'groups' => auth()->user('admin')->groups()->get(),
         ]);
     }
 
@@ -97,6 +104,7 @@ class UserController extends Controller
 
             DB::transaction(function () use ($params, $request) {
                 $this->_user->findOrFail($request->user)->fill($params)->update();
+                $this->_user->findOrFail($request->user)->groups()->sync($params['groups'] ?? []);
             });
 
             return redirect()->route('admin.user.index')->with([
