@@ -19,7 +19,7 @@
               <li><a href="{{ route('front.pages.about') }}" class="py-2 d-block">事務所概要</a></li>
               <li><a href="{{ route('front.pages.services') }}" class="py-2 d-block">サービス</a></li>
               <li><a href="{{ route('front.pages.pricing') }}" class="py-2 d-block">価格</a></li>
-              <li><a href="{{ route('front.pages.about') }}" class="py-2 d-block">ログイン</a></li>
+              <li><a href="{{ route('front.contact.index') }}" class="py-2 d-block">お問い合わせ</a></li>
             </ul>
           </div>
         </div>
