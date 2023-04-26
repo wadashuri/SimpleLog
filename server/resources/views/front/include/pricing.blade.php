@@ -10,9 +10,9 @@
             <div class="col-md-3 ftco-animate">
                 <div class="block-7">
                     <div class="text-center">
-                        <h2 class="heading">FREE</h2>
+                        <h2 class="heading">Free</h2>
                         <span class="price"><sup>¥</sup> <span class="number">0</span></span>
-                        <span class="excerpt d-block">個人利用に最適<br>永続無料</span>
+                        <span class="excerpt d-block">個人利用に最適<br>入力データはプランを変更した場合も引き継がれます</span>
                         <a href="{{ route('admin.register') }}" class="btn btn-primary btn-outline-primary d-block px-2 py-3 mb-4">Get
                             Started</a>
 
@@ -28,14 +28,14 @@
             <div class="col-md-3 ftco-animate">
                 <div class="block-7">
                     <div class="text-center">
-                        <h2 class="heading">STANDARD</h2>
+                        <h2 class="heading">Standard</h2>
                         <span class="price"><sup>¥</sup> <span class="number">3,000</span></span>
                         <span class="excerpt d-block">ユーザー追加機能が追加</span>
                         <a href="{{ route('admin.register') }}"
                             class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get
                             Started</a>
 
-                        <h3 class="heading-2 mb-4">FREEの全ての機能</h3>
+                        <h3 class="heading-2 mb-4">Freeの全ての機能</h3>
 
                         <ul class="pricing-text">
                             <li><strong>50人</strong> ユーザー</li>
@@ -58,7 +58,7 @@
                             class="btn btn-primary d-block px-3 py-3 mb-4">Get
                             Started</a>
 
-                        <h3 class="heading-2 mb-4">STANDARDの全ての機能</h3>
+                        <h3 class="heading-2 mb-4">Standardの全ての機能</h3>
 
                         <ul class="pricing-text">
                             <li><strong>100人</strong> ユーザー</li>
@@ -73,17 +73,17 @@
                     <div class="text-center">
                         <h2 class="heading">Pro</h2>
                         <span class="price"><sup>¥</sup> <span class="number">22,500</span></span>
-                        <span class="excerpt d-block">ユーザーに権限を与えれる機能追加</span>
+                        <span class="excerpt d-block">操作が不安で電話サポートを受けたい方</span>
                         <a href="{{ route('admin.register') }}"
                             class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get
                             Started</a>
 
-                        <h3 class="heading-2 mb-4">Proの全ての機能</h3>
+                        <h3 class="heading-2 mb-4">Premiumの全ての機能</h3>
 
                         <ul class="pricing-text">
                             <li><strong>150人</strong> ユーザー</li>
                             <li><strong>ユーザー毎に権限付与</strong></li>
-                            <li><strong>カスタマーサポート</strong>導入サポート</li>
+                            <li><strong>電話サポート</strong>（操作方法）</li>
                         </ul>
                     </div>
                 </div>
