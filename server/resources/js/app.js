@@ -1,17 +1,18 @@
 require('./bootstrap');
 
-// Vue.js をインポート
-import Vue from 'vue';
+//新しいVueアプリケーションインスタンスを作成
+import {
+    createApp
+} from 'vue'
 
 // コンポーネントをインポート
 import editTextCommon from './components/editTextCommon/index.vue';
 import taskSearchCommon from './components/taskSearchCommon/index.vue';
 
-// コンポーネント登録
-Vue.component('edit-text-common', editTextCommon);
-Vue.component('task-search-common', taskSearchCommon);
-
-// Vueインスタンスを作成してマウント
-new Vue({
-    el: '#app'
-});
+// コンポーネント登録とマウント
+createApp({
+    components: {
+        taskSearchCommon,
+        editTextCommon,
+    }
+}).mount('#app');
