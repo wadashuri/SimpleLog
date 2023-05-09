@@ -8,6 +8,9 @@
     {{-- css --}}
     @include('layouts.front.parts.css')
 
+    <!-- Google tag (gtag.js) -->
+    @include('layouts.include.ga4')
+
   </head>
   <body>
 
