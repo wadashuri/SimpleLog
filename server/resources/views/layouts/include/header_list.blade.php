@@ -2,11 +2,11 @@
     <li class="nav-item {{ Functions::activeClass('front.pages.about') }}">
         <a href="{{ route('front.pages.about') }}" class="nav-link">事務所概要</a>
     </li>
-    <li class="nav-item {{ Functions::activeClass('front.pages.tokushoho') }}">
-        <a class="nav-link" href="{{ route('front.pages.tokushoho') }}">特定商取引法に基づく表記</a>
-    </li>
     <li class="nav-item {{ Functions::activeClass('front.pages.privacy_policy') }}">
         <a href="{{ route('front.pages.privacy_policy') }}" class="nav-link">プライバシーポリシー</a>
+    </li>
+    <li class="nav-item {{ Functions::activeClass('front.pages.tokushoho') }}">
+        <a class="nav-link" href="{{ route('front.pages.tokushoho') }}">特定商取引法に基づく表記</a>
     </li>
     <li class="nav-item {{ Functions::activeClass('front.pages.work') }}">
         <a class="nav-link" href="{{ route('front.pages.work') }}">事業内容</a>
