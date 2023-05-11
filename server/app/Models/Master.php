@@ -21,4 +21,14 @@ class Master extends Authenticatable
     {
         $this->attributes['password'] =  Hash::make($attr);
     }
+
+    // ========================================================================
+
+    /**
+     * リレーション設定
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
