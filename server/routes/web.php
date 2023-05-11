@@ -32,7 +32,7 @@ Route::group([
     # work
     Route::view('/work', 'front.pages.work')->name('pages.work');
     # team
-    // Route::view('/team', 'front.pages.team')->name('pages.team');
+    Route::view('/team', 'front.pages.team')->name('pages.team');
     # pricing
     Route::view('/pricing', 'front.pages.pricing')->name('pages.pricing');
     # blog
