@@ -14,7 +14,7 @@
         </li>
         @can('master_admin')
         <li class="nav-item">
-            <a class="nav-link link-dark {{ Functions::activeClass('master.post.create') }}" href="{{ route('master.post.create') }}">
+            <a class="nav-link link-dark {{ Functions::activeClass('master.post.index') }}" href="{{ route('master.post.index') }}">
                 <span class="svg_initial" data-feather="alert-circle"></span>
                 お知らせ
             </a>

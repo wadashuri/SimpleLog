@@ -21,7 +21,6 @@
             <thead>
                 <tr>
                     <th scope="col">タイトル</th>
-                    <th scope="col">コンテンツ</th>
                     <th scope="col">カテゴリー</th>
                     <th scope="col">操作</th>
                 </tr>
@@ -30,7 +29,6 @@
                 @forelse ($posts as $post)
                     <tr>
                         <td class="align-middle">{{ $post->title }}</td>
-                        <td class="align-middle">{{ $post->content }}</td>
                         <td class="align-middle">
                             @foreach($post->categories as $category)
                             <span class="badge bg-secondary">{{ $category->name }}</span>
