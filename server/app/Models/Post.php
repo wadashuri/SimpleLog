@@ -49,4 +49,23 @@ class Post extends Model
 
         return $image;
     }
+
+    // ========================================================================
+
+    /**
+     * スコープ設定
+     */
+
+    public function scopeSearch($query, $request)
+    {
+        $query
+        ->with(['categories'])
+        ->when($request->filled('category_name'), function ($q) use ($request) {
+            $q->where(function ($q) use ($request) {
+                $q->whereHas('categories', function ($query) use ($request) {
+                    $query->where('name', 'LIKE', '%' . $request->category_name . '%');
+                });
+            });
+        });
+    }
 }

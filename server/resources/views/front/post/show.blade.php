@@ -14,7 +14,7 @@
         <div class="col-md-8 ftco-animate">
           {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora.</p> --}}
           <p>
-            <img src="{{ $post->image('image') }}" alt="" class="img-fluid">
+            <img src="{{ $post->image('image') }}" alt="" class="img-fluid w-100">
           </p>
           {{-- <p>Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!</p> --}}
           <h2 class="mb-3 mt-5">{{ $post->title }}</h2>
@@ -22,7 +22,7 @@
           <div class="tag-widget post-tag-container mb-5 mt-5">
             <div class="tagcloud">
               @foreach($post->categories as $category)
-              <a href="#" class="tag-cloud-link">{{ $category->name }}</a>
+              <a href="{{ route('front.post.index',['category_name' => $category->name])}}" class="tag-cloud-link">{{ $category->name }}</a>
               @endforeach
             </div>
           </div>
@@ -158,7 +158,7 @@
             <div class="categories">
               <h3>カテゴリー一覧</h3>
               @forelse($categories as $category)
-              <li><a href="#">{{ $category->name }} <span>({{ $category->posts->count() }})</span></a></li>
+              <li><a href="{{ route('front.post.index',['category_name' => $category->name])}}">{{ $category->name }} <span>({{ $category->posts->count() }})</span></a></li>
               @empty
               <li>カテゴリーはありません</li>
               @endforelse

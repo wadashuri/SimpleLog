@@ -16,7 +16,10 @@
             </a>
             <div class="text p-4 d-block">
               <div class="meta mb-3">
-                <div><a href="#">{{ $post->created_at }}</a></div>
+                <div><a href="#">{{ $post->created_at }}</a></div><br>
+                @foreach($post->categories as $category)
+                  <a href="{{ route('front.post.index',['category_name' => $category->name])}}" class="tag-cloud-link">{{ $category->name }}</a>
+                @endforeach
                 {{-- <div><a href="#">Admin</a></div> --}}
                 {{-- <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div> --}}
               </div>

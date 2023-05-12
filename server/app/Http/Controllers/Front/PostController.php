@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -18,10 +19,10 @@ class PostController extends Controller
         });
     }
 
-    public function index()
+    public function index(Request $request)
     {
         return view('front.post.index', [
-            'posts' => $this->_post->latest()->paginate(9)
+            'posts' => $this->_post->search($request)->latest()->paginate(9)
         ]);
     }
 
