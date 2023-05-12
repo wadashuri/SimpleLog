@@ -12,6 +12,14 @@
                 管理者
             </a>
         </li>
+        @can('master_admin')
+        <li class="nav-item">
+            <a class="nav-link link-dark {{ Functions::activeClass('master.category.create') }}" href="{{ route('master.category.create') }}">
+                <span class="svg_initial" data-feather="tag"></span>
+                カテゴリー
+            </a>
+        </li>
+        @endcan
         <li class="nav-item">
             <a class="nav-link text {{ Functions::activeClass('master.logout') }}" href="{{ route('master.logout') }}"
                 onclick="event.preventDefault();

@@ -77,6 +77,11 @@ Route::group(['prefix' => 'master', 'as' => 'master.',], function () {
         # Admin
         Route::resource('admin', Master\AdminController::class);
 
+        Route::group(['middleware' => ['can:master_admin']], function () {
+            # グループ
+            Route::resource('category', Master\CategoryController::class)->only('create', 'store', 'update', 'destroy');
+        });
+
         # logout
         Route::match(['get', 'post'], '/logout', [Auth\LoginController::class, 'logout'])->name('logout');
     });
