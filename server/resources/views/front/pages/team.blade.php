@@ -2,15 +2,15 @@
 
 @section('content')
     @include('front.include.content_header', [
-        'title1' => 'Team',
-        'main_title' => 'チーム',
+        'title1' => 'Profile',
+        'main_title' => 'プロフィール',
     ])
 
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-md-7 text-center heading-section ftco-animate">
-                    <h2 class="mb-3">チーム</h2>
+                    <h2 class="mb-3">プロフィール</h2>
                     {{-- <span class="subheading">Our Expert &amp; Well Experience Staff</span> --}}
                 </div>
             </div>

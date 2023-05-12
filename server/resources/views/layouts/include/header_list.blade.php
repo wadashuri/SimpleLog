@@ -12,7 +12,7 @@
         <a class="nav-link" href="{{ route('front.pages.work') }}">事業内容</a>
     </li>
     <li class="nav-item {{ Functions::activeClass('front.pages.team') }}">
-        <a href="{{ route('front.pages.team') }}" class="nav-link">チーム</a>
+        <a href="{{ route('front.pages.team') }}" class="nav-link">プロフィール</a>
     </li>
     <li class="nav-item {{ Functions::activeClass('front.post.index') }}">
         <a href="{{ route('front.post.index') }}" class="nav-link">お知らせ</a>
