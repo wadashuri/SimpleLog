@@ -5,7 +5,7 @@
     @include('parts.alert.bootstrap-5')
 
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">ユーザー詳細</h1>
+        <h1 class="h2">お知らせ詳細</h1>
         <div class="btn-group mb-2 mb-md-0">
             <a class="btn btn-sm btn-outline-secondary" href="{{ route('master.post.index') }}">
                 <span data-feather="corner-down-left" ></span>
