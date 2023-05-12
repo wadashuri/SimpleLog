@@ -2,8 +2,8 @@
 
 @section('content')
   @include('front.include.content_header',[
-    'title1' => 'Blog',
-    'main_title' => 'ブログ',
+    'title1' => 'News',
+    'main_title' => 'お知らせ',
   ])
   <section class="ftco-section bg-light">
     <div class="container">

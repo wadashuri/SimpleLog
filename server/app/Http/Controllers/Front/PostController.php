@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Category;
 
 class PostController extends Controller
 {
@@ -27,7 +28,9 @@ class PostController extends Controller
     public function show()
     {
         return view('front.post.show', [
-            'post' => $this->_post->findOrFail(request()->route('post'))
+            'post' => $this->_post->findOrFail(request()->route('post')),
+            'categories' => Category::all(),
+            'recent_posts' => Post::latest()->take(3)->get(),
         ]);
     }
 }

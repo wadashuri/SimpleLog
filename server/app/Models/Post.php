@@ -40,7 +40,6 @@ class Post extends Model
         $disk = Storage::disk('local');
 
         $directory = 'public/post/' . $this->id . '/' . $type . '.png';
-        // dd($directory);
 
         if ($disk->exists($directory)) {
             // ファイルの最終更新日の取得

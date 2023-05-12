@@ -3,7 +3,23 @@
     <div class="container-fluid">
       <div class="row no-gutters d-flex slider-text align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="{{ route('front.pages.index') }}">Home</a></span> <span class="mr-2">{{ $title1 }}</span>@isset($title2)<span>{{ $title2 }}</span>@endisset</p>
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+              <span class="mr-2">
+                <a href="{{ route('front.pages.index') }}">Home</a>
+              </span>
+              <span class="mr-2">
+                @isset($title2)
+                <a href="{{ route($route) }}">{{ $title1 }}</a>
+                @else
+                {{ $title1 }}
+                 @endisset
+              </span>
+              @isset($title2)
+              <span>
+                {{ $title2 }}
+              </span>
+              @endisset
+            </p>
           <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">{{ $main_title }}</h1>
         </div>
       </div>

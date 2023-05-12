@@ -5,9 +5,9 @@
 @include('front.include.content_header',[
     'title1' => 'Blog',
     'title2' => 'Blog Single',
-    'main_title' => 'ブログ詳細',
+    'main_title' => 'お知らせ詳細',
+    'route' => 'front.post.index',
   ])
-
   <section class="ftco-section ftco-degree-bg">
     <div class="container">
       <div class="row">
@@ -21,10 +21,9 @@
           <p>{!! nl2br(e($post->content)) !!}</p>
           <div class="tag-widget post-tag-container mb-5 mt-5">
             <div class="tagcloud">
-              <a href="#" class="tag-cloud-link">Life</a>
-              <a href="#" class="tag-cloud-link">Sport</a>
-              <a href="#" class="tag-cloud-link">Tech</a>
-              <a href="#" class="tag-cloud-link">Travel</a>
+              @foreach($post->categories as $category)
+              <a href="#" class="tag-cloud-link">{{ $category->name }}</a>
+              @endforeach
             </div>
           </div>
 
@@ -157,50 +156,32 @@
           </div> --}}
           <div class="sidebar-box ftco-animate">
             <div class="categories">
-              <h3>Categories</h3>
-              <li><a href="#">Food <span>(12)</span></a></li>
-              <li><a href="#">Dish <span>(22)</span></a></li>
-              <li><a href="#">Desserts <span>(37)</span></a></li>
-              <li><a href="#">Drinks <span>(42)</span></a></li>
-              <li><a href="#">Ocassion <span>(14)</span></a></li>
+              <h3>カテゴリー一覧</h3>
+              @forelse($categories as $category)
+              <li><a href="#">{{ $category->name }} <span>({{ $category->posts->count() }})</span></a></li>
+              @empty
+              <li>カテゴリーはありません</li>
+              @endforelse
             </div>
           </div>
 
           <div class="sidebar-box ftco-animate">
-            <h3>Recent Blog</h3>
+            <h3>新しい投稿</h3>
+            @forelse($recent_posts as $recent_post)
             <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+              <a class="blog-img mr-4" style="background-image: url({{ $recent_post->image('image') }});"></a>
               <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                <h3 class="heading"><a href="{{ route('front.post.show', $recent_post->id) }}">{{ $recent_post->title }}</a></h3>
                 <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                  <div><a href="{{ route('front.post.show', $recent_post->id) }}"><span class="icon-calendar"></span> {{ $recent_post->created_at }}</a></div>
                   {{-- <div><a href="#"><span class="icon-person"></span> Admin</a></div>
                   <div><a href="#"><span class="icon-chat"></span> 19</a></div> --}}
                 </div>
               </div>
             </div>
-            {{-- <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div> --}}
+            @empty
+            <p>新しい投稿がありません</p>
+            @endforelse
           </div>
 
           {{-- <div class="sidebar-box ftco-animate">
