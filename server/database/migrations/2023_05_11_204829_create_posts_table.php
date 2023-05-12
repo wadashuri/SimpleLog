@@ -17,9 +17,8 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('master_id')->constrained()->cascadeOnDelete();
-            $table->string('main_title')->comment('メインタイトル');
             $table->string('title')->comment('タイトル');
-            $table->text('content')->comment('content');
+            $table->text('content')->comment('コンテンツ');
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });

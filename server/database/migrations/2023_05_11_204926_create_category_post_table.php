@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateCategoryPostTable extends Migration
 {
@@ -17,6 +18,7 @@ class CreateCategoryPostTable extends Migration
             $table->foreignId('post_id')->constrained()->cascadeOnDelete();
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
         });
+        DB::statement("ALTER TABLE category_post comment='カテゴリーとポストの中間テーブル'");
     }
 
     /**
