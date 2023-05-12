@@ -61,6 +61,19 @@
         </div>
 
         <div class="col-12">
+            <label>画像</label>
+                    @isset($slot_post)
+                        @if ($slot_post->image('image'))
+                            <p>現在設定されているimage</p>
+                            <img src="{{ $slot_post->image('image') }}">
+                        @else
+                            <p>画像が設定されていません</p>
+                        @endif
+                    @endisset
+            {{ Form::file('post_image', ['class' => 'form-control']) }}
+        </div>
+
+        <div class="col-12">
             <label>コンテンツ<span class="text-danger">*</span></label>
             {{ Form::textarea('content', old('content', isset($slot_post) ? $slot_post->content : null), ['class' => 'form-control', 'required']) }}
         </div>

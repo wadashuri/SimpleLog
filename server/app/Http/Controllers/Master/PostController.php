@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Master;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\PostRequest;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+
 
 class PostController extends Controller
 {
@@ -55,6 +58,8 @@ class PostController extends Controller
                 }
             });
 
+            $this->postImage($request);
+
             return redirect()->route('master.post.index')->with([
                 'alert' => [
                     'message' => 'お知らせ登録が完了しました。',
@@ -101,6 +106,8 @@ class PostController extends Controller
                 $this->_post->findOrFail(request()->route('post'))->categories()->sync($params['categories'] ?? []);
             });
 
+            $this->postImage($request);
+
             return redirect()->route('master.post.index')->with([
                 'alert' => [
                     'message' => 'お知らせ編集が完了しました。',
@@ -132,6 +139,45 @@ class PostController extends Controller
         } catch (\Exception $e) {
             logger()->error($e);
             throw $e;
+        }
+    }
+
+    # 画像アップロード
+    private function uploadPublicImage($images, $targetDir, $postId, $type)
+    {
+        $postsDir = $targetDir . '/' . $postId;
+        $fileName = $type . '.png';
+        $disk = Storage::disk('local');
+
+        $disk->makeDirectory($postsDir);
+
+        $imagesPath = $disk->putFileAs('public/' . $postsDir, $images, $fileName);
+        // インスタンスを作成
+        $image = Image::make($disk->path($imagesPath));
+        // ここでリサイズを行う
+        $width = 300;
+        $image->resize($width, null, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+
+        // 回転を補正して保存
+        $image->orientate()->save();
+        // 一次ファイル削除
+        $image->destroy();
+        return $disk->url($imagesPath);
+    }
+
+    /**
+     * 画像登録関数
+     */
+    private function postImage($request)
+    {
+        # oemファイル
+        $post_image = $request->file('post_image');
+
+        # post_imageあり
+        if ($post_image) {
+            $this->uploadPublicImage($post_image, 'post', $request->post, 'image');
         }
     }
 }
