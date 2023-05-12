@@ -14,8 +14,8 @@
     <li class="nav-item {{ Functions::activeClass('front.pages.team') }}">
         <a href="{{ route('front.pages.team') }}" class="nav-link">チーム</a>
     </li>
-    <li class="nav-item">
-        <a href="https://blog.sinceritylab.com/blog" class="nav-link" target="_blank" rel="noopener noreferrer">ブログ</a>
+    <li class="nav-item {{ Functions::activeClass('front.post.index') }}">
+        <a href="{{ route('front.post.index') }}" class="nav-link">お知らせ</a>
     </li>
     <!-- ドロップダウントグル -->
     <li class="nav-item dropdown">
