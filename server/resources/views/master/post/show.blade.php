@@ -29,12 +29,12 @@
         <table class="table table-bordered align-middle">
             <tbody>
                 <tr>
-                    <th class="table-light text-nowrap col-lg-3">名前
+                    <th class="table-light text-nowrap col-lg-3">タイトル
                     </th>
                     <td>{{ $post->title }}</td>
                 </tr>
                 <tr>
-                    <th class="table-light text-nowrap col-lg-3">メール
+                    <th class="table-light text-nowrap col-lg-3">コンテンツ
                     </th>
                     <td>{{ $post->content }}</td>
                 </tr>
