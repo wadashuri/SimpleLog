@@ -14,6 +14,12 @@
         </li>
         @can('master_admin')
         <li class="nav-item">
+            <a class="nav-link link-dark {{ Functions::activeClass('master.post.create') }}" href="{{ route('master.post.create') }}">
+                <span class="svg_initial" data-feather="alert-circle"></span>
+                お知らせ
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link link-dark {{ Functions::activeClass('master.category.create') }}" href="{{ route('master.category.create') }}">
                 <span class="svg_initial" data-feather="tag"></span>
                 カテゴリー

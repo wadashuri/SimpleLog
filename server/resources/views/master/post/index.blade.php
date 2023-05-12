@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.master.app')
 
 @section('content')
     {{-- alert --}}
@@ -6,9 +6,9 @@
 
     {{-- header --}}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">ユーザー一覧</h1>
+        <h1 class="h2">お知らせ一覧</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ route('admin.user.create') }}">
+            <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ route('master.post.create') }}">
                 <span data-feather="plus-circle"></span>
                 新規登録
             </a>
@@ -20,34 +20,36 @@
         <table class="table text-nowrap table-hover">
             <thead>
                 <tr>
-                    <th scope="col">名前</th>
-                    <th scope="col">グループ</th>
+                    <th scope="col">タイトル</th>
+                    <th scope="col">コンテンツ</th>
+                    <th scope="col">カテゴリー</th>
                     <th scope="col">操作</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($users as $user)
+                @forelse ($posts as $post)
                     <tr>
-                        <td class="align-middle">{{ $user->name }}</td>
+                        <td class="align-middle">{{ $post->title }}</td>
+                        <td class="align-middle">{{ $post->content }}</td>
                         <td class="align-middle">
-                            @foreach($user->groups as $group)
-                            <span class="badge bg-secondary">{{ $group->name }}</span>
+                            @foreach($post->categories as $category)
+                            <span class="badge bg-secondary">{{ $category->name }}</span>
                             @endforeach
                         </td>
                         <td class="align-middle">
                             <div class="btn-group me-2">
                                 <a class="btn btn-sm btn-outline-success"
-                                    href="{{ route('admin.user.show', $user->id) }}">
+                                    href="{{ route('master.post.show', $post->id) }}">
                                     <span data-feather="info"></span>
                                     詳細
                                 </a>
                                 <a class="btn btn-sm btn-outline-primary"
-                                    href="{{ route('admin.user.edit', $user->id) }}">
+                                    href="{{ route('master.post.edit', $post->id) }}">
                                     <span data-feather="edit"></span>
                                     編集
                                 </a>
                                 {!! Form::open([
-                                    'route' => ['admin.user.destroy', $user->id],
+                                    'route' => ['master.post.destroy', $post->id],
                                     'method' => 'delete',
                                     'class' => 'btn-group',
                                 ]) !!}
@@ -61,12 +63,12 @@
                         </td>
                     </tr>
                 @empty
-                    <p>ユーザーが登録されていません</p>
+                    <p>お知らせが登録されていません</p>
                 @endforelse
             </tbody>
         </table>
     </div>
 
     {{-- paginator --}}
-    {{ $users->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
+    {{ $posts->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
 @endsection

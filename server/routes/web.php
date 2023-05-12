@@ -78,7 +78,10 @@ Route::group(['prefix' => 'master', 'as' => 'master.',], function () {
         Route::resource('admin', Master\AdminController::class);
 
         Route::group(['middleware' => ['can:master_admin']], function () {
-            # グループ
+            # お知らせ
+            Route::resource('post', Master\PostController::class);
+
+            # カテゴリー
             Route::resource('category', Master\CategoryController::class)->only('create', 'store', 'update', 'destroy');
         });
 
