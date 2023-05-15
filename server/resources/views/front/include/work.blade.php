@@ -7,18 +7,6 @@
         </div>
       </div>
       <div class="row">
-          <div class="col-md-4 ftco-animate">
-              <div class="work-entry">
-                  <a href="https://blog.sinceritylab.com/posts/commissioned_development/" class="img" style="background-image: url(images/work-1.jpg);">
-                      <div class="text d-flex justify-content-center align-items-center">
-                          <div class="p-3">
-                              <span>受託開発</span>
-                              <h3>詳しく見る</h3>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div>
           {{-- <div class="col-md-4 ftco-animate">
               <div class="work-entry">
                   <a href="#" class="img" style="background-image: url(images/work-2.jpg);">
@@ -33,7 +21,19 @@
           </div> --}}
           <div class="col-md-4 ftco-animate">
               <div class="work-entry">
-                  <a href="{{ route('front.pages.services') }}" class="img" style="background-image: url(images/work-3.jpg);">
+                  <a href="https://sinceritylab.com/front/post/9" class="img" style="background-image: url(images/work-4.jpg);">
+                      <div class="text d-flex justify-content-center align-items-center">
+                          <div class="p-3">
+                              <span>音楽</span>
+                              <h3>詳しく見る</h3>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+              <div class="work-entry">
+                  <a href="https://sinceritylab.com/front/post/10" class="img" style="background-image: url(images/work-3.jpg);">
                       <div class="text d-flex justify-content-center align-items-center">
                           <div class="p-3">
                               <span>オリジナルサービス「SimpleLog」</span>
@@ -45,10 +45,10 @@
           </div>
           <div class="col-md-4 ftco-animate">
               <div class="work-entry">
-                  <a href="https://blog.sinceritylab.com/posts/music/" class="img" style="background-image: url(images/work-4.jpg);">
+                  <a href="https://sinceritylab.com/front/post/11" class="img" style="background-image: url(images/work-1.jpg);">
                       <div class="text d-flex justify-content-center align-items-center">
                           <div class="p-3">
-                              <span>音楽</span>
+                              <span>SES</span>
                               <h3>詳しく見る</h3>
                           </div>
                       </div>
