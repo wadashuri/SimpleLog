@@ -30,7 +30,7 @@ Route::group([
     # services
     Route::view('/services', 'front.pages.services')->name('pages.services');
     # work
-    Route::view('/work', 'front.pages.work')->name('pages.work');
+    // Route::view('/work', 'front.pages.work')->name('pages.work');
     # team
     Route::view('/team', 'front.pages.team')->name('pages.team');
     # pricing
