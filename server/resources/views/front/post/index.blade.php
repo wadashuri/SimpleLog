@@ -7,6 +7,12 @@
   ])
   <section class="ftco-section bg-light">
     <div class="container">
+        @if(request()->input('category_name'))
+        <div class="mb-3">
+            <h4>検索結果：{{ $posts->count() }}件</h4>
+            <p>カテゴリー：{{ request()->input('category_name') }}</p>
+        </div>
+        @endif
       <div class="row">
         @forelse($posts as $post)
         <a href="{{ route('front.post.show', $post->id) }}">
