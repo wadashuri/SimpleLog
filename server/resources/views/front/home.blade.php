@@ -24,12 +24,18 @@
                 </div>
                 <div class="one-half align-self-md-end align-self-sm-center">
                     <div class="slider-carousel owl-carousel">
+                        <div class="col-lg-10">
+                            <img src="images/pc.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-lg-10">
+                            <img src="images/music.png" class="img-fluid" alt="">
+                        </div>
                         <div class="item">
                             <img src="images/dashboard_full_2.png" class="img-fluid img"alt="">
                         </div>
-                        <div class="item">
+                        {{-- <div class="item">
                             <img src="images/dashboard_full_3.png" class="img-fluid img"alt="">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
