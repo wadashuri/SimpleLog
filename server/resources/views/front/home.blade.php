@@ -17,9 +17,9 @@
                         私たちの目標は、愛を持って仕事をし、お客様や作品に真摯に向き合い、常に高品質なサービスを提供することです。</p>
                     <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                         <a href="{{ route('front.contact.index') }}"
-                            class="btn btn-primary btn-outline-primary px-4 py-3 mt-1">お問い合わせ</a>
-                        <a href="{{ route('admin.register') }}"
-                            class="btn btn-primary px-4 py-3 mt-1">無料でSimpleLogを試してみる</a>
+                            class="btn btn-primary btn-outline-primary px-4 py-3 mt-1">お問い合わせはこちら</a>
+                        {{-- <a href="{{ route('admin.register') }}"
+                            class="btn btn-primary px-4 py-3 mt-1">無料でSimpleLogを試してみる</a> --}}
                     </p>
                 </div>
                 <div class="one-half align-self-md-end align-self-sm-center">
