@@ -7,17 +7,17 @@
             <div class="slider-text d-md-flex align-items-center" data-scrollax-parent="true">
 
                 <div class="one-forth ftco-animate align-self-md-center" data-scrollax=" properties: { translateY: '70%' }">
-                    <h1 class="mb-4"> シンプルで
+                    <h1 class="mb-4">web,音楽で
                         <strong class="typewrite" data-period="4000"
-                            data-type='[ "必要最低限の項目で 稼働", "洗礼されたデザイン", "直感的に 使える", "あなたのビジネスを 効率化" ]'>
+                            data-type='[ "真心を尽くし、確かな品質を提供。", "純粋な思いが溢れる、感動を届ける。", "真摯な姿勢を持ち、信頼を築く。", "誠心誠意、お客様の満足に全力を尽くす。" ]'>
                             <span class="wrap"></span>
                         </strong>
                     </h1>
                     <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
-                        進捗状況と作業時間を確認することで業務の偏りなどをおさえビジネスの効率化を図ります</p>
+                        私たちの目標は、愛を持って仕事をし、お客様や作品に真摯に向き合い、常に高品質なサービスを提供することです。</p>
                     <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                         <a href="{{ route('front.contact.index') }}"
-                            class="btn btn-primary btn-outline-primary px-4 py-3 mt-1">資料請求</a>
+                            class="btn btn-primary btn-outline-primary px-4 py-3 mt-1">お問い合わせ</a>
                         <a href="{{ route('admin.register') }}"
                             class="btn btn-primary px-4 py-3 mt-1">無料でSimpleLogを試してみる</a>
                     </p>
@@ -41,7 +41,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h3 class="heading-white">高品質なサービスをお届けすることをお約束します</h3>
+                    <h3 class="heading-white">制作において一切の妥協をしないことをお約束します</h3>
                 </div>
             </div>
         </div>
