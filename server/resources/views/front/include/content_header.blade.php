@@ -5,7 +5,7 @@
         <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
               <span class="mr-2">
-                <a href="{{ route('front.pages.index') }}">Home</a>
+                <a href="{{ route('front.home') }}">Home</a>
               </span>
               <span class="mr-2">
                 @isset($title2)

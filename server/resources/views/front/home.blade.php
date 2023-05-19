@@ -1,60 +1,103 @@
 @extends('layouts.front.app')
 
 @section('content')
-<div class="hero-wrap">
-    <div class="overlay"></div>
-    <div class="container-fluid">
-      <div class="slider-text d-md-flex align-items-center" data-scrollax-parent="true">
+    <div class="hero-wrap">
+        <div class="overlay"></div>
+        <div class="container-fluid">
+            <div class="slider-text d-md-flex align-items-center" data-scrollax-parent="true">
 
-        <div class="one-forth ftco-animate align-self-md-center" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4"> シンプルで
-            <strong class="typewrite" data-period="4000" data-type='[ "必要最低限の項目で 稼働", "洗礼されたデザイン", "直感的に 使える", "あなたのビジネスを 効率化" ]'>
-              <span class="wrap"></span>
-            </strong>
-          </h1>
-          <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">進捗状況と作業時間を確認することで業務の偏りなどをおさえビジネスの効率化を図ります</p>
-          <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
-             <a href="{{ route('front.contact.index') }}" class="btn btn-primary btn-outline-primary px-4 py-3 mt-1">資料請求</a>
-             <a href="{{ route('admin.register') }}" class="btn btn-primary px-4 py-3 mt-1">無料でSimpleLogを試してみる</a>
-            </p>
-        </div>
-        <div class="one-half align-self-md-end align-self-sm-center">
-            <div class="slider-carousel owl-carousel">
-                <div class="item">
-                    <img src="images/dashboard_full_2.png" class="img-fluid img"alt="">
+                <div class="one-forth ftco-animate align-self-md-center" data-scrollax=" properties: { translateY: '70%' }">
+                    <h1 class="mb-4"> シンプルで
+                        <strong class="typewrite" data-period="4000"
+                            data-type='[ "必要最低限の項目で 稼働", "洗礼されたデザイン", "直感的に 使える", "あなたのビジネスを 効率化" ]'>
+                            <span class="wrap"></span>
+                        </strong>
+                    </h1>
+                    <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                        進捗状況と作業時間を確認することで業務の偏りなどをおさえビジネスの効率化を図ります</p>
+                    <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                        <a href="{{ route('front.contact.index') }}"
+                            class="btn btn-primary btn-outline-primary px-4 py-3 mt-1">資料請求</a>
+                        <a href="{{ route('admin.register') }}"
+                            class="btn btn-primary px-4 py-3 mt-1">無料でSimpleLogを試してみる</a>
+                    </p>
                 </div>
-                <div class="item">
-                    <img src="images/dashboard_full_3.png" class="img-fluid img"alt="">
+                <div class="one-half align-self-md-end align-self-sm-center">
+                    <div class="slider-carousel owl-carousel">
+                        <div class="item">
+                            <img src="images/dashboard_full_2.png" class="img-fluid img"alt="">
+                        </div>
+                        <div class="item">
+                            <img src="images/dashboard_full_3.png" class="img-fluid img"alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <section class="ftco-section ftco-section-2">
-      <div class="overlay"></div>
-      <div class="container">
-          <div class="row">
-              <div class="col-md-8">
-                  <h3 class="heading-white">高品質なサービスをお届けすることをお約束します</h3>
-              </div>
-          </div>
-      </div>
-  </section>
+    <section class="ftco-section ftco-section-2">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3 class="heading-white">高品質なサービスをお届けすることをお約束します</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  @include('front.include.services')
+    <div class="container">
+        <h2 class="text-center mt-5">お知らせ</h2>
+        <div class="table-responsive">
+            <table class="table mt-3">
+                <tbody>
+                    @forelse($posts as $post)
+                        <tr>
+                            <td class="border-bottom border-top-0" style="width: 10%;">
+                                <small>{{ $post->created_at->format('Y-m-d') }}</small>
+                            </td>
+                            <td class="border-bottom border-top-0" style="width: 15%;">
+                                @foreach ($post->categories as $category)
+                                    <span class="badge bg-secondary text-white">{{ $category->name }}</span>
+                                @endforeach
+                            </td>
+                            <td class="border-bottom border-top-0">
+                                <a href="{{ route('front.post.show', $post->id) }}">
+                                    <h5>
+                                        <span class="border-bottom border-dark">{{ $post->title }}</span>
+                                    </h5>
+                                </a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="3">お知らせはありません</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <small class="d-block text-center mt-3">
+                <a href="{{ route('front.post.index') }}" class="btn btn-primary px-4 py-3 mt-1">お知らせ一覧はこちら</a>
+            </small>
+        </div>
+    </div>
 
-  {{-- counter --}}
-  {{-- @include('front.include.counter') --}}
 
-  {{-- 事業内容 --}}
-  @include('front.include.work')
+    {{-- counter --}}
+    {{-- @include('front.include.counter') --}}
 
-  @include('front.include.pricing')
+    {{-- 事業内容 --}}
+    @include('front.include.work')
 
-  {{-- 資料請求 --}}
-  {{-- <section class="ftco-quote">
+    @include('front.include.services')
+
+    @include('front.include.pricing')
+
+    {{-- 資料請求 --}}
+    {{-- <section class="ftco-quote">
       <div class="container">
           <div class="row">
               <div class="col-md-6 pr-md-5 aside-stretch py-5 choose">
@@ -113,14 +156,14 @@
       </div>
   </section> --}}
 
-{{-- ユーザーの声 --}}
-{{-- @include('front.include.testimony') --}}
+    {{-- ユーザーの声 --}}
+    {{-- @include('front.include.testimony') --}}
 
 
-{{-- メルマガ --}}
-{{-- @include('front.include.newsletter') --}}
+    {{-- メルマガ --}}
+    {{-- @include('front.include.newsletter') --}}
 
-  {{-- <section class="ftco-section">
+    {{-- <section class="ftco-section">
     <div class="container">
       <div class="row justify-content-center mb-5 pb-3">
         <div class="col-md-7 text-center heading-section ftco-animate">

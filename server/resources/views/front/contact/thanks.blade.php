@@ -8,7 +8,7 @@
     <div class="container">
         <div class="signup u-mt50">
             <p class="u-txt_center u-mb60">お問い合わせありがとうございます。</p>
-            <a href="{{ route('front.pages.index') }}" class="btn_square">TOPに戻る</a>
+            <a href="{{ route('front.home') }}" class="btn_square">TOPに戻る</a>
         </div>
     </div>
 @endsection

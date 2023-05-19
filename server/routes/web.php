@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 # リダイレクト設定
 Route::get('/', function () {
-    return redirect('/front/index');
+    return redirect('/front/home');
 });
 
 /**
@@ -24,7 +24,7 @@ Route::group([
      */
 
     # index
-    Route::view('/index', 'front.pages.index')->name('pages.index');
+    Route::get('/home', [Front\HomeController::class, 'home'])->name('home');
     # about
     Route::view('/about', 'front.pages.about')->name('pages.about');
     # services
