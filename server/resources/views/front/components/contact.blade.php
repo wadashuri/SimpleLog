@@ -58,8 +58,8 @@
         </div>
 
         {{-- ここにGoogleマップ表示 --}}
-        <div class="col-md-6" id="map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4612.747205838796!2d136.92050180103385!3d35.16398149207498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1681695112299!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="col-md-6 embed-responsive embed-responsive-16by9" id="map">
+          <iframe  class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4612.747205838796!2d136.92050180103385!3d35.16398149207498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1681695112299!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
