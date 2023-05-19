@@ -2,8 +2,9 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
         <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-2">SimpleLogでできること</h2>
-          <span class="subheading">シンプルな操作で &amp; あなたのビジネスを効率化します</span>
+          <h2 class="mb-2">サービス</h2>
+          <span class="subheading">当事務所が運営する工数管理システムSimpleLogについて
+          </span>
         </div>
       </div>
       <div class="row">

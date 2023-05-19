@@ -17,10 +17,10 @@
           <p><span>Address:</span> 愛知県名古屋市中区新栄3丁目14-15</p>
         </div>
         <div class="col-md-3">
-          <p><span>Phone:</span> <a href="tel://1234567920">070-8581-5236</a></p>
+          <p><span>Phone:</span> <a href="tel://07085815236">070-8581-5236</a></p>
         </div>
         <div class="col-md-3">
-          <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@sinceritylab.com</a></p>
+          <p><span>Email:</span> <a href="mailto:info@sinceritylab.com">info@sinceritylab.com</a></p>
         </div>
         <div class="col-md-3">
           <p><span>Website</span> <a href="https://sinceritylab.com">sinceritylab.com</a></p>

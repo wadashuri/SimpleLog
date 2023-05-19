@@ -29,11 +29,8 @@
 
     {{-- ボタン --}}
     @slot('slot_button')
-        {{-- <div class="contact_form--btn">
-            {{ Form::button('確認画面へ', ['class' => 'form-control','type' => 'submit']) }}
-        </div> --}}
         <div class="contact_form--btn">
-            {{ Form::button('現在お問い合わせは停止しています', ['class' => 'form-control','type' => 'submit','disabled' => true]) }}
+            {{ Form::button('確認画面へ', ['class' => 'form-control','type' => 'submit']) }}
         </div>
     @endslot
 @endcomponent
