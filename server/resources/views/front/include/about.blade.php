@@ -76,7 +76,7 @@
                               <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel"
                                   aria-labelledby="v-pills-whatwedo-tab">
                                   <div>
-                                      <h2 class="mb-4">オリジナルのサービス開発とWeb制作。</h2>
+                                      <h2 class="mb-4">web,音楽制作</h2>
                                       <p>当事務所では、オリジナルのサービス開発とWeb制作、音楽事業を行っています。
                                       </p>
                                       <p>オリジナルサービスとして、工数管理システム「SimpleLog」Web制作においては、受託開発、WordPressカスタム、業務効率化システム開発を行っています。<br>また音楽事業においては楽曲制作、各種ストリーミングサービスへの配信をおこなっています。</p>
@@ -95,7 +95,7 @@
                               <div class="tab-pane fade" id="v-pills-goal" role="tabpanel"
                                   aria-labelledby="v-pills-goal-tab">
                                   <div>
-                                      <h2 class="mb-4">お客様の満足度を向上させ、やりがいを持ちながら自己実現を目指すこと</h2>
+                                      <h2 class="mb-4">より良いものを作り、自分と周りを幸せにしていく事。</h2>
                                       <p>私たちは独自のサービス開発とWeb制作を通じて、お客様のニーズに合わせた高品質なサービスを提供しています。</p>
                                       <p>お客様とのコミュニケーションを大切にし、真摯に向き合いながら、お客様が求めるものを具現化することを目指しています。</p>
                                       <p>また、私たちはやりがいを持ちながら仕事をすることを大切にし、自己実現に向けて努力を続けています。</p>
