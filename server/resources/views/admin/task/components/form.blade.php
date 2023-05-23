@@ -23,7 +23,7 @@
         </div>
         <div class="col-12">
             <label>タスク名</label>
-            {{ Form::text('name', isset($slot_task) ? $slot_task->title : null, [
+            {{ Form::text('title', isset($slot_task) ? $slot_task->title : null, [
                 'class' => 'form-control group_border_none',
                 'placeholder' => 'タスク名を入力してください',
             ]) }}
