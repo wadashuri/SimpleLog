@@ -34,7 +34,7 @@
             <tbody>
                 @forelse ($tasks as $task)
                     <tr>
-                        <td class="align-middle">{{ $task->name }}</td>
+                        <td class="align-middle">{{ $task->title }}</td>
                         <td class="align-middle">
                             <div class="btn-group me-2">
                                 <a class="btn btn-sm btn-outline-success"

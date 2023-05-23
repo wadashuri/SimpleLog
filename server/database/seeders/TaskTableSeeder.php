@@ -17,7 +17,7 @@ class TaskTableSeeder extends Seeder
         Task::factory(1000)->sequence(
             function ($sequence) {
                 return [
-                    'name' => 'タスク' . ($sequence->index + 1),
+                    'title' => 'タスク' . ($sequence->index + 1),
                 ];
             }
         )->create();

@@ -33,8 +33,8 @@ class Task extends Model
     public function scopeSearchTask($query, $request)
     {
         $query->when(!empty($request->date), function ($q) use ($request) {
-            $q->where('published_at', '<=', $request->date . ' 23:59:59')
-                ->where('closed_at', '>=', $request->date . ' 00:00:00');
+            $q->where('start', '<=', $request->date . ' 23:59:59')
+                ->where('end', '>=', $request->date . ' 00:00:00');
         });
 
         return $query;

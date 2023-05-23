@@ -20,8 +20,8 @@ class TaskFactory extends Factory
             'admin_id' => $admin_id,
             'user_id' => $admin_id ? null : $this->faker->numberBetween(1, 100),
             'status' => $this->faker->randomElement([0, 1, 5, 8, 10]),
-            'published_at' => $this->faker->dateTimeBetween('-1 day', 'now'),
-            'closed_at' => $this->faker->dateTimeBetween($datetime, 'now'),
+            'start' => $this->faker->dateTimeBetween('-1 day', 'now'),
+            'end' => $this->faker->dateTimeBetween($datetime, 'now'),
             'created_at' => $datetime,
             'updated_at' => $datetime
         ];

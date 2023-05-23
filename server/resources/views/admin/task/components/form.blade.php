@@ -23,18 +23,18 @@
         </div>
         <div class="col-12">
             <label>タスク名</label>
-            {{ Form::text('name', isset($slot_task) ? $slot_task->name : null, [
+            {{ Form::text('name', isset($slot_task) ? $slot_task->title : null, [
                 'class' => 'form-control group_border_none',
                 'placeholder' => 'タスク名を入力してください',
             ]) }}
         </div>
         <div class="col-12">
-            {{ Form::label('published_at', '開始日', ['class' => 'form-label']) }}
-            {{ Form::input('dateTime-local', 'published_at', isset($slot_task->published_at) ? $slot_task->published_at : '', ['class' => 'form-control']) }}
+            {{ Form::label('start', '開始日', ['class' => 'form-label']) }}
+            {{ Form::input('dateTime-local', 'start', isset($slot_task->start) ? $slot_task->start : '', ['class' => 'form-control']) }}
         </div>
         <div class="col-12">
-            {{ Form::label('closed_at', '終了日', ['class' => 'form-label']) }}
-            {{ Form::input('dateTime-local', 'closed_at', isset($slot_task->closed_at) ? $slot_task->closed_at : '', ['class' => 'form-control']) }}
+            {{ Form::label('end', '終了日', ['class' => 'form-label']) }}
+            {{ Form::input('dateTime-local', 'end', isset($slot_task->end) ? $slot_task->end : '', ['class' => 'form-control']) }}
         </div>
         <div class="mb-3">
             {{ Form::label('status', '状態', ['class' => 'form-label']) }}

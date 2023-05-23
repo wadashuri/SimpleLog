@@ -31,7 +31,7 @@
                 <tr>
                     <th class="table-light text-nowrap col-lg-3">名前
                     </th>
-                    <td>{{ $task->name }}</td>
+                    <td>{{ $task->title }}</td>
                 </tr>
             </tbody>
         </table>

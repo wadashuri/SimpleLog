@@ -4,10 +4,8 @@
     {{-- alert --}}
     @include('parts.alert.bootstrap-5')
 
-    <task-search-common
-    value="{{ request()->input('date'??'') }}"
-    csrf-token="{{ csrf_token() }}"
-    route="{{ route('admin.task.index') }}">
+    <task-search-common value="{{ request()->input('date' ?? '') }}" csrf-token="{{ csrf_token() }}"
+        route="{{ route('admin.task.index') }}">
     </task-search-common>
 
     {{-- header --}}
@@ -23,7 +21,8 @@
 
     {{-- table --}}
     <div class="table-responsive">
-        <table class="table text-nowrap table-hover">
+        <task-calendar-common :events='@json($tasks)'></task-calendar-common>
+        <table class="table text-nowrap table-hover mt-3">
             <thead>
                 <tr>
                     <th scope="col">名前</th>
@@ -35,8 +34,8 @@
             <tbody>
                 @forelse ($tasks as $task)
                     <tr>
-                        <td class="align-middle">{{ $task->name }}</td>
-                        <td class="align-middle">{{ $task->published_at }}/{{ $task->closed_at }}</td>
+                        <td class="align-middle">{{ $task->title }}</td>
+                        <td class="align-middle">{{ $task->start }}/{{ $task->end }}</td>
                         <td class="align-middle">
                             <span class="{{ StatusConstants::COLOR[$task->status] }}">
                                 {{ StatusConstants::STATUS[$task->status] }}
