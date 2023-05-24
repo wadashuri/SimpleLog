@@ -20,7 +20,7 @@
                     <h2 class="ftco-heading-2">リンク</h2>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('front.pages.about') }}" class="py-2 d-block">事務所概要</a></li>
-                        <li><a href="{{ route('front.pages.work') }}" class="py-2 d-block">事業内容</a></li>
+                        <li><a href="{{ route('front.work.index') }}" class="py-2 d-block">事業内容</a></li>
                         <li><a href="{{ route('front.pages.team') }}" class="py-2 d-block">プロフィール</a></li>
                         <li><a href="{{ route('front.contact.index') }}" class="py-2 d-block">お問い合わせ</a></li>
                     </ul>

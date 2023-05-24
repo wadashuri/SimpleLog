@@ -10,8 +10,14 @@ class HomeController extends Controller
 {
     public function home(Request $request)
     {
+        $post_query = Post::latest()->with(['categories']);
         return view('front.home', [
-            'posts' => Post::latest()->take(5)->get(),
+            'posts' => $post_query->take(5)->get(),
+            'works' => $post_query->where(function ($query) {
+                $query->whereHas('categories', function ($q) {
+                    $q->where('name', 'LIKE', '%' . '事業内容' . '%');
+                });
+            })->get(),
         ]);
     }
 }

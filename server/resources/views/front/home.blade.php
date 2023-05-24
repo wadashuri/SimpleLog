@@ -96,7 +96,7 @@
     {{-- @include('front.include.counter') --}}
 
     {{-- 事業内容 --}}
-    @include('front.include.work')
+    @include('front.include.work',['works' => $works])
 
     @include('front.include.services')
 

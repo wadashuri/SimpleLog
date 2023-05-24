@@ -6,7 +6,8 @@
     'main_title' => '事業内容',
   ])
 
-@include('front.include.work')
+{{-- 事業内容 --}}
+@include('front.include.work',['works' => $works])
 
 
 {{-- newsletter --}}

@@ -29,8 +29,6 @@ Route::group([
     Route::view('/about', 'front.pages.about')->name('pages.about');
     # services
     Route::view('/services', 'front.pages.services')->name('pages.services');
-    # work
-    Route::view('/work', 'front.pages.work')->name('pages.work');
     # team
     Route::view('/team', 'front.pages.team')->name('pages.team');
     # pricing
@@ -48,6 +46,9 @@ Route::group([
 
     # お知らせ
     Route::resource('post', Front\PostController::class)->only('index','show');
+
+    # 事業内容
+    Route::resource('work', Front\WorkController::class)->only('index');
 
     # お問い合わせ
     Route::group(['controller' => Front\ContactController::class], function () {

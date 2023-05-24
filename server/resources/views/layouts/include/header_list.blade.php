@@ -8,8 +8,8 @@
     <li class="nav-item {{ Functions::activeClass('front.pages.tokushoho') }}">
         <a class="nav-link" href="{{ route('front.pages.tokushoho') }}">特定商取引法に基づく表記</a>
     </li>
-    <li class="nav-item {{ Functions::activeClass('front.pages.work') }}">
-        <a href="{{ route('front.pages.work') }}" class="nav-link">事業内容</a>
+    <li class="nav-item {{ Functions::activeClass('front.work.index') }}">
+        <a href="{{ route('front.work.index') }}" class="nav-link">事業内容</a>
     </li>
     <li class="nav-item {{ Functions::activeClass('front.pages.team') }}">
         <a href="{{ route('front.pages.team') }}" class="nav-link">プロフィール</a>

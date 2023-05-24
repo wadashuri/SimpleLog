@@ -4,13 +4,6 @@
     {{-- alert --}}
     @include('parts.alert.bootstrap-5')
 
-    {{-- search --}}
-    <task-search-common
-    value="{{ request()->input('date'??'') }}"
-    csrf-token="{{ csrf_token() }}"
-    route="{{ route('user.task.index') }}">
-    </task-search-common>
-
     {{-- header --}}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">タスク一覧</h1>
@@ -25,6 +18,7 @@
     {{-- table --}}
     <div class="table-responsive">
         <table class="table text-nowrap table-hover">
+            <task-calendar-common :events='@json($tasks)'></task-calendar-common>
             <thead>
                 <tr>
                     <th scope="col">名前</th>

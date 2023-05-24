@@ -7,78 +7,22 @@
         </div>
       </div>
       <div class="row">
-          {{-- <div class="col-md-4 ftco-animate">
-              <div class="work-entry">
-                  <a href="#" class="img" style="background-image: url(images/work-2.jpg);">
-                      <div class="text d-flex justify-content-center align-items-center">
-                          <div class="p-3">
-                              <span>業務効率化サービス</span>
-                              <h3>詳しく見る</h3>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div> --}}
+          @forelse($works as $work)
           <div class="col-md-4 ftco-animate">
               <div class="work-entry">
-                  <a href="https://sinceritylab.com/front/post/11" class="img" style="background-image: url(images/work-4.jpg);">
+                  <a href="{{ route('front.post.show', $work->id) }}" class="img" style="background-image: url('{{ $work->image('image') }}');">
                       <div class="text d-flex justify-content-center align-items-center">
                           <div class="p-3">
-                              <span>SES</span>
-                              <h3>詳しく見る</h3>
+                              <span>{{ $work->title }}</span>
+                                <h3>詳しく見る</h3>
                           </div>
                       </div>
                   </a>
               </div>
           </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="work-entry">
-                <a href="https://sinceritylab.com/front/post/10" class="img" style="background-image: url(images/work-3.jpg);">
-                    <div class="text d-flex justify-content-center align-items-center">
-                        <div class="p-3">
-                            <span>オリジナルサービス「SimpleLog」</span>
-                            <h3>詳しく見る</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="work-entry">
-                <a href="https://sinceritylab.com/front/post/9" class="img" style="background-image: url(images/work-1.jpg);">
-                    <div class="text d-flex justify-content-center align-items-center">
-                        <div class="p-3">
-                            <span>音楽</span>
-                            <h3>詳しく見る</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-          </div>
-          {{-- <div class="col-md-4 ftco-animate">
-              <div class="work-entry">
-                  <a href="#" class="img" style="background-image: url(images/work-5.jpg);">
-                      <div class="text d-flex justify-content-center align-items-center">
-                          <div class="p-3">
-                              <span>Branding</span>
-                              <h3>Work 02</h3>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-              <div class="work-entry">
-                  <a href="#" class="img" style="background-image: url(images/work-6.jpg);">
-                      <div class="text d-flex justify-content-center align-items-center">
-                          <div class="p-3">
-                              <span>Branding</span>
-                              <h3>Work 03</h3>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div> --}}
+          @empty
+          <p class="test-center">事業内容がありません</p>
+          @endforelse
       </div>
       </div>
   </section>
