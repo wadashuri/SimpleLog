@@ -12,22 +12,10 @@
 import { defineProps, ref } from 'vue';
 
 const props = defineProps({
-    value: {
-        type: Object,
-        required: true,
-    },
-    csrfToken: {
-        type: String,
-        required: true,
-    },
-    title: {
-        type: String,
-        required: true,
-    },
-    route: {
-        type: String,
-        required: true,
-    },
+    value: { type: Object, required: true, },
+    csrfToken: { type: String, required: true, },
+    title: { type: String, required: true, },
+    route: { type: String, required: true, },
 });
 
 const name = ref(props.value.name);
@@ -47,4 +35,5 @@ const handleBlur = () => {
         }
     }
 }
+
 </script>

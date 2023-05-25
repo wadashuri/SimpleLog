@@ -1,14 +1,17 @@
+<!-- カレンダー -->
+<template>
+    <fullCalendar :options="calendarOptions"></fullCalendar>
+</template>
+
 <script setup>
+
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { defineProps, ref } from 'vue';
 
 const props = defineProps({
-    events: {
-        type: Object,
-        required: true,
-    },
+    events: { type: Object, required: true, },
 });
 
 const calendarOptions = ref({
@@ -23,6 +26,3 @@ function handleDateClick(arg) {
 }
 
 </script>
-<template>
-    <fullCalendar :options="calendarOptions"></fullCalendar>
-</template>
