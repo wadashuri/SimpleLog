@@ -53,7 +53,7 @@
                         <ul>
                             <li>
                                 <span class="icon icon-map-marker"></span>
-                                <span class="text">愛知県名古屋市中区新栄3丁目14-15</span>
+                                <span class="text">神奈川県横浜市西区戸部町２丁目４７</span>
                             </li>
                             <li>
                                 <a href="tel://07085815236">

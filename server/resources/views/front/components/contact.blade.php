@@ -14,16 +14,13 @@
         </div>
         <div class="w-100"></div>
         <div class="col-md-3">
-          <p><span>Address:</span> 愛知県名古屋市中区新栄3丁目14-15</p>
+          <p><span>住所:</span>神奈川県横浜市西区戸部町２丁目４７</p>
         </div>
         <div class="col-md-3">
-          <p><span>Phone:</span> <a href="tel://07085815236">070-8581-5236</a></p>
+          <p><span>電話番号:</span> <a href="tel://07085815236">070-8581-5236</a></p>
         </div>
         <div class="col-md-3">
-          <p><span>Email:</span> <a href="mailto:info@sinceritylab.com">info@sinceritylab.com</a></p>
-        </div>
-        <div class="col-md-3">
-          <p><span>Website</span> <a href="https://sinceritylab.com">sinceritylab.com</a></p>
+          <p><span>メール:</span> <a href="mailto:info@sinceritylab.com">info@sinceritylab.com</a></p>
         </div>
       </div>
       <div class="row block-9">
@@ -59,7 +56,7 @@
 
         {{-- ここにGoogleマップ表示 --}}
         <div class="col-md-6 embed-responsive embed-responsive-16by9 mt-5" id="map">
-          <iframe  class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4612.747205838796!2d136.92050180103385!3d35.16398149207498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1681695112299!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d812.5312597386795!2d139.6239114219187!3d35.45169873622236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c64343a0897%3A0x501676f79f8e122a!2z44CSMjIwLTAwNDIg56We5aWI5bed55yM5qiq5rWc5biC6KW_5Yy65oi46YOo55S677yS5LiB55uu77yU77yX!5e0!3m2!1sja!2sjp!4v1684973453450!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
