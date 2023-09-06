@@ -44,7 +44,7 @@
                 @forelse ($tasks as $task)
                     <tr>
                         <td class="align-middle">{{ $task->title }}</td>
-                        <td class="align-middle">{{ $task->start }}/{{ $task->end }}</td>
+                        <td class="align-middle">{{ $task->start->format("m月d日:H時i分/") }}{{ $task->end->format("m月d日:H時i分") }}</td>
                         <td class="align-middle">
                             <span class="{{ StatusConstants::COLOR[$task->status] }}">
                                 {{ StatusConstants::STATUS[$task->status] }}

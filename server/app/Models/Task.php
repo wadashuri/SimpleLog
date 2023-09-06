@@ -12,6 +12,11 @@ class Task extends Model
 
     protected $guarded = ['id'];
 
+    protected $dates = [
+        'start',
+        'end',
+        ];
+
     // ========================================================================
 
     /**
