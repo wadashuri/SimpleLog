@@ -79,9 +79,121 @@
                 @endforelse
             </tbody>
         </table>
-        <task-calendar-common :events='@json($tasks)'></task-calendar-common>
+        {{-- カレンダー --}}
+        <div id='top'>
+
+            Locales:
+            <select id='locale-selector'></select>
+        
+          </div>
+        <div id='calendar' data-tasks='@json($tasks)'></div>
+        {{-- <task-calendar-common :events='@json($tasks)'></task-calendar-common> --}}
     </div>
 
     {{-- paginator --}}
     {{ $tasks->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var initialLocaleCode = 'ja';
+          var localeSelectorEl = document.getElementById('locale-selector');
+          var calendarEl = document.getElementById('calendar');
+          const jason_tasks = JSON.parse(calendarEl.dataset.tasks); // オブジェクトを取得
+      
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+            },
+            defaultDate: new Date(),
+            locale: initialLocaleCode,
+            buttonIcons: false, // show the prev/next text
+            weekNumbers: true,
+            navLinks: true, // can click day/week names to navigate views
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            defaultView: 'timeGridDay', // 初期表示を日単位に設定
+            events: jason_tasks.data
+            // [
+            //   {
+            //     title: 'All Day Event',
+            //     start: '2019-08-01'
+            //   },
+            //   {
+            //     title: 'Long Event',
+            //     start: '2019-08-07',
+            //     end: '2019-08-10'
+            //   },
+            //   {
+            //     groupId: 999,
+            //     title: 'Repeating Event',
+            //     start: '2019-08-09T16:00:00'
+            //   },
+            //   {
+            //     groupId: 999,
+            //     title: 'Repeating Event',
+            //     start: '2019-08-16T16:00:00'
+            //   },
+            //   {
+            //     title: 'Conference',
+            //     start: '2019-08-11',
+            //     end: '2019-08-13'
+            //   },
+            //   {
+            //     title: 'Meeting',
+            //     start: '2019-08-12T10:30:00',
+            //     end: '2019-08-12T12:30:00'
+            //   },
+            //   {
+            //     title: 'Lunch',
+            //     start: '2019-08-12T12:00:00'
+            //   },
+            //   {
+            //     title: 'Meeting',
+            //     start: '2019-08-12T14:30:00'
+            //   },
+            //   {
+            //     title: 'Happy Hour',
+            //     start: '2019-08-12T17:30:00'
+            //   },
+            //   {
+            //     title: 'Dinner',
+            //     start: '2019-08-12T20:00:00'
+            //   },
+            //   {
+            //     title: 'Birthday Party',
+            //     start: '2019-08-13T07:00:00'
+            //   },
+            //   {
+            //     title: 'Click for Google',
+            //     url: 'http://google.com/',
+            //     start: '2019-08-28'
+            //   }
+            // ]
+          });
+      
+          calendar.render();
+      
+          // build the locale selector's options
+          calendar.getAvailableLocaleCodes().forEach(function(localeCode) {
+            var optionEl = document.createElement('option');
+            optionEl.value = localeCode;
+            optionEl.selected = localeCode == initialLocaleCode;
+            optionEl.innerText = localeCode;
+            localeSelectorEl.appendChild(optionEl);
+          });
+      
+          // when the selected option changes, dynamically change the calendar option
+          localeSelectorEl.addEventListener('change', function() {
+            if (this.value) {
+              calendar.setOption('locale', this.value);
+            }
+          });
+      
+        });
+      
+      </script>
 @endsection

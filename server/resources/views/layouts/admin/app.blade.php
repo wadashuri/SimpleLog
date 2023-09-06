@@ -14,6 +14,13 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
     <!-- Google tag (gtag.js) -->
     @include('layouts.include.ga4')
+    <!-- fullcalendar -->
+    <script src="{{ asset('fullcalendar/core/main.js') }}"></script>
+    <script src="{{ asset('fullcalendar/interaction/main.js') }}"></script>
+    <script src="{{ asset('fullcalendar/daygrid/main.js') }}"></script>
+    <script src="{{ asset('fullcalendar/timegrid/main.js') }}"></script>
+    <script src="{{ asset('fullcalendar/list/main.js') }}"></script>
+    <script src="{{ asset('fullcalendar/core/locales-all.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,6 +28,11 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <!-- fullcalendar -->
+    <link href="{{ asset('fullcalendar/core/main.css') }}" rel="stylesheet" />
+    <link href="{{ asset('fullcalendar/daygrid/main.css') }}" rel="stylesheet" />
+    <link href="{{ asset('fullcalendar/timegrid/main.css') }}" rel="stylesheet" />
+    <link href="{{ asset('fullcalendar/list/main.css') }}" rel="stylesheet" />
 
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -33,7 +45,7 @@
         <main class="py-4">
             <div class="container-fluid">
                 <div class="row">
-                    <nav id="sidebarMenu"  class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                         @include('layouts.admin.sidebar')
                     </nav>
                     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
