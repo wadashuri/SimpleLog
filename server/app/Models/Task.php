@@ -33,7 +33,7 @@ class Task extends Model
     public function scopeSearchTask($query, $request)
     {
         $query->when(!empty($request->date), function ($q) use ($request) {
-            $q->where('start', '<=', $request->date . ' 23:59:59')
+            $q->where('pub', '<=', $request->date . ' 23:59:59')
                 ->where('end', '>=', $request->date . ' 00:00:00');
         });
 

@@ -4,6 +4,12 @@
     {{-- alert --}}
     @include('parts.alert.bootstrap-5')
 
+    {{-- search --}}
+    @include('parts.task.search', [
+        'slot_route' => ['admin.task.index'],
+        'slot_method' => 'GET',
+    ])
+
     {{-- header --}}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">タスク一覧</h1>
@@ -17,7 +23,6 @@
 
     {{-- table --}}
     <div class="table-responsive">
-        <task-calendar-common :events='@json($tasks)'></task-calendar-common>
         <table class="table text-nowrap table-hover mt-3">
             <thead>
                 <tr>
@@ -66,6 +71,7 @@
                 @endforelse
             </tbody>
         </table>
+        <task-calendar-common :events='@json($tasks)'></task-calendar-common>
     </div>
 
     {{-- paginator --}}
