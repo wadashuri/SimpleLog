@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\TaskRequest;
 use Illuminate\Support\Facades\DB;
+use App\Constants\StatusConstants;
 
 class TaskController extends Controller
 {
@@ -15,11 +16,11 @@ class TaskController extends Controller
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-            $this->_task = auth()->user('admin')->tasks();
+            $this->_task = auth()->user('admin')->tasks()->with('project');
             return $next($request);
         });
     }
-
+    
     /**
      *　タスク一覧
      */
@@ -131,5 +132,63 @@ class TaskController extends Controller
             logger()->error($e);
             throw $e;
         }
+    }
+
+    /**
+     *　txtエクスポート
+     */
+    public function exportTxt(Request $request)
+    {
+        // タスクデータを取得
+        $tasks = $this->_task->searchTask($request)->latest()->get();
+
+        // データを整形してテキストファイルに書き込む
+        $dataToExport = '';
+        $tasksByProject = [];
+
+        foreach ($tasks as $task) {
+            $projectName = $task->project->name;
+            $check_box = "□";
+
+            if (StatusConstants::STATUS[$task->status] === "完了") {
+                $check_box = "☑︎";
+            }
+
+            if (!isset($tasksByProject[$projectName])) {
+                $tasksByProject[$projectName] = [];
+            }
+
+            // タスクを案件ごとの配列に追加
+            $tasksByProject[$projectName][] = "$check_box$task->title";
+        }
+
+        // データを整形してテキストファイルに書き込む
+        foreach ($tasksByProject as $projectName => $projectTasks) {
+            $dataToExport .= "【" . $projectName . "】\n";
+            
+            // タスクを完了と未完了に分けて整形
+            $completedTasks = [];
+            $uncompletedTasks = [];
+
+            foreach ($projectTasks as $task) {
+                if (strpos($task, '☑︎') === 0) {
+                    $completedTasks[] = $task;
+                } else {
+                    $uncompletedTasks[] = $task;
+                }
+            }
+
+            // 完了したタスクを先頭に配置
+            $tasksForExport = array_merge($completedTasks, $uncompletedTasks);
+
+            $dataToExport .= implode("\n", $tasksForExport) . "\n";
+        }
+
+        // ファイルに書き込む
+        $fileName = $request->date.'_task.txt';
+        file_put_contents($fileName, $dataToExport);
+
+        // ファイルをダウンロードさせるレスポンスを返す
+        return response()->download($fileName)->deleteFileAfterSend(true);
     }
 }

@@ -133,6 +133,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
 
         # タスク
         Route::resource('task', Admin\TaskController::class);
+        # txtエクスポート
+        Route::post('/task/export', [Admin\TaskController::class, 'exportTxt'])->name('task.export');
 
         # 権限:ユーザー登録
         Route::group(['middleware' => ['can:plan']], function () {
