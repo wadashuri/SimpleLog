@@ -21,7 +21,8 @@ class CreateGroupsTable extends Migration
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
-        DB::statement("ALTER TABLE groups comment='グループ'");
+        // DB::statement("ALTER TABLE groups comment='グループ'");
+        //AWS環境でエラーが出るためコメントアウト
     }
 
     /**
