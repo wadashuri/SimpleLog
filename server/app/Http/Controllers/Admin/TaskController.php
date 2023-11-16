@@ -27,7 +27,8 @@ class TaskController extends Controller
     public function index(Request $request)
     {
         return view('admin.task.index', [
-            'tasks' => $this->_task->searchTask($request)->latest()->paginate(10)
+            'tasks' => $this->_task->searchTask($request)->latest()->paginate(10),
+            'projects' => auth()->user('admin')->projects()->pluck('name', 'id')
         ]);
     }
 
