@@ -9,6 +9,7 @@
         {{ Form::text('title', isset($slot_task) ? $slot_task->title : null, [
             'class' => 'form-control group_border_none',
             'placeholder' => 'タスク名を入力してください',
+            'id' => 'title'
         ]) }}
     </div>
     <div class="col-12">
@@ -25,7 +26,7 @@
     </div>
     <div class="col-12 mt-0">
         <hr class="my-4">
-        {{ Form::button('送信', ['type' => 'submit', 'class' => 'w-100 btn btn-primary btn-md']) }}
+        {{ Form::button('送信', ['class' => 'w-100 btn btn-primary btn-md','id' => 'saveButton']) }}
     </div>
 </div>
 {!! Form::close() !!}

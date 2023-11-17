@@ -113,132 +113,267 @@
     {{ $tasks->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
 
     <script>
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     var initialLocaleCode = 'ja';
+        //     var localeSelectorEl = document.getElementById('locale-selector');
+        //     var calendarEl = document.getElementById('calendar');
+        //     const jason_tasks = JSON.parse(calendarEl.dataset.tasks); // オブジェクトを取得
+
+        //     var calendar = new FullCalendar.Calendar(calendarEl, {
+        //         plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
+        //         header: {
+        //             left: 'prev,next today',
+        //             center: 'title',
+        //             right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+        //         },
+        //         defaultDate: new Date(),
+        //         locale: initialLocaleCode,
+        //         buttonIcons: false, // show the prev/next text
+        //         weekNumbers: true,
+        //         navLinks: true, // can click day/week names to navigate views
+        //         editable: true,
+        //         eventLimit: true, // allow "more" link when too many events
+        //         defaultView: 'timeGridDay', // 初期表示を日単位に設定
+        //         //日付をクリックした時に発生させるイベント
+        //         dateClick: function(info) {
+        //             // 日付取得
+        //             const year = info.date.getFullYear();
+        //             const month = (info.date.getMonth() + 1).toString().padStart(2, '0');
+        //             const day = info.date.getDate().toString().padStart(2, '0');
+
+        //             // 時刻取得
+        //             const hours = info.date.getHours().toString().padStart(2, '0');
+        //             const minutes = info.date.getMinutes().toString().padStart(2, '0');
+
+        //             // 日付と時刻を結合
+        //             const formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+
+        //             // 30分追加
+        //             const dateObject = new Date(formattedDateTime);
+        //             dateObject.setMinutes(dateObject.getMinutes() + 30);
+        //             const thirtyMinutesLater =
+        //                 `${dateObject.getFullYear()}-${String(dateObject.getMonth() + 1).padStart(2, '0')}-${String(dateObject.getDate()).padStart(2, '0')}T${String(dateObject.getHours()).padStart(2, '0')}:${String(dateObject.getMinutes()).padStart(2, '0')}`;
+
+        //             // inputフィールドの値を設定
+        //             document.getElementById('start').value = formattedDateTime;
+        //             document.getElementById('end').value = thirtyMinutesLater;
+
+        //             // モーダルを表示
+        //             const modal = new bootstrap.Modal(exampleModal);
+        //             modal.show();
+        //         },
+        //         events: jason_tasks.data
+        //         [
+        //           {
+        //             title: 'All Day Event',
+        //             start: '2019-08-01'
+        //           },
+        //           {
+        //             title: 'Long Event',
+        //             start: '2019-08-07',
+        //             end: '2019-08-10'
+        //           },
+        //           {
+        //             groupId: 999,
+        //             title: 'Repeating Event',
+        //             start: '2019-08-09T16:00:00'
+        //           },
+        //           {
+        //             groupId: 999,
+        //             title: 'Repeating Event',
+        //             start: '2019-08-16T16:00:00'
+        //           },
+        //           {
+        //             title: 'Conference',
+        //             start: '2019-08-11',
+        //             end: '2019-08-13'
+        //           },
+        //           {
+        //             title: 'Meeting',
+        //             start: '2019-08-12T10:30:00',
+        //             end: '2019-08-12T12:30:00'
+        //           },
+        //           {
+        //             title: 'Lunch',
+        //             start: '2019-08-12T12:00:00'
+        //           },
+        //           {
+        //             title: 'Meeting',
+        //             start: '2019-08-12T14:30:00'
+        //           },
+        //           {
+        //             title: 'Happy Hour',
+        //             start: '2019-08-12T17:30:00'
+        //           },
+        //           {
+        //             title: 'Dinner',
+        //             start: '2019-08-12T20:00:00'
+        //           },
+        //           {
+        //             title: 'Birthday Party',
+        //             start: '2019-08-13T07:00:00'
+        //           },
+        //           {
+        //             title: 'Click for Google',
+        //             url: 'http://google.com/',
+        //             start: '2019-08-28'
+        //           }
+        //         ]
+        //     });
+
+        //     calendar.render();
+
+        //     // build the locale selector's options
+        //     calendar.getAvailableLocaleCodes().forEach(function(localeCode) {
+        //         var optionEl = document.createElement('option');
+        //         optionEl.value = localeCode;
+        //         optionEl.selected = localeCode == initialLocaleCode;
+        //         optionEl.innerText = localeCode;
+        //         localeSelectorEl.appendChild(optionEl);
+        //     });
+
+        //     // when the selected option changes, dynamically change the calendar option
+        //     localeSelectorEl.addEventListener('change', function() {
+        //         if (this.value) {
+        //             calendar.setOption('locale', this.value);
+        //         }
+        //     });
+
+        // });
+
         document.addEventListener('DOMContentLoaded', function() {
-            var initialLocaleCode = 'ja';
-            var localeSelectorEl = document.getElementById('locale-selector');
-            var calendarEl = document.getElementById('calendar');
+            const calendarEl = document.getElementById('calendar');
             const jason_tasks = JSON.parse(calendarEl.dataset.tasks); // オブジェクトを取得
 
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['interaction', 'dayGrid', 'timeGrid'],
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
                 defaultDate: new Date(),
-                locale: initialLocaleCode,
-                buttonIcons: false, // show the prev/next text
-                weekNumbers: true,
-                navLinks: true, // can click day/week names to navigate views
-                editable: true,
-                eventLimit: true, // allow "more" link when too many events
                 defaultView: 'timeGridDay', // 初期表示を日単位に設定
-                //日付をクリックした時に発生させるイベント
-                dateClick: function(info) {
-                    // 日付取得
-                    const year = info.date.getFullYear();
-                    const month = (info.date.getMonth() + 1).toString().padStart(2, '0');
-                    const day = info.date.getDate().toString().padStart(2, '0');
+                navLinks: true, // can click day/week names to navigate views
+                selectable: true,
+                selectMirror: true,
+                select: function(arg) {
 
-                    // 時刻取得
-                    const hours = info.date.getHours().toString().padStart(2, '0');
-                    const minutes = info.date.getMinutes().toString().padStart(2, '0');
+                    // const dateStart = new Date(arg.start);
+                    // const dateEnd = new Date(arg.end);
 
-                    // 日付と時刻を結合
-                    const formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+                    // const isoFormattedStart = toISODateTimeLocalString(dateStart);
+                    // const isoFormattedEnd = toISODateTimeLocalString(dateEnd);
 
-                    // 30分追加
-                    const dateObject = new Date(formattedDateTime);
-                    dateObject.setMinutes(dateObject.getMinutes() + 30);
-                    const thirtyMinutesLater =
-                        `${dateObject.getFullYear()}-${String(dateObject.getMonth() + 1).padStart(2, '0')}-${String(dateObject.getDate()).padStart(2, '0')}T${String(dateObject.getHours()).padStart(2, '0')}:${String(dateObject.getMinutes()).padStart(2, '0')}`;
+                    // document.getElementById('start').value = isoFormattedStart;
+                    // document.getElementById('end').value = isoFormattedEnd;
 
-                    // inputフィールドの値を設定
-                    document.getElementById('start').value = formattedDateTime;
-                    document.getElementById('end').value = thirtyMinutesLater;
-
-                    // モーダルを表示
+                    // // モーダルを表示
                     const modal = new bootstrap.Modal(exampleModal);
                     modal.show();
+
+                    const saveButton = document.getElementById('saveButton');
+
+                    saveButton.addEventListener('click', function() {
+                        const title = document.getElementById('title').value;
+
+                        if (title) {
+                            calendar.addEvent({
+                                title: title,
+                                start: arg.start,
+                                end: arg.end,
+                                allDay: arg.allDay
+                            });
+                            modal.hide(); // 修正: hide() メソッドを呼ぶ
+                        }
+                    });
+                    calendar.unselect()
                 },
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
                 events: jason_tasks.data
-                // [
-                //   {
-                //     title: 'All Day Event',
-                //     start: '2019-08-01'
-                //   },
-                //   {
-                //     title: 'Long Event',
-                //     start: '2019-08-07',
-                //     end: '2019-08-10'
-                //   },
-                //   {
-                //     groupId: 999,
-                //     title: 'Repeating Event',
-                //     start: '2019-08-09T16:00:00'
-                //   },
-                //   {
-                //     groupId: 999,
-                //     title: 'Repeating Event',
-                //     start: '2019-08-16T16:00:00'
-                //   },
-                //   {
-                //     title: 'Conference',
-                //     start: '2019-08-11',
-                //     end: '2019-08-13'
-                //   },
-                //   {
-                //     title: 'Meeting',
-                //     start: '2019-08-12T10:30:00',
-                //     end: '2019-08-12T12:30:00'
-                //   },
-                //   {
-                //     title: 'Lunch',
-                //     start: '2019-08-12T12:00:00'
-                //   },
-                //   {
-                //     title: 'Meeting',
-                //     start: '2019-08-12T14:30:00'
-                //   },
-                //   {
-                //     title: 'Happy Hour',
-                //     start: '2019-08-12T17:30:00'
-                //   },
-                //   {
-                //     title: 'Dinner',
-                //     start: '2019-08-12T20:00:00'
-                //   },
-                //   {
-                //     title: 'Birthday Party',
-                //     start: '2019-08-13T07:00:00'
-                //   },
-                //   {
-                //     title: 'Click for Google',
-                //     url: 'http://google.com/',
-                //     start: '2019-08-28'
-                //   }
-                // ]
+                //   [
+                //     {
+                //       title: 'All Day Event',
+                //       start: '2019-08-01'
+                //     },
+                //     {
+                //       title: 'Long Event',
+                //       start: '2019-08-07',
+                //       end: '2019-08-10'
+                //     },
+                //     {
+                //       groupId: 999,
+                //       title: 'Repeating Event',
+                //       start: '2019-08-09T16:00:00'
+                //     },
+                //     {
+                //       groupId: 999,
+                //       title: 'Repeating Event',
+                //       start: '2019-08-16T16:00:00'
+                //     },
+                //     {
+                //       title: 'Conference',
+                //       start: '2019-08-11',
+                //       end: '2019-08-13'
+                //     },
+                //     {
+                //       title: 'Meeting',
+                //       start: '2019-08-12T10:30:00',
+                //       end: '2019-08-12T12:30:00'
+                //     },
+                //     {
+                //       title: 'Lunch',
+                //       start: '2019-08-12T12:00:00'
+                //     },
+                //     {
+                //       title: 'Meeting',
+                //       start: '2019-08-12T14:30:00'
+                //     },
+                //     {
+                //       title: 'Happy Hour',
+                //       start: '2019-08-12T17:30:00'
+                //     },
+                //     {
+                //       title: 'Dinner',
+                //       start: '2019-08-12T20:00:00'
+                //     },
+                //     {
+                //       title: 'Birthday Party',
+                //       start: '2019-08-13T07:00:00'
+                //     },
+                //     {
+                //       title: 'Click for Google',
+                //       url: 'http://google.com/',
+                //       start: '2019-08-28'
+                //     }
+                //   ]
             });
 
             calendar.render();
-
-            // build the locale selector's options
-            calendar.getAvailableLocaleCodes().forEach(function(localeCode) {
-                var optionEl = document.createElement('option');
-                optionEl.value = localeCode;
-                optionEl.selected = localeCode == initialLocaleCode;
-                optionEl.innerText = localeCode;
-                localeSelectorEl.appendChild(optionEl);
-            });
-
-            // when the selected option changes, dynamically change the calendar option
-            localeSelectorEl.addEventListener('change', function() {
-                if (this.value) {
-                    calendar.setOption('locale', this.value);
-                }
-            });
-
         });
+
+        // 与えられた日時をISO 8601 形式の日本時間に変換
+        const toISODateTimeLocalString = (date) => {
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            return `${year}-${month}-${day}T${hours}:${minutes}`;
+        };
     </script>
+    <style>
+        body {
+            margin: 40px 10px;
+            padding: 0;
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
 @endsection
