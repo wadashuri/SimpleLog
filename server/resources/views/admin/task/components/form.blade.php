@@ -24,9 +24,17 @@
         {{ Form::label('status', '状態', ['class' => 'form-label']) }}
         {{ Form::select('status', StatusConstants::STATUS, isset($slot_task->status) ? $slot_task->status : '', ['class' => 'form-select']) }}
     </div>
-    <div class="col-12 mt-0">
+    <div class="col-12 mt-0 d-flex justify-content-center gap-1">
         <hr class="my-4">
-        {{ Form::button('送信', ['type' => 'submit','class' => 'w-100 btn btn-primary btn-md']) }}
+        <div class="col-4">
+            {{ Form::button('戻る', ['class' => 'w-100 btn btn-secondary btn-md','id' => 'back','data-bs-dismiss' => 'modal']) }}
+        </div>
+        <div class="col-4">
+            {{ Form::button('送信', ['class' => 'w-100 btn btn-primary btn-md','id' => 'putForm']) }}
+        </div>
+        <div class="col-4">
+            {{ Form::button('送信', ['class' => 'w-100 btn btn-danger btn-md','id' => 'delete','data-bs-dismiss' => 'modal']) }}
+        </div>
     </div>
 </div>
 {!! Form::close() !!}

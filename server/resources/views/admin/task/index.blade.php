@@ -113,134 +113,7 @@
     {{ $tasks->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
 
     <script>
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     var initialLocaleCode = 'ja';
-        //     var localeSelectorEl = document.getElementById('locale-selector');
-        //     var calendarEl = document.getElementById('calendar');
-        //     const jason_tasks = JSON.parse(calendarEl.dataset.tasks); // オブジェクトを取得
-
-        //     var calendar = new FullCalendar.Calendar(calendarEl, {
-        //         plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
-        //         header: {
-        //             left: 'prev,next today',
-        //             center: 'title',
-        //             right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-        //         },
-        //         defaultDate: new Date(),
-        //         locale: initialLocaleCode,
-        //         buttonIcons: false, // show the prev/next text
-        //         weekNumbers: true,
-        //         navLinks: true, // can click day/week names to navigate views
-        //         editable: true,
-        //         eventLimit: true, // allow "more" link when too many events
-        //         defaultView: 'timeGridDay', // 初期表示を日単位に設定
-        //         //日付をクリックした時に発生させるイベント
-        //         dateClick: function(info) {
-        //             // 日付取得
-        //             const year = info.date.getFullYear();
-        //             const month = (info.date.getMonth() + 1).toString().padStart(2, '0');
-        //             const day = info.date.getDate().toString().padStart(2, '0');
-
-        //             // 時刻取得
-        //             const hours = info.date.getHours().toString().padStart(2, '0');
-        //             const minutes = info.date.getMinutes().toString().padStart(2, '0');
-
-        //             // 日付と時刻を結合
-        //             const formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
-
-        //             // 30分追加
-        //             const dateObject = new Date(formattedDateTime);
-        //             dateObject.setMinutes(dateObject.getMinutes() + 30);
-        //             const thirtyMinutesLater =
-        //                 `${dateObject.getFullYear()}-${String(dateObject.getMonth() + 1).padStart(2, '0')}-${String(dateObject.getDate()).padStart(2, '0')}T${String(dateObject.getHours()).padStart(2, '0')}:${String(dateObject.getMinutes()).padStart(2, '0')}`;
-
-        //             // inputフィールドの値を設定
-        //             document.getElementById('start').value = formattedDateTime;
-        //             document.getElementById('end').value = thirtyMinutesLater;
-
-        //             // モーダルを表示
-        //             const modal = new bootstrap.Modal(exampleModal);
-        //             modal.show();
-        //         },
-        //         events: jason_tasks.data
-        //         [
-        //           {
-        //             title: 'All Day Event',
-        //             start: '2019-08-01'
-        //           },
-        //           {
-        //             title: 'Long Event',
-        //             start: '2019-08-07',
-        //             end: '2019-08-10'
-        //           },
-        //           {
-        //             groupId: 999,
-        //             title: 'Repeating Event',
-        //             start: '2019-08-09T16:00:00'
-        //           },
-        //           {
-        //             groupId: 999,
-        //             title: 'Repeating Event',
-        //             start: '2019-08-16T16:00:00'
-        //           },
-        //           {
-        //             title: 'Conference',
-        //             start: '2019-08-11',
-        //             end: '2019-08-13'
-        //           },
-        //           {
-        //             title: 'Meeting',
-        //             start: '2019-08-12T10:30:00',
-        //             end: '2019-08-12T12:30:00'
-        //           },
-        //           {
-        //             title: 'Lunch',
-        //             start: '2019-08-12T12:00:00'
-        //           },
-        //           {
-        //             title: 'Meeting',
-        //             start: '2019-08-12T14:30:00'
-        //           },
-        //           {
-        //             title: 'Happy Hour',
-        //             start: '2019-08-12T17:30:00'
-        //           },
-        //           {
-        //             title: 'Dinner',
-        //             start: '2019-08-12T20:00:00'
-        //           },
-        //           {
-        //             title: 'Birthday Party',
-        //             start: '2019-08-13T07:00:00'
-        //           },
-        //           {
-        //             title: 'Click for Google',
-        //             url: 'http://google.com/',
-        //             start: '2019-08-28'
-        //           }
-        //         ]
-        //     });
-
-        //     calendar.render();
-
-        //     // build the locale selector's options
-        //     calendar.getAvailableLocaleCodes().forEach(function(localeCode) {
-        //         var optionEl = document.createElement('option');
-        //         optionEl.value = localeCode;
-        //         optionEl.selected = localeCode == initialLocaleCode;
-        //         optionEl.innerText = localeCode;
-        //         localeSelectorEl.appendChild(optionEl);
-        //     });
-
-        //     // when the selected option changes, dynamically change the calendar option
-        //     localeSelectorEl.addEventListener('change', function() {
-        //         if (this.value) {
-        //             calendar.setOption('locale', this.value);
-        //         }
-        //     });
-
-        // });
-
+        // カレンダー
         document.addEventListener('DOMContentLoaded', function() {
             const calendarEl = document.getElementById('calendar');
             const jason_tasks = JSON.parse(calendarEl.dataset.tasks); // オブジェクトを取得
@@ -301,10 +174,6 @@
                     const isoFormattedStart = toISODateTimeLocalString(dateStart);
                     const isoFormattedEnd = toISODateTimeLocalString(dateEnd);
 
-                    console.log(e, e.event.extendedProps.project_id, e.event.title, isoFormattedStart,
-                        isoFormattedEnd, e.event.extendedProps.status);
-
-
                     // inputフィールドの値を設定
                     document.getElementById('project_id').value = e.event.extendedProps.project_id;
                     document.getElementById('title').value = e.event.title;
@@ -314,63 +183,20 @@
 
                     const modal = new bootstrap.Modal(exampleModal);
                     modal.show();
+
+                    const deleteTask = document.getElementById('delete');
+                    deleteTask.addEventListener('click', function() {
+                        if (confirm('削除をしてもよろしいですか？')) {
+                            var numericId = parseInt(e.event.id, 10);
+                            const apiUrl = '{{ route('admin.task.destroy', '*') }}'.replace('*', numericId);
+                            // 非同期関数を呼び出してDELETEリクエストを行います。
+                            deleteData(apiUrl);
+                            e.event.remove();
+                        } else {
+                            return false;
+                        }
+                    });
                 }
-                //   [
-                //     {
-                //       title: 'All Day Event',
-                //       start: '2019-08-01'
-                //     },
-                //     {
-                //       title: 'Long Event',
-                //       start: '2019-08-07',
-                //       end: '2019-08-10'
-                //     },
-                //     {
-                //       groupId: 999,
-                //       title: 'Repeating Event',
-                //       start: '2019-08-09T16:00:00'
-                //     },
-                //     {
-                //       groupId: 999,
-                //       title: 'Repeating Event',
-                //       start: '2019-08-16T16:00:00'
-                //     },
-                //     {
-                //       title: 'Conference',
-                //       start: '2019-08-11',
-                //       end: '2019-08-13'
-                //     },
-                //     {
-                //       title: 'Meeting',
-                //       start: '2019-08-12T10:30:00',
-                //       end: '2019-08-12T12:30:00'
-                //     },
-                //     {
-                //       title: 'Lunch',
-                //       start: '2019-08-12T12:00:00'
-                //     },
-                //     {
-                //       title: 'Meeting',
-                //       start: '2019-08-12T14:30:00'
-                //     },
-                //     {
-                //       title: 'Happy Hour',
-                //       start: '2019-08-12T17:30:00'
-                //     },
-                //     {
-                //       title: 'Dinner',
-                //       start: '2019-08-12T20:00:00'
-                //     },
-                //     {
-                //       title: 'Birthday Party',
-                //       start: '2019-08-13T07:00:00'
-                //     },
-                //     {
-                //       title: 'Click for Google',
-                //       url: 'http://google.com/',
-                //       start: '2019-08-28'
-                //     }
-                //   ]
             });
 
             calendar.render();
@@ -409,27 +235,26 @@
             }
         };
 
-        //get
-        // const postData = async (url, data) => {
-        //     try {
-        //         const response = await fetch(url, {
-        //             method: 'GET',
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
-        //                     'content')
-        //             },
-        //             body: JSON.stringify(data),
-        //         });
+        // delete
+        const deleteData = async (url) => {
+            try {
+                const response = await fetch(url, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                            'content')
+                    },
+                });
 
-        //         if (!response.ok) {
-        //             throw new Error('Network response was not ok');
-        //         }
-        //         console.log('通信成功!');
-        //     } catch (error) {
-        //         console.error('Error during POST request:', error);
-        //     }
-        // };
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                console.log('通信成功!');
+            } catch (error) {
+                console.error('Error during DELETE request:', error.message);
+            }
+        };
     </script>
     <style>
         body {
