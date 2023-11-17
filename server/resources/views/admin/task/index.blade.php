@@ -184,11 +184,44 @@
                     const modal = new bootstrap.Modal(exampleModal);
                     modal.show();
 
+                    const putForm = document.getElementById('putForm');
+                    putForm.addEventListener('click', function() {
+                        e.event.remove();
+                        const title = document.getElementById('title').value;
+                        if (title) {
+                            calendar.addEvent({
+                                title: document.getElementById('title').value,
+                                start: document.getElementById('start').value,
+                                end: document.getElementById('end').value,
+                                allDay: e.allDay
+                            })
+
+                            // PUTするデータ
+                            const putDataObject = {
+                                project_id: document.getElementById('project_id').value,
+                                title: document.getElementById('title').value,
+                                start: document.getElementById('start').value,
+                                end: document.getElementById('end').value,
+                                status: document.getElementById('status').value
+                            };
+
+                            var numericId = parseInt(e.event.id, 10);
+                            const apiUrl = '{{ route('admin.task.update', '*') }}'.replace('*',
+                                numericId);
+
+                            // 非同期関数を呼び出してPOSTリクエストを行います。
+                            putData(apiUrl, putDataObject);
+                        } else {
+                            alert('タスク名を入力してください');
+                        }
+                    });
+
                     const deleteTask = document.getElementById('delete');
                     deleteTask.addEventListener('click', function() {
                         if (confirm('削除をしてもよろしいですか？')) {
                             var numericId = parseInt(e.event.id, 10);
-                            const apiUrl = '{{ route('admin.task.destroy', '*') }}'.replace('*', numericId);
+                            const apiUrl = '{{ route('admin.task.destroy', '*') }}'.replace(
+                                '*', numericId);
                             // 非同期関数を呼び出してDELETEリクエストを行います。
                             deleteData(apiUrl);
                             e.event.remove();
@@ -232,6 +265,28 @@
                 console.log('通信成功!');
             } catch (error) {
                 console.error('Error during POST request:', error);
+            }
+        };
+
+        //put
+        const putData = async (url, data) => {
+            try {
+                const response = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                            'content')
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                console.log('通信成功!');
+            } catch (error) {
+                console.error('Error during PUT request:', error);
             }
         };
 
