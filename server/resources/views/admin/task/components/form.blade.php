@@ -33,7 +33,7 @@
             {{ Form::button('送信', ['class' => 'w-100 btn btn-primary btn-md','id' => 'putForm','data-bs-dismiss' => 'modal']) }}
         </div>
         <div class="col-4">
-            {{ Form::button('送信', ['class' => 'w-100 btn btn-danger btn-md','id' => 'delete','data-bs-dismiss' => 'modal']) }}
+            {{ Form::button('削除', ['class' => 'w-100 btn btn-danger btn-md','id' => 'delete','data-bs-dismiss' => 'modal']) }}
         </div>
     </div>
 </div>

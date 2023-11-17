@@ -209,7 +209,7 @@
                             const apiUrl = '{{ route('admin.task.update', '*') }}'.replace('*',
                                 numericId);
 
-                            // 非同期関数を呼び出してPOSTリクエストを行います。
+                            // 非同期関数を呼び出してPUTリクエストを行います。
                             putData(apiUrl, putDataObject);
                         } else {
                             alert('タスク名を入力してください');
@@ -229,6 +229,57 @@
                             return false;
                         }
                     });
+                },
+                eventDrop: function(e) {
+                    // イベントがドロップされたときに実行する処理
+                    var droppedEvent = e.event;
+
+                    const dateStart = new Date(droppedEvent.start);
+                    const dateEnd = new Date(droppedEvent.end);
+
+                    const isoFormattedStart = toISODateTimeLocalString(dateStart);
+                    const isoFormattedEnd = toISODateTimeLocalString(dateEnd);
+
+                    // PUTするデータ
+                    const putDataObject = {
+                        project_id: droppedEvent.extendedProps.project_id,
+                        title: droppedEvent.title,
+                        start: isoFormattedStart,
+                        end: isoFormattedEnd,
+                        status: droppedEvent.extendedProps.status
+                    };
+
+                    var numericId = parseInt(e.event.id, 10);
+                    const apiUrl = '{{ route('admin.task.update', '*') }}'.replace('*',
+                        numericId);
+
+                    // 非同期関数を呼び出してPUTリクエストを行います。
+                    putData(apiUrl, putDataObject);
+                },
+                eventResize: function(e) {
+                    // イベントのリサイズが発生したときに実行する処理
+                    var resizedEvent = e.event;
+                    const dateStart = new Date(resizedEvent.start);
+                    const dateEnd = new Date(resizedEvent.end);
+
+                    const isoFormattedStart = toISODateTimeLocalString(dateStart);
+                    const isoFormattedEnd = toISODateTimeLocalString(dateEnd);
+
+                    // PUTするデータ
+                    const putDataObject = {
+                        project_id: resizedEvent.extendedProps.project_id,
+                        title: resizedEvent.title,
+                        start: isoFormattedStart,
+                        end: isoFormattedEnd,
+                        status: resizedEvent.extendedProps.status
+                    };
+
+                    var numericId = parseInt(e.event.id, 10);
+                    const apiUrl = '{{ route('admin.task.update', '*') }}'.replace('*',
+                        numericId);
+
+                    // 非同期関数を呼び出してPUTリクエストを行います。
+                    putData(apiUrl, putDataObject);
                 }
             });
 
