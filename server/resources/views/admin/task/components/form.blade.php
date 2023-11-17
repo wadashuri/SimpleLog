@@ -2,7 +2,7 @@
 <div class="row g-3 mb-3">
     <div class="col-12">
         {{ Form::label('project_id', 'プロジェクト', ['class' => 'form-label']) }}
-        {{ Form::select('project_id', $projects, old('project_id', isset($slot_task->project_id) ? $slot_task->project_id : false), ['class' => 'form-select']) }}
+        {{ Form::select('project_id', $projects, old('project_id', isset($slot_task->project_id) ? $slot_task->project_id : false), ['class' => 'form-select', 'placeholder' => '未指定']) }}
     </div>
     <div class="col-12">
         <label>タスク名</label>

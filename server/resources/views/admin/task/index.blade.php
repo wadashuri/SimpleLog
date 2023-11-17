@@ -281,7 +281,7 @@
                             end: isoFormattedEnd,
                         };
 
-                        const apiUrl = '{{ route("admin.task.store") }}';
+                        const apiUrl = '{{ route('admin.task.store') }}';
 
                         // 非同期関数を呼び出してPOSTリクエストを行います。
                         postData(apiUrl, postDataObject);
@@ -292,7 +292,29 @@
                 },
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
-                events: jason_tasks.data
+                events: jason_tasks.data,
+                eventClick: (e) => { // イベントのクリックイベント
+                    // モーダルを表示
+                    const dateStart = new Date(e.event.start);
+                    const dateEnd = new Date(e.event.end);
+
+                    const isoFormattedStart = toISODateTimeLocalString(dateStart);
+                    const isoFormattedEnd = toISODateTimeLocalString(dateEnd);
+
+                    console.log(e, e.event.extendedProps.project_id, e.event.title, isoFormattedStart,
+                        isoFormattedEnd, e.event.extendedProps.status);
+
+
+                    // inputフィールドの値を設定
+                    document.getElementById('project_id').value = e.event.extendedProps.project_id;
+                    document.getElementById('title').value = e.event.title;
+                    document.getElementById('start').value = isoFormattedStart;
+                    document.getElementById('end').value = isoFormattedEnd;
+                    document.getElementById('status').value = e.event.extendedProps.status;
+
+                    const modal = new bootstrap.Modal(exampleModal);
+                    modal.show();
+                }
                 //   [
                 //     {
                 //       title: 'All Day Event',
@@ -365,13 +387,15 @@
         };
 
         //非同期処理
+        //post
         const postData = async (url, data) => {
             try {
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                            'content')
                     },
                     body: JSON.stringify(data),
                 });
@@ -384,6 +408,28 @@
                 console.error('Error during POST request:', error);
             }
         };
+
+        //get
+        // const postData = async (url, data) => {
+        //     try {
+        //         const response = await fetch(url, {
+        //             method: 'GET',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+        //                     'content')
+        //             },
+        //             body: JSON.stringify(data),
+        //         });
+
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         console.log('通信成功!');
+        //     } catch (error) {
+        //         console.error('Error during POST request:', error);
+        //     }
+        // };
     </script>
     <style>
         body {
