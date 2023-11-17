@@ -258,35 +258,36 @@
                 selectable: true,
                 selectMirror: true,
                 select: function(arg) {
+                    const title = prompt('タスク名');
+                    const dateStart = new Date(arg.start);
+                    const dateEnd = new Date(arg.end);
 
-                    // const dateStart = new Date(arg.start);
-                    // const dateEnd = new Date(arg.end);
+                    const isoFormattedStart = toISODateTimeLocalString(dateStart);
+                    const isoFormattedEnd = toISODateTimeLocalString(dateEnd);
 
-                    // const isoFormattedStart = toISODateTimeLocalString(dateStart);
-                    // const isoFormattedEnd = toISODateTimeLocalString(dateEnd);
+                    if (title) {
+                        calendar.addEvent({
+                            title: title,
+                            start: arg.start,
+                            end: arg.end,
+                            allDay: arg.allDay
+                        })
 
-                    // document.getElementById('start').value = isoFormattedStart;
-                    // document.getElementById('end').value = isoFormattedEnd;
+                        // POSTするデータ
+                        const postDataObject = {
+                            title: title,
+                            status: 0,
+                            start: isoFormattedStart,
+                            end: isoFormattedEnd,
+                        };
 
-                    // // モーダルを表示
-                    const modal = new bootstrap.Modal(exampleModal);
-                    modal.show();
+                        const apiUrl = '{{ route("admin.task.store") }}';
 
-                    const saveButton = document.getElementById('saveButton');
-
-                    saveButton.addEventListener('click', function() {
-                        const title = document.getElementById('title').value;
-
-                        if (title) {
-                            calendar.addEvent({
-                                title: title,
-                                start: arg.start,
-                                end: arg.end,
-                                allDay: arg.allDay
-                            });
-                            modal.hide(); // 修正: hide() メソッドを呼ぶ
-                        }
-                    });
+                        // 非同期関数を呼び出してPOSTリクエストを行います。
+                        postData(apiUrl, postDataObject);
+                    } else {
+                        alert('タスク名を入力してください');
+                    }
                     calendar.unselect()
                 },
                 editable: true,
@@ -361,6 +362,27 @@
             const hours = date.getHours().toString().padStart(2, '0');
             const minutes = date.getMinutes().toString().padStart(2, '0');
             return `${year}-${month}-${day}T${hours}:${minutes}`;
+        };
+
+        //非同期処理
+        const postData = async (url, data) => {
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                console.log('通信成功!');
+            } catch (error) {
+                console.error('Error during POST request:', error);
+            }
         };
     </script>
     <style>

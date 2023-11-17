@@ -24,14 +24,14 @@ class TaskRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id' => 'required',
+            'title' => 'required',
         ];
     }
 
     public function attributes()
     {
         return [
-            'project_id' => 'プロジェクト'
+            'title' => 'タスク名'
         ];
     }
 }
