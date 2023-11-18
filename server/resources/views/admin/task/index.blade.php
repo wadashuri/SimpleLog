@@ -185,7 +185,8 @@
                     modal.show();
 
                     const putForm = document.getElementById('putForm');
-                    putForm.addEventListener('click', function() {
+
+                    function putFormHandler() {
                         e.event.remove();
                         const title = document.getElementById('title').value;
                         if (title) {
@@ -211,24 +212,38 @@
 
                             // 非同期関数を呼び出してPUTリクエストを行います。
                             putData(apiUrl, putDataObject);
+
+                            // Remove the event listener after it has been executed
+                            putForm.removeEventListener('click', putFormHandler);
                         } else {
                             alert('タスク名を入力してください');
                         }
-                    });
+                    }
+
+                    // Attach the event listener
+                    putForm.addEventListener('click', putFormHandler);
 
                     const deleteTask = document.getElementById('delete');
-                    deleteTask.addEventListener('click', function() {
+
+                    function deleteTaskHandler() {
                         if (confirm('削除をしてもよろしいですか？')) {
                             var numericId = parseInt(e.event.id, 10);
-                            const apiUrl = '{{ route('admin.task.destroy', '*') }}'.replace(
-                                '*', numericId);
+                            const apiUrl = '{{ route('admin.task.destroy', '*') }}'.replace('*',
+                                numericId);
                             // 非同期関数を呼び出してDELETEリクエストを行います。
                             deleteData(apiUrl);
                             e.event.remove();
+
+                            // Remove the event listener after it has been executed
+                            deleteTask.removeEventListener('click', deleteTaskHandler);
                         } else {
                             return false;
                         }
-                    });
+                    }
+
+                    // Attach the event listener
+                    deleteTask.addEventListener('click', deleteTaskHandler);
+
                 },
                 eventDrop: function(e) {
                     // イベントがドロップされたときに実行する処理
