@@ -20,77 +20,25 @@
     {{-- カレンダー --}}
     <div id='calendar' data-tasks='@json($tasks)'></div>
 
-    {{-- table --}}
-    <div class="table-responsive">
-        <table class="table text-nowrap table-hover mt-3">
-            <thead>
-                <tr>
-                    <th scope="col">名前</th>
-                    <th scope="col">開始/終了</th>
-                    <th scope="col">状態</th>
-                    <th scope="col">操作</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($tasks as $task)
-                    <tr>
-                        <td class="align-middle">{{ $task->title }}</td>
-                        <td class="align-middle">
-                            {{ $task->start->format('m月d日:H時i分/') }}{{ $task->end->format('m月d日:H時i分') }}</td>
-                        <td class="align-middle">
-                            <span class="{{ StatusConstants::COLOR[$task->status] }}">
-                                {{ StatusConstants::STATUS[$task->status] }}
-                            </span>
-                        </td>
-                        <td class="align-middle">
-                            <div class="btn-group me-2">
-                                <a class="btn btn-sm btn-outline-success" href="{{ route('admin.task.show', $task->id) }}">
-                                    <span data-feather="info"></span>
-                                    詳細
-                                </a>
-                                <a class="btn btn-sm btn-outline-primary" href="{{ route('admin.task.edit', $task->id) }}">
-                                    <span data-feather="edit"></span>
-                                    編集
-                                </a>
-                                {!! Form::open([
-                                    'route' => ['admin.task.destroy', $task->id],
-                                    'method' => 'delete',
-                                    'class' => 'btn-group',
-                                ]) !!}
-                                {!! Form::button('<span data-feather="trash"></span>削除', [
-                                    'type' => 'submit',
-                                    'class' => 'btn btn-sm btn-outline-danger',
-                                    'onclick' => "if(!confirm('削除をしてもよろしいですか？')) return false;",
-                                ]) !!}
-                                {!! Form::close() !!}
-                            </div>
-                        </td>
-                    </tr>
-                @empty
-                    <p>タスクが登録されていません</p>
-                @endforelse
-            </tbody>
-        </table>
-
-        {{-- modal --}}
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">タスク</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        @component('admin.task.components.form', [
-                            'slot_route' => 'admin.task.store',
-                            'slot_method' => 'post',
-                            'projects' => $projects,
-                        ])
-                        @endcomponent
-                    </div>
+    {{-- modal --}}
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">タスク</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @component('admin.task.components.form', [
+                        'slot_route' => 'admin.task.store',
+                        'slot_method' => 'post',
+                        'projects' => $projects,
+                    ])
+                    @endcomponent
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     {{-- paginator --}}
