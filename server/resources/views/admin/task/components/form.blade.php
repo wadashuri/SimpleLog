@@ -14,7 +14,7 @@
     </div>
     <div class="col-12">
         {{ Form::label('start', '開始日', ['class' => 'form-label']) }}
-        {{ Form::input('dateTime-local', 'start', isset($slot_task->start) ? $slot_task->start : '', ['class' => 'form-control', 'step' => '1800']) }}
+        {{ Form::input('dateTime-local', 'start', isset($slot_task->start) ? $slot_task->start : '', ['class' => 'form-control']) }}
     </div>
     <div class="col-12">
         {{ Form::label('end', '終了日', ['class' => 'form-label']) }}

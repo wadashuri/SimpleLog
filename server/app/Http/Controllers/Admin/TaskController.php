@@ -52,15 +52,14 @@ class TaskController extends Controller
             $params = $request->input();
             $params['admin_id'] = auth()->user('admin')->id;
 
-            DB::transaction(function () use ($params) {
-                $this->_task->create($params);
+            $task = DB::transaction(function () use ($params) {
+                return $this->_task->create($params);
             });
 
-            return redirect()->route('admin.task.index')->with([
-                'alert' => [
-                    'message' => 'タスクの登録が完了しました。',
-                    'type' => 'success'
-                ]
+            return response()->json([
+                'success' => true,
+                'message' => 'タスクの登録が完了しました。',
+                'id' => $task->id
             ]);
         } catch (\Exception $e) {
             logger()->error($e);
@@ -101,11 +100,9 @@ class TaskController extends Controller
                 $this->_task->findOrFail(request()->route('task'))->fill($params)->update();
             });
 
-            return redirect()->route('admin.task.edit', request()->route('task'))->with([
-                'alert' => [
-                    'message' => 'タスクの編集が完了しました。',
-                    'type' => 'success'
-                ]
+            return response()->json([
+                'success' => true,
+                'message' => 'タスクの編集が完了しました。',
             ]);
         } catch (\Exception $e) {
             logger()->error($e);
@@ -123,11 +120,9 @@ class TaskController extends Controller
                 $this->_task->findOrFail(request()->route('task'))->delete();
             });
 
-            return redirect()->route('admin.task.index')->with([
-                'alert' => [
-                    'message' => 'タスクの削除が完了しました。',
-                    'type' => 'danger'
-                ]
+            return response()->json([
+                'success' => true,
+                'message' => 'タスクの削除が完了しました。',
             ]);
         } catch (\Exception $e) {
             logger()->error($e);

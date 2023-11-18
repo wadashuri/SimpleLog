@@ -6,12 +6,6 @@
                 ホーム
             </a>
         </li>
-        <li class="nav-item {{ Functions::activeClass('admin.project.index') }}">
-            <a class="nav-link link-dark" href="{{ route('admin.project.index') }}">
-                <span class="svg_initial" data-feather="activity"></span>
-                プロジェクト
-            </a>
-        </li>
         <li class="nav-item">
             <a class="nav-link link-dark {{ Functions::activeClass('admin.task.index') }}"
                 href="{{ route('admin.task.index') }}">
@@ -19,13 +13,19 @@
                 タスク
             </a>
         </li>
-            <li class="nav-item">
-                <a class="nav-link link-dark {{ Functions::activeClass('admin.user.index') }}"
-                    href="{{ route('admin.user.index') }}">
-                    <span class="svg_initial" data-feather="user"></span>
-                    ユーザー
-                </a>
-            </li>
+        <li class="nav-item {{ Functions::activeClass('admin.project.index') }}">
+            <a class="nav-link link-dark" href="{{ route('admin.project.index') }}">
+                <span class="svg_initial" data-feather="activity"></span>
+                プロジェクト
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-dark {{ Functions::activeClass('admin.user.index') }}"
+                href="{{ route('admin.user.index') }}">
+                <span class="svg_initial" data-feather="user"></span>
+                ユーザー
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link link-dark {{ Functions::activeClass('admin.group.create') }}"
                 href="{{ route('admin.group.create') }}">
