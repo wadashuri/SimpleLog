@@ -7,14 +7,14 @@
     {{-- header --}}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">タスク一覧</h1>
-        <div class="btn-toolbar mb-2 mb-md-0 align-items-end">
+        {{-- <div class="btn-toolbar mb-2 mb-md-0 align-items-end">
             <div class="btn-group me-2">
                 {!! Form::open(['route' => 'admin.task.export', 'method' => 'post']) !!}
                 <button type="submit" class="btn btn-sm btn-outline-success">TXTエクスポート</button>
                 <input type="hidden" name="date" value={{ request()->input('date', date('Y-m-d')) }}>
                 {!! Form::close() !!}
             </div>
-        </div>
+        </div> --}}
     </div>
 
     {{-- カレンダー --}}
