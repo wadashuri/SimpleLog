@@ -143,7 +143,7 @@ class TaskController extends Controller
         $tasksByProject = [];
 
         foreach ($tasks as $task) {
-            $projectName = $task->project->name;
+            $projectName = $task->project->name ?? '未指定';
             $check_box = "□";
 
             if (StatusConstants::STATUS[$task->status] === "完了") {
