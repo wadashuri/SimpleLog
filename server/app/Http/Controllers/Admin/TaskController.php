@@ -136,7 +136,7 @@ class TaskController extends Controller
     public function exportTxt(Request $request)
     {
         // タスクデータを取得
-        $tasks = $this->_task->searchTask($request)->latest()->get();
+        $tasks = $this->_task->exportTask($request)->get();
 
         // データを整形してテキストファイルに書き込む
         $dataToExport = '';

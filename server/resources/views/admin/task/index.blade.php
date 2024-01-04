@@ -9,7 +9,11 @@
         <h1 class="h2">タスク一覧</h1>
         <div class="btn-toolbar mb-2 mb-md-0 align-items-end">
             <div class="btn-group me-2">
-                {!! Form::open(['route' => 'admin.task.export', 'method' => 'post', 'class' => 'd-flex gap-1  flex-wrap align-items-center']) !!}
+                {!! Form::open([
+                    'route' => 'admin.task.export',
+                    'method' => 'post',
+                    'class' => 'd-flex gap-1  flex-wrap align-items-center',
+                ]) !!}
                 {{-- 日付 --}}
                 <div>
                     {{ Form::input('date', 'date', request()->input('date', date('Y-m-d')), ['class' => 'form-control']) }}
@@ -179,20 +183,16 @@
                 const deleteTask = document.getElementById('delete');
 
                 function deleteTaskHandler() {
-                    if (confirm('削除をしてもよろしいですか？')) {
-                        var numericId = parseInt(e.event.id, 10);
-                        const apiUrl = '{{ route('admin.task.destroy', '*') }}'.replace('*',
-                            numericId);
+                    var numericId = parseInt(e.event.id, 10);
+                    const apiUrl = '{{ route('admin.task.destroy', '*') }}'.replace('*',
+                        numericId);
 
-                        // 非同期関数を呼び出してDELETEリクエストを行います。
-                        deleteData(apiUrl);
-                        e.event.remove();
+                    // 非同期関数を呼び出してDELETEリクエストを行います。
+                    deleteData(apiUrl);
+                    e.event.remove();
 
-                        // Remove the event listener after it has been executed
-                        deleteTask.removeEventListener('click', deleteTaskHandler);
-                    } else {
-                        return false;
-                    }
+                    // Remove the event listener after it has been executed
+                    deleteTask.removeEventListener('click', deleteTaskHandler);
                 }
 
                 // Attach the event listener
