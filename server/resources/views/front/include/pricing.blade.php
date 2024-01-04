@@ -49,8 +49,8 @@
                 <div class="block-7 border border-primary">
                     <div class="text-center">
                         <h2 class="heading">
-                            <span class="badge bg-danger text-white">おすすめ！</span><br>
-                            Premium
+                            Premium<br>
+                            <span class="badge bg-danger text-white">おすすめ！</span>
                         </h2>
                         <span class="price"><sup>¥</sup> <span class="number">7,500</span></span>
                         <span class="excerpt d-block">ユーザー追加数増加インポートエクスポート機能追加</span>
@@ -73,7 +73,7 @@
                     <div class="text-center">
                         <h2 class="heading">Pro</h2>
                         <span class="price"><sup>¥</sup> <span class="number">22,500</span></span>
-                        <span class="excerpt d-block">操作が不安で電話サポートを受けたい方</span>
+                        <span class="excerpt d-block">操作が不安で電話サポートを受けたい方<br>※150人以上のご利用はご相談ください</span>
                         <a href="{{ route('admin.register') }}"
                             class="btn btn-primary btn-outline-primary d-block px-3 py-3 mb-4">Get
                             Started</a>
