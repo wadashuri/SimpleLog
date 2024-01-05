@@ -323,6 +323,29 @@
         }
     };
 
+    //post
+    const postData = async (url, data) => {
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                        'content')
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            console.log('通信成功!');
+            return response.json();
+        } catch (error) {
+            console.error('Error during POST request:', error);
+        }
+    };
+
 
 
     //put
