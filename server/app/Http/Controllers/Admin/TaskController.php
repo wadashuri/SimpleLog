@@ -36,10 +36,11 @@ class TaskController extends Controller
     /**
      *　タスク作成
      */
-    public function create()
+    public function get(Request $request)
     {
-        return view('admin.task.create', [
-            'projects' => auth()->user('admin')->projects()->pluck('name', 'id'),
+        return response()->json([
+            'tasks' => $this->_task->searchTask($request)->latest()->paginate(10),
+            'projects' => auth()->user('admin')->projects()->pluck('name', 'id')
         ]);
     }
 

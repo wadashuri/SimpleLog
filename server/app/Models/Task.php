@@ -37,8 +37,8 @@ class Task extends Model
      */
     public function scopeSearchTask($query, $request)
     {
-        $start = Carbon::now()->startOfMonth();
-        $end = Carbon::now()->endOfMonth();
+        $start = $request->start ?? Carbon::now()->startOfMonth();
+        $end = $request->end ?? Carbon::now()->endOfMonth();
         
         $query->where('start', '>=', $start)
               ->where('end', '<=', $end);

@@ -28,7 +28,7 @@
 
     {{-- カレンダー --}}
     <div id='calendar' data-tasks='@json($tasks)'></div>
-        <small class="text-danger">※現在の月データのみ取得されます</small>
+    <small class="text-danger">※現在の月データのみ取得されます</small>
 
     {{-- modal --}}
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -120,7 +120,33 @@
             },
             editable: true,
             eventLimit: true, // allow "more" link when too many events
-            events: jason_tasks.data,
+            events: function(fetchInfo, successCallback, failureCallback) {
+                // ***** ここでカレンダーデータ取得JSを呼ぶ *****
+                const dateStart = new Date(fetchInfo.startStr);
+                const dateEnd = new Date(fetchInfo.endStr);
+
+                const isoFormattedStart = toISODateTimeLocalString(dateStart);
+                const isoFormattedEnd = toISODateTimeLocalString(dateEnd);
+
+                // getData 関数が Promise を返すと仮定して、then を使って非同期処理の結果を取得します
+                getData('{{ route('admin.task.get') }}', isoFormattedStart, isoFormattedEnd)
+                    .then(data => {
+                        var events = [];
+                        data.forEach(function(e) {
+                            events.push({
+                                title: e.title,
+                                start: e.start,
+                                end: e.end,
+                                status: e.status,
+                            });
+                        });
+                        console.log(events);
+                        successCallback(events);
+                    })
+                    .catch(error => {
+                        console.error('Error during POST request:', error);
+                    });
+            },
             eventClick: (e) => {
                 // モーダルを表示
                 const dateStart = new Date(e.event.start);
@@ -266,8 +292,8 @@
     };
 
     // 非同期処理
-    //post
-    const postData = async (url, data) => {
+    //get
+    const getData = async (url, start, end) => {
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -276,18 +302,29 @@
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
                         'content')
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify({
+                    start,
+                    end
+                })
             });
 
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
+
             console.log('通信成功!');
-            return response.json();
+
+            // レスポンスのJSONデータを取得
+            const eventData = await response.json();
+
+            return eventData.tasks.data; // レスポンスのJSONデータを返す
         } catch (error) {
             console.error('Error during POST request:', error);
+            throw error; // エラーを再度投げる
         }
     };
+
+
 
     //put
     const putData = async (url, data) => {

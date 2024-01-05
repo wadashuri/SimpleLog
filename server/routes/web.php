@@ -133,6 +133,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.',], function () {
 
         # タスク
         Route::resource('task', Admin\TaskController::class);
+        Route::post('/task/get', [Admin\TaskController::class, 'get'])->name('task.get');
         # txtエクスポート
         Route::post('/task/export', [Admin\TaskController::class, 'exportTxt'])->name('task.export');
 
