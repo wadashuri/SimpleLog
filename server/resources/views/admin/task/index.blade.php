@@ -133,6 +133,8 @@
                         var events = [];
                         data.forEach(function(e) {
                             events.push({
+                                id: e.id,
+                                project_id: e.project_id,
                                 title: e.title,
                                 start: e.start,
                                 end: e.end,
