@@ -28,7 +28,6 @@
 
     {{-- カレンダー --}}
     <div id='calendar' data-tasks='@json($tasks)'></div>
-    <small class="text-danger">※現在の月データのみ取得されます</small>
 
     {{-- modal --}}
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
