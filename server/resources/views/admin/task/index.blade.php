@@ -51,7 +51,7 @@
     </div>
 
     {{-- paginator --}}
-    {{ $tasks->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
+    {{-- {{ $tasks->appends(request()->query())->links('vendor.pagination.bootstrap-5') }} --}}
 @endsection
 
 <script>
@@ -141,7 +141,6 @@
                                 status: e.status,
                             });
                         });
-                        console.log(events);
                         successCallback(events);
                     })
                     .catch(error => {
@@ -318,7 +317,7 @@
             // レスポンスのJSONデータを取得
             const eventData = await response.json();
 
-            return eventData.tasks.data; // レスポンスのJSONデータを返す
+            return eventData.tasks; // レスポンスのJSONデータを返す
         } catch (error) {
             console.error('Error during POST request:', error);
             throw error; // エラーを再度投げる

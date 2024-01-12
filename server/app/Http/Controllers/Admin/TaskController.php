@@ -27,19 +27,19 @@ class TaskController extends Controller
     public function index(Request $request)
     {
         return view('admin.task.index', [
-            'tasks' => $this->_task->searchTask($request)->latest()->paginate(10),
+            'tasks' => $this->_task->searchTask($request)->latest()->get(),
             'projects' => auth()->user('admin')->projects()->pluck('name', 'id')
         ]);
     }
 
 
     /**
-     *　タスク作成
+     *　タスク一覧
      */
     public function get(Request $request)
     {
         return response()->json([
-            'tasks' => $this->_task->searchTask($request)->latest()->paginate(10),
+            'tasks' => $this->_task->searchTask($request)->latest()->get(),
             'projects' => auth()->user('admin')->projects()->pluck('name', 'id')
         ]);
     }
