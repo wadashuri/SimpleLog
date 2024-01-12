@@ -21,6 +21,7 @@
             <thead>
                 <tr>
                     <th scope="col">admin名</th>
+                    <th scope="col">最終ログイン</th>
                     <th scope="col">操作</th>
                 </tr>
             </thead>
@@ -28,6 +29,7 @@
                 @forelse ($admins as $admin)
                     <tr>
                         <td class="align-middle">{{ $admin->name }}</td>
+                        <td class="align-middle">{{ $admin->last_login_at }}</td>
                         <td class="align-middle">
                             <div class="btn-group me-2">
                                 <a class="btn btn-sm btn-outline-success"

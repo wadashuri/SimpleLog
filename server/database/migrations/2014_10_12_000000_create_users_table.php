@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->unsignedTinyInteger('administrator')->comment('全体管理者:10 一般:1');
             $table->rememberToken();
+            $table->dateTime('last_login_at')->nullable()->comment('最終ログイン');
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });

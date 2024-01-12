@@ -64,6 +64,8 @@ class LoginController extends Controller
         $route_name = $this->_guard . '.home';
 
         if (auth($this->_guard)->attempt($credentials, $request->filled('remember'))) {
+            #ログインログを保存
+            auth($this->_guard)->user()->update(['last_login_at' => now()]);
             return redirect()->route($route_name);
         }
         return back()->withInput($credentials)->withErrors([
