@@ -18,8 +18,8 @@
                     <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                         <a href="{{ route('front.contact.index') }}"
                             class="btn btn-primary btn-outline-primary px-4 py-3 mt-1">お問い合わせはこちら</a>
-                        {{-- <a href="{{ route('admin.register') }}"
-                            class="btn btn-primary px-4 py-3 mt-1">無料でSimpleLogを試してみる</a> --}}
+                        <a href="{{ route('admin.register') }}"
+                            class="btn btn-primary px-4 py-3 mt-1">無料でSimpleLogを試してみる</a>
                     </p>
                 </div>
                 <div class="one-half align-self-md-end align-self-sm-center">
@@ -92,13 +92,18 @@
     </div>
 
 
-    {{-- counter --}}
-    {{-- @include('front.include.counter') --}}
-
     {{-- 事業内容 --}}
     @include('front.include.work',['works' => $works])
 
     @include('front.include.services')
+
+    {{-- counter --}}
+    @include('front.include.counter',[
+      'admin_count' => $admin_count,
+      'master_count' => $master_count,
+      'user_count' => $user_count,
+      'subscription_count' => $subscription_count,
+    ])
 
     @include('front.include.pricing')
 

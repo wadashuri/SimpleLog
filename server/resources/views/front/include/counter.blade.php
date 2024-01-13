@@ -6,32 +6,32 @@
                 <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                   <div class="block-18 text-center">
                     <div class="text">
-                      <strong class="number" data-number="6780">0</strong>
-                      <span>Happy Clients</span>
+                      <strong class="number" data-number={{ $master_count }}>0</strong>
+                      <span>連携企業数</span>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                   <div class="block-18 text-center">
                     <div class="text">
-                      <strong class="number" data-number="4500">0</strong>
-                      <span>Running Projects</span>
+                      <strong class="number" data-number={{ $admin_count }}>0</strong>
+                      <span>システム利用者数</span>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                   <div class="block-18 text-center">
                     <div class="text">
-                      <strong class="number" data-number="4200">0</strong>
-                      <span>Project Completed</span>
+                      <strong class="number" data-number={{ $user_count }}>0</strong>
+                      <span>有料会員管理ユーザー数</span>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                   <div class="block-18 text-center">
                     <div class="text">
-                      <strong class="number" data-number="320">0</strong>
-                      <span>Cups of Coffe</span>
+                      <strong class="number" data-number={{ $subscription_count }}>0</strong>
+                      <span>有料会員数</span>
                     </div>
                   </div>
                 </div>
