@@ -193,6 +193,9 @@ Route::group(['prefix' => 'user', 'as' => 'user.',], function () {
 
         # タスク
         Route::resource('task', User\TaskController::class);
+        Route::post('/task/get', [User\TaskController::class, 'get'])->name('task.get');
+        # txtエクスポート
+        Route::post('/task/export', [User\TaskController::class, 'exportTxt'])->name('task.export');
 
         # logout
         Route::match(['get', 'post'], '/logout', [Auth\LoginController::class, 'logout'])->name('logout');

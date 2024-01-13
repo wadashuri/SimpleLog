@@ -14,7 +14,7 @@ class TaskController extends Controller
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-            $this->_task = auth()->user()->admin->tasks();
+            $this->_task = auth()->user('user')->admin->tasks()->with('project');
             return $next($request);
         });
     }
@@ -25,18 +25,20 @@ class TaskController extends Controller
     public function index(Request $request)
     {
         return view('user.task.index', [
-            'tasks' => $this->_task->searchTask($request)->latest()->paginate(10)
+            'tasks' => $this->_task->searchTask($request)->latest()->get(),
+            'projects' => auth()->user('user')->admin->projects()->pluck('name', 'id')
         ]);
     }
 
+
     /**
-     *　タスク作成
+     *　タスク一覧
      */
-    public function create()
+    public function get(Request $request)
     {
-        return view('user.task.create', [
-            'tasks' => $this->_task->latest()->paginate(10),
-            'projects' => auth()->user()->admin->projects()->pluck('name', 'id'),
+        return response()->json([
+            'tasks' => $this->_task->searchTask($request)->latest()->get(),
+            'projects' => auth()->user('user')->admin->projects()->pluck('name', 'id')
         ]);
     }
 
@@ -47,17 +49,17 @@ class TaskController extends Controller
     {
         try {
             $params = $request->input();
-            $params['user_id'] = auth()->user()->id;
+            $params['admin_id'] = auth()->user('user')->admin->id;
+            $params['user_id'] = auth()->user('user')->admin->id;
 
-            DB::transaction(function () use ($params) {
-                $this->_task->create($params);
+            $task = DB::transaction(function () use ($params) {
+                return $this->_task->create($params);
             });
 
-            return redirect()->route('user.task.index')->with([
-                'alert' => [
-                    'message' => 'タスクの登録が完了しました。',
-                    'type' => 'success'
-                ]
+            return response()->json([
+                'success' => true,
+                'message' => 'タスクの登録が完了しました。',
+                'id' => $task->id
             ]);
         } catch (\Exception $e) {
             logger()->error($e);
@@ -82,7 +84,7 @@ class TaskController extends Controller
     {
         return view('user.task.edit', [
             'task' => $this->_task->findOrFail(request()->route('task')),
-            'projects' => auth()->user()->admin->projects()->pluck('name', 'id'),
+            'projects' => auth()->user('user')->projects()->pluck('name', 'id')
         ]);
     }
 
@@ -98,11 +100,9 @@ class TaskController extends Controller
                 $this->_task->findOrFail(request()->route('task'))->fill($params)->update();
             });
 
-            return redirect()->route('user.task.edit', request()->route('task'))->with([
-                'alert' => [
-                    'message' => 'タスクの編集が完了しました。',
-                    'type' => 'success'
-                ]
+            return response()->json([
+                'success' => true,
+                'message' => 'タスクの編集が完了しました。',
             ]);
         } catch (\Exception $e) {
             logger()->error($e);
@@ -120,15 +120,71 @@ class TaskController extends Controller
                 $this->_task->findOrFail(request()->route('task'))->delete();
             });
 
-            return redirect()->route('user.task.index')->with([
-                'alert' => [
-                    'message' => 'タスクの削除が完了しました。',
-                    'type' => 'danger'
-                ]
+            return response()->json([
+                'success' => true,
+                'message' => 'タスクの削除が完了しました。',
             ]);
         } catch (\Exception $e) {
             logger()->error($e);
             throw $e;
         }
+    }
+
+        /**
+     *　txtエクスポート
+     */
+    public function exportTxt(Request $request)
+    {
+        // タスクデータを取得
+        $tasks = $this->_task->exportTask($request)->get();
+
+        // データを整形してテキストファイルに書き込む
+        $dataToExport = '';
+        $tasksByProject = [];
+
+        foreach ($tasks as $task) {
+            $projectName = $task->project->name ?? '未指定';
+            $check_box = "□";
+
+            if (StatusConstants::STATUS[$task->status] === "完了") {
+                $check_box = "☑︎";
+            }
+
+            if (!isset($tasksByProject[$projectName])) {
+                $tasksByProject[$projectName] = [];
+            }
+
+            // タスクを案件ごとの配列に追加
+            $tasksByProject[$projectName][] = "$check_box$task->title";
+        }
+
+        // データを整形してテキストファイルに書き込む
+        foreach ($tasksByProject as $projectName => $projectTasks) {
+            $dataToExport .= "【" . $projectName . "】\n";
+            
+            // タスクを完了と未完了に分けて整形
+            $completedTasks = [];
+            $uncompletedTasks = [];
+
+            foreach ($projectTasks as $task) {
+                if (strpos($task, '☑︎') === 0) {
+                    $completedTasks[] = $task;
+                } else {
+                    $uncompletedTasks[] = $task;
+                }
+            }
+
+            // 完了したタスクを先頭に配置
+            $tasksForExport = array_merge($completedTasks, $uncompletedTasks);
+
+            $dataToExport .= implode("\n", $tasksForExport) . "\n";
+        }
+
+        // ファイルに書き込む
+        $fileName = $request->date.'_task.txt';
+        file_put_contents($fileName, $dataToExport);
+
+        // ファイルをダウンロードさせるレスポンスを返す
+        return response()->download($fileName)->deleteFileAfterSend(true);
     }
 }

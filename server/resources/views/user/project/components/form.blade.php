@@ -56,6 +56,11 @@
         </div>
 
         <div class="col-12">
+            {{ Form::label('gross_profit', '粗利', ['class' => 'form-label']) }}
+            {{ Form::number('gross_profit', isset($slot_project) ? $slot_project->gross_profit : null, ['class' => 'form-control', 'min' => 0,'max' => 100000000,]) }}
+        </div>
+
+        <div class="col-12">
             {{ Form::label('description', '説明', ['class' => 'form-label']) }}
             {{ Form::textarea('description', old('description', isset($slot_project) ? $slot_project->description : null), ['class' => 'form-control']) }}
         </div>

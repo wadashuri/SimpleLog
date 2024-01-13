@@ -27,6 +27,11 @@ class Task extends Model
         return $this->belongsTo(Admin::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(user::class);
+    }
+
     public function project()
     {
         return $this->belongsTo(Project::class);
