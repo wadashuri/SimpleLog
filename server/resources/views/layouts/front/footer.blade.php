@@ -4,14 +4,19 @@
             <div class="col-md-3">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">SincerityLab</h2>
-                    <p>当事務所に関する情報を各種SNSにも掲載しておりますのでご確認ください</p>
+                    <p>各種SNSに制作楽曲を掲載しておりますのでご確認ください</p>
                 </div>
                 <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
-                    <li class="ftco-animate"><a href="https://twitter.com/wada20010108"><span
-                                class="icon-twitter"></span></a></li>
-                    <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCu22rOTZVY-GJWrA5MmG6LQ"><span
+                    <li class="ftco-animate">
+                        <a href="https://www.tiktok.com/@shuri_slab?_t=8kGK47AeCx8&_r=1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="38" style="padding-top: 10px; padding-left: 5px;"  fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+                                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="ftco-animate"><a href="https://www.youtube.com/@shuri-slab"><span
                                 class="icon-youtube"></span></a></li>
-                    <li class="ftco-animate"><a href="https://www.instagram.com/shuri.wada/"><span
+                    <li class="ftco-animate"><a href="https://www.instagram.com/slab0108?igsh=MWxsOWt6MjFpMjJmeQ%3D%3D&utm_source=qr"><span
                                 class="icon-instagram"></span></a></li>
                 </ul>
             </div>

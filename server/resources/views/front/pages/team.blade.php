@@ -17,7 +17,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 d-flex mb-sm-4 ftco-animate justify-content-center">
                     <div class="staff">
-                        <div class="img mb-4" style="background-image: url(images/person_1.png);"></div>
+                        <div class="img mb-4" style="background-image: url(images/person_1.jpg);"></div>
                         <div class="info text-left">
                             <h3><a href="teacher-single.html">和田 朱利</a></h3>
                             <span class="position">代表, プログラマー</span>
