@@ -4,9 +4,9 @@
             <div class="col-md-3">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">SincerityLab</h2>
-                    <p>各種SNSに制作楽曲を掲載しておりますのでご確認ください</p>
+                    {{-- <p>各種SNSに制作楽曲を掲載しておりますのでご確認ください</p> --}}
                 </div>
-                <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
+                {{-- <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
                     <li class="ftco-animate">
                         <a href="https://www.tiktok.com/@shuri_slab?_t=8kGK47AeCx8&_r=1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="38" style="padding-top: 10px; padding-left: 5px;"  fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
@@ -18,7 +18,7 @@
                                 class="icon-youtube"></span></a></li>
                     <li class="ftco-animate"><a href="https://www.instagram.com/slab0108?igsh=MWxsOWt6MjFpMjJmeQ%3D%3D&utm_source=qr"><span
                                 class="icon-instagram"></span></a></li>
-                </ul>
+                </ul> --}}
             </div>
             <div class="col-md-2">
                 <div class="ftco-footer-widget mb-4 ml-md-5">
