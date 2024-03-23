@@ -54,6 +54,10 @@ class Task extends Model
             $guard = $route[0];
         }
 
+        $query->when($guard === 'admin', function ($q) {
+            $q->where('admin_id', '=', auth('admin')->id());
+        });
+
         $query->when($guard === 'user', function ($q) {
             $q->where('user_id', '=', auth('user')->id());
         });
