@@ -15,7 +15,7 @@ class Task extends Model
     protected $dates = [
         'start',
         'end',
-        ];
+    ];
 
     // ========================================================================
 
@@ -44,13 +44,23 @@ class Task extends Model
     {
         $start = $request->start ?? Carbon::now()->startOfMonth();
         $end = $request->end ?? Carbon::now()->endOfMonth();
-        
+
         $query->where('start', '>=', $start)
-              ->where('end', '<=', $end);
-        
+            ->where('end', '<=', $end);
+
+        if (request()->route()) {
+            # ルート名から現在のguard名を取得
+            $route = explode('.', request()->route()->getName());
+            $guard = $route[0];
+        }
+
+        $query->when($guard === 'user', function ($q) {
+            $q->where('user_id', '=', auth('user')->id());
+        });
+
         return $query;
     }
-    
+
     public function scopeExportTask($query, $request)
     {
         $date = $request->date ?? date('Y-m-d');
