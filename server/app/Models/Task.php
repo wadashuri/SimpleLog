@@ -55,7 +55,7 @@ class Task extends Model
         }
 
         $query->when($guard === 'admin', function ($q) {
-            $q->where('admin_id', '=', auth('admin')->id());
+            $q->where('user_id', '=', null);
         });
 
         $query->when($guard === 'user', function ($q) {
