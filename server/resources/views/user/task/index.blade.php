@@ -204,7 +204,7 @@
                     }
                 }
 
-                // Attach the event listener
+
                 putForm.addEventListener('click', putFormHandler);
 
                 const deleteTask = document.getElementById('delete');
@@ -224,6 +224,13 @@
 
                 // Attach the event listener
                 deleteTask.addEventListener('click', deleteTaskHandler);
+
+                // モーダルが閉じられたときにイベントリスナーを削除
+                const bsModal = document.getElementById('exampleModal');
+                bsModal.addEventListener('hidden.bs.modal', function(event) {
+                    putForm.removeEventListener('click', putFormHandler);
+                    deleteTask.removeEventListener('click', deleteTaskHandler);
+                });
             },
             eventDrop: function(e) {
                 // イベントがドロップされたときに実行する処理

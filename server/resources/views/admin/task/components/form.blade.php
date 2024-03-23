@@ -1,4 +1,4 @@
-{!! Form::open(['route' => $slot_route, 'method' => $slot_method, 'files' => 'true']) !!}
+{!! Form::open(['route' => $slot_route, 'method' => $slot_method, 'files' => 'true', 'onsubmit' => 'return false;' ]) !!}
 <div class="row g-3 mb-3">
     <div class="col-12">
         {{ Form::label('project_id', 'プロジェクト', ['class' => 'form-label']) }}
