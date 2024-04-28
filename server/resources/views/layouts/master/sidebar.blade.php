@@ -1,4 +1,8 @@
-<div class="position-sticky">
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">SimpleLog</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
     <ul class="nav flex-column">
         <li class="nav-item">
             <a class="nav-link link-dark {{ Functions::activeClass('master.home') }}" href="{{ route('master.home') }}">
