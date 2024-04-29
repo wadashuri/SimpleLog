@@ -51,7 +51,7 @@ class TaskController extends Controller
         try {
             $params = $request->input();
             $params['admin_id'] = auth()->user('user')->admin->id;
-            $params['user_id'] = auth()->user('user')->admin->id;
+            $params['user_id'] = auth()->user('user')->id;
 
             $task = DB::transaction(function () use ($params) {
                 return $this->_task->create($params);
