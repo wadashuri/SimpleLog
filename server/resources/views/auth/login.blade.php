@@ -9,10 +9,12 @@
                 <div class="card-header">Googleで{{ __('Login') }}</div>
 
                 <div class="card-body">
+                    @if(request()->route()->getName() == 'admin.login_form')
                     <a href="{{ route('login.google') }}">
                         <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" alt="Googleでログイン" style="height: 40px;">
                     </a>
-                    {{-- <form method="POST" action="{{ url()->current() }}">
+                    @else
+                    <form method="POST" action="{{ url()->current() }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -68,7 +70,8 @@
                                 @endif
                             </div>
                         </div>
-                    </form> --}}
+                    </form>
+                    @endif
                 </div>
             </div>
         </div>
