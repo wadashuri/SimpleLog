@@ -8,7 +8,10 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ url()->current() }}">
+                    <a href="{{ route('login.google') }}">
+                        <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" alt="Googleでログイン" style="height: 40px;">
+                    </a>
+                    {{-- <form method="POST" action="{{ url()->current() }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -68,7 +71,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>
