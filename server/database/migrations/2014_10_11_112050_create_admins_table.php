@@ -19,7 +19,7 @@ class CreateAdminsTable extends Migration
             $table->foreignId('master_id')->nullable()->constrained()->nullOnDelete();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->dateTime('last_login_at')->nullable()->comment('最終ログイン');
             $table->dateTime('created_at')->nullable();

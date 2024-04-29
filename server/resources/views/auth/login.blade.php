@@ -1,14 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container mt-5">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">Googleで{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ url()->current() }}">
+                    <a href="{{ route('login.google') }}">
+                        <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" alt="Googleでログイン" style="height: 40px;">
+                    </a>
+                    {{-- <form method="POST" action="{{ url()->current() }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -64,7 +68,7 @@
                                 @endif
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>

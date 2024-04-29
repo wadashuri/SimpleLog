@@ -28,8 +28,8 @@
             <a class="dropdown-item" href="{{ route('front.pages.services') }}">サービス</a>
             <a class="dropdown-item" href="{{ route('front.pages.pricing') }}">価格</a>
             <a class="dropdown-item" href="{{ route('front.contact.index') }}">お問い合わせ</a>
-            <a class="dropdown-item {{ Functions::activeClass('admin.register') }}"
-                href="{{ route('admin.register') }}">新規会員登録</a>
+            {{-- <a class="dropdown-item {{ Functions::activeClass('admin.register') }}"
+                href="{{ route('admin.register') }}">新規会員登録</a> --}}
             <a class="dropdown-item {{ Functions::activeClass('admin.login') }}"
                 href="{{ route('admin.login') }}">ログイン</a>
         </div>
