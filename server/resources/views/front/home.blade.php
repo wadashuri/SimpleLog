@@ -7,31 +7,31 @@
             <div class="slider-text d-md-flex align-items-center" data-scrollax-parent="true">
 
                 <div class="one-forth ftco-animate align-self-md-center" data-scrollax=" properties: { translateY: '70%' }">
-                    <h1 class="mb-4">web,音楽で
+                    <h1 class="mb-4">SimpleLogで
                         <strong class="typewrite" data-period="4000"
-                            data-type='[ "真心を尽くし、確かな品質を提供。", "純粋な思いが溢れる、感動を届ける。", "真摯な姿勢を持ち、信頼を築く。", "誠心誠意、お客様の満足に全力を尽くす。" ]'>
+                            data-type='[ "シンプルなタスク管理。", "リモート社員の作業の見える化。", "効率化。" ]'>
                             <span class="wrap"></span>
                         </strong>
                     </h1>
                     <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
-                        私たちの目標は、愛を持って仕事をし、お客様や作品に真摯に向き合い、常に高品質なサービスを提供することです。</p>
+                      シンプルなタスク管理システム。個人利用は無料です。</p>
                     <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                         <a href="{{ route('front.contact.index') }}"
                             class="btn btn-primary btn-outline-primary px-4 py-3 mt-1">お問い合わせはこちら</a>
                         <a href="{{ route('admin.register') }}"
-                            class="btn btn-primary px-4 py-3 mt-1">無料でSimpleLogを試してみる</a>
+                            class="btn btn-primary px-4 py-3 mt-1">Googleでログイン</a>
                     </p>
                 </div>
                 <div class="one-half align-self-md-end align-self-sm-center">
                     <div class="slider-carousel owl-carousel">
                         <div class="col-lg-10">
-                            <img src="images/pc.png" class="img-fluid" alt="">
+                            <img src="images/taskEdit.png" class="img-fluid" alt="">
                         </div>
                         <div class="col-lg-10">
-                            <img src="images/music.png" class="img-fluid" alt="">
+                            <img src="images/taskIndex.png" class="img-fluid" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/dashboard_full_2.png" class="img-fluid img"alt="">
+                            <img src="images/projectIndex.png" class="img-fluid img"alt="">
                         </div>
                         {{-- <div class="item">
                             <img src="images/dashboard_full_3.png" class="img-fluid img"alt="">
@@ -47,7 +47,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h3 class="heading-white">制作において一切の妥協をしないことをお約束します</h3>
+                    <h3 class="heading-white">Googleログインで個人情報もしっかり保護。</h3>
                 </div>
             </div>
         </div>
