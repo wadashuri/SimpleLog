@@ -9,35 +9,30 @@
         ]))) !!}
     </div>
 
-    <div class="accordion accordion-flush mb-3" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              詳細設定
-            </button>
-          </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-                <div class="col-12">
-                    {{ Form::label('project_id', 'プロジェクト', ['class' => 'form-label']) }}
-                    {{ Form::select('project_id', $projects, old('project_id', isset($slot_task->project_id) ? $slot_task->project_id : false), ['class' => 'form-select', 'placeholder' => '未指定']) }}
-                </div>
-                <div class="col-12">
-                    {{ Form::label('start', '開始日', ['class' => 'form-label']) }}
-                    {{ Form::input('dateTime-local', 'start', isset($slot_task->start) ? $slot_task->start : '', ['class' => 'form-control']) }}
-                </div>
-                <div class="col-12">
-                    {{ Form::label('end', '終了日', ['class' => 'form-label']) }}
-                    {{ Form::input('dateTime-local', 'end', isset($slot_task->end) ? $slot_task->end : '', ['class' => 'form-control']) }}
-                </div>
-                <div class="mb-3">
-                    {{ Form::label('status', '状態', ['class' => 'form-label']) }}
-                    {{ Form::select('status', StatusConstants::STATUS, isset($slot_task->status) ? $slot_task->status : '', ['class' => 'form-select']) }}
-                </div>
+    <section class="accordion">
+		<input id="block-01" type="checkbox" class="toggle">
+		<label class="Label" for="block-01">詳細設定</label>
+		<div class="content">
+            <div class="col-12">
+                {{ Form::label('project_id', 'プロジェクト', ['class' => 'form-label']) }}
+                {{ Form::select('project_id', $projects, old('project_id', isset($slot_task->project_id) ? $slot_task->project_id : false), ['class' => 'form-select', 'placeholder' => '未指定']) }}
             </div>
-          </div>
-        </div>
-    </div>
+            <div class="col-12">
+                {{ Form::label('start', '開始日', ['class' => 'form-label']) }}
+                {{ Form::input('dateTime-local', 'start', isset($slot_task->start) ? $slot_task->start : '', ['class' => 'form-control']) }}
+            </div>
+            <div class="col-12">
+                {{ Form::label('end', '終了日', ['class' => 'form-label']) }}
+                {{ Form::input('dateTime-local', 'end', isset($slot_task->end) ? $slot_task->end : '', ['class' => 'form-control']) }}
+            </div>
+            <div class="mb-3">
+                {{ Form::label('status', '状態', ['class' => 'form-label']) }}
+                {{ Form::select('status', StatusConstants::STATUS, isset($slot_task->status) ? $slot_task->status : '', ['class' => 'form-select']) }}
+            </div>
+		</div>
+	</section>
+
+    
     <div class="col-12 mt-0 d-flex justify-content-center gap-1">
         <hr class="my-4">
         <div class="col-4">

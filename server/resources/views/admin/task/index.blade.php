@@ -65,12 +65,13 @@
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                right: 'dayGridMonth'
             },
             defaultDate: new Date(),
-            defaultView: 'timeGridDay', // 初期表示を日単位に設定
+            defaultView: 'dayGridMonth',
             navLinks: true, // can click day/week names to navigate views
             selectable: true,
+            selectLongPressDelay: 0,
             locale: 'ja',
             selectMirror: true,
             select: function(e) {
@@ -411,4 +412,53 @@
         max-width: 900px;
         margin: 0 auto;
     }
+
+    .fc-day-number {
+    text-decoration: none;
+    color: black;
+    }
+
+        /*ベース*/
+.toggle {
+	display: none;
+}
+.Label {		/*タイトル*/
+	padding: 1em;
+	display: block;
+	color: #fff;
+	background:#bbbcbc;
+}
+.Label::before{		/*タイトル横の矢印*/
+	content:"";
+	width: 6px;
+	height: 6px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	-webkit-transform: rotate(45deg);
+	position: absolute;
+	top:calc( 50% - 3px );
+	right: 20px;
+	transform: rotate(135deg);
+}
+.Label,
+.content {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+	transition: all 0.3s;
+}
+.content {		/*本文*/
+	height: 0;
+	margin-bottom:10px;
+	padding:0 20px;
+	overflow: hidden;
+}
+.toggle:checked + .Label + .content {	/*開閉時*/
+	height: auto;
+	padding:20px ;
+	transition: all .3s;
+}
+.toggle:checked + .Label::before {
+	transform: rotate(-45deg) !important;
+}
 </style>

@@ -65,12 +65,13 @@
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                right: 'dayGridMonth'
             },
             defaultDate: new Date(),
-            defaultView: 'timeGridDay', // 初期表示を日単位に設定
+            defaultView: 'dayGridMonth',
             navLinks: true, // can click day/week names to navigate views
             selectable: true,
+            selectLongPressDelay: 0,
             locale: 'ja',
             selectMirror: true,
             select: function(e) {
